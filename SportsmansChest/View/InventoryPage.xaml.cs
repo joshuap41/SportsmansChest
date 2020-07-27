@@ -14,5 +14,10 @@ namespace SportsmansChest.View
         {
             InitializeComponent();
         }
+
+        private void ItemListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+
+        }
     }
 }

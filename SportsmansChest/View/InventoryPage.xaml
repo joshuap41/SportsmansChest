@@ -11,22 +11,24 @@
                    FontAttributes="Bold"
                    FontSize="20"/>
             <Button Text="Add"
-                    HorizontalOptions="End"
-                    BackgroundColor=""/>
+                    HorizontalOptions="End"/>
         </StackLayout>
     </NavigationPage.TitleView>
 
 
-    <ContentPage.Content>
-        <StackLayout>
-            <StackLayout>
-                
-            </StackLayout>
-        </StackLayout>
-
-
-
-
-
-    </ContentPage.Content>
+    <StackLayout VerticalOptions="CenterAndExpand" x:Name="createdInventoryItems">
+        <ListView x:Name="ItemListView" ItemSelected="ItemListView_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell IsEnabled="True">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                            <Label Text="{Binding ...}"
+                                   TextColor="Blue"/>
+                            
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>
