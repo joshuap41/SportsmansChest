@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using SportsmansChest.View;
 
 namespace SportsmansChest
 {
@@ -16,6 +17,15 @@ namespace SportsmansChest
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        void InventoryList_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new InventoryPage());
+        }
+
+        void PastEvents_Clicked(System.Object sender, System.EventArgs e)
+        {
         }
     }
 }

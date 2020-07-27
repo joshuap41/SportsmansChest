@@ -5,7 +5,25 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="SportsmansChest.App">
-    <Application.Resources>
 
+    <Application.Resources>
+        <!--Different Colors for the App-->
+        <ResourceDictionary>
+            
+            <!--Button Colors-->
+            <Color x:Key="blueColorForButton">#1E90FF</Color>
+            <Color x:Key="white">#FFFFFF</Color>
+
+                        <!--Create a "style" for the titles of each page-->
+
+            <!--This "Style" applies to all "Button(s)" within the app because the specific button is not set-->
+            <Style x:Key="normalButton" TargetType="Button">
+                <Setter Property="BackgroundColor"
+                        Value="{StaticResource blueColorForButton}"/>
+                <Setter Property="TextColor"
+                        Value="{StaticResource white}"/>
+            </Style>
+            
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
