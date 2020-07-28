@@ -1,34 +1,43 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SportsmansChest.View.InventoryPage">
+             x:Class="SportsmansChest.View.InventoryPage"
+             Title="Sportsmans Chest" >
 
-    <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal">
-            <Label Text="Inventory Page"
-                   HorizontalOptions="CenterAndExpand"
-                   VerticalOptions="CenterAndExpand"
-                   FontAttributes="Bold"
-                   FontSize="20"/>
-            <Button Text="Add"
-                    HorizontalOptions="End"/>
+    <!--Can also use NavigationPage.TitleView with a StackLayout...-->
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Home"
+                     Clicked="HomeToolbarItem_Clicked"/>
+        <ToolbarItem Text="Add"
+                    Clicked="AddButton_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+
+        <StackLayout>
+            <Label Text="Current Inventory"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    FontAttributes="Bold"
+                    FontSize="20"/>
+        </StackLayout>    
+
+        <StackLayout VerticalOptions="CenterAndExpand" x:Name="createdInventoryItems">
+            <SearchBar Placeholder="Search..." TextChanged="SearchBar_TextChanged"/>
+            <ListView x:Name="itemListView" ItemSelected="ItemListView_ItemSelected" SeparatorVisibility="Default">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell IsEnabled="True">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                <Label Text="{Binding Manufacturer}" TextColor="Blue" VerticalOptions="Center"/>
+                                <Label Text="{Binding Model}" TextColor="Blue" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
-    </NavigationPage.TitleView>
 
-
-    <StackLayout VerticalOptions="CenterAndExpand" x:Name="createdInventoryItems">
-        <ListView x:Name="ItemListView" ItemSelected="ItemListView_ItemSelected">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell IsEnabled="True">
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                            <Label Text="{Binding ...}"
-                                   TextColor="Blue"/>
-                            
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
     </StackLayout>
 </ContentPage>
