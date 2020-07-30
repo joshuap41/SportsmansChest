@@ -8,7 +8,11 @@
 
 
     <!-- **Need a background picturefor the buttons instead of a solid color** -->
-
+    <!-- *Need a MenuPage for the MainPage*
+    <MasterDetailPage.Master>
+        <views:MenuPage />
+    </MasterDetailPage.Master>
+    -->
     <StackLayout>
         <Label Text="The Sportsmans Chest"
                FontSize="Title"
