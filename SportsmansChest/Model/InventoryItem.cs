@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SportsmansChest.Model
 {
-    class InventoryItem
+    public class InventoryItem
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
@@ -16,6 +16,7 @@ namespace SportsmansChest.Model
         public string SerialNumber { get; set; }
         public string DeclairedValue { get; set; }
         public DateTime MaintenanceDate { get; set; }
+        //change to string
         public int Notification { get; set; }
         public string Notes { get; set; }
 

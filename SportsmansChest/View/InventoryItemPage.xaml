@@ -5,6 +5,42 @@
              Title="Inventory Item">
 
     <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="itemDetailsListView" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="Manufacturer:" FontAttributes="Bold" FontSize="Medium"/>
+                                <Label Text="{Binding Manufacturer}" FontSize="Small"/>
 
+                                <Label Text="Model:" FontAttributes="Bold" FontSize="Medium"/>
+                                <Label Text="{Binding Model}" FontSize="Small"/>
+
+                                <Label Text="Grade:" FontAttributes="Bold" FontSize="Medium"/>
+                                <Label Text="{Binding Grade}" FontSize="Small"/>
+
+                                <Label Text="Serial Number:" FontAttributes="Bold" FontSize="Medium"/>
+                                <Label Text="{Binding SerialNumber}" FontSize="Small"/>
+
+                                <Label Text="Declaired Value:" FontAttributes="Bold" FontSize="Medium"/>
+                                <Label Text="{Binding DeclairedValue}" FontSize="Small"/>
+
+                                <Label Text="Maintenance Date:" FontAttributes="Bold" FontSize="Medium"/>
+                                <Label Text="{Binding MaintenanceDate}" FontSize="Small"/>
+
+                                <Label Text="Notification:" FontAttributes="Bold" FontSize="Medium"/>
+                                <Label Text="{Binding Notification}" FontSize="Small"/>
+
+                                <Label Text="Notes:" FontAttributes="Bold" FontSize="Medium"/>
+                                <Label Text="{Binding Notes}" FontSize="Small"/>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
