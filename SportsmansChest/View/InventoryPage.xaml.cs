@@ -35,7 +35,10 @@ namespace SportsmansChest.View
 
         private void ItemListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            var selectedInventoryItem = itemListView.SelectedItem as InventoryItem;
 
+            if (selectedInventoryItem != null)
+                Navigation.PushAsync(new InventoryItemPage(selectedInventoryItem));
         }
 
         async void AddButton_Clicked(System.Object sender, System.EventArgs e)

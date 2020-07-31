@@ -2,13 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SportsmansChest.View.InventoryPage"
-             Title="Current Inventory" >
+             Title="Inventory Items" >
 
     <!--Can also use NavigationPage.TitleView with a StackLayout...-->
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Home"
-                     Clicked="HomeToolbarItem_Clicked"/>
         <ToolbarItem Text="Add"
                      Clicked="AddButton_Clicked" />
     </ContentPage.ToolbarItems>
