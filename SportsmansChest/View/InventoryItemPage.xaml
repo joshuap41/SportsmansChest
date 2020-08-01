@@ -40,7 +40,33 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            
+
+            <StackLayout>
+                <Button x:Name="Accessories"
+                        Margin="0, 0, 0, 0"
+                        HeightRequest="35"
+                        Text="Accessories"
+                        Clicked="Accessories_Clicked"
+                        BackgroundColor="{StaticResource blueColorForButton}"
+                        TextColor="{StaticResource white}"/>
+                <Button x:Name="EditItem"
+                        Margin="0, 0, 0, 0"
+                        HeightRequest="35"
+                        Text="Edit Item"
+                        Clicked="EditItem_Clicked"
+                        BackgroundColor="{StaticResource blueColorForButton}"
+                        TextColor="{StaticResource white}"/>
+                <Button x:Name="DeleteItem"
+                        Margin="0, 0, 0, 30"
+                        HeightRequest="35"
+                        Text="Delete Item"
+                        Clicked="DeleteItem_Clicked"
+                        BackgroundColor="{StaticResource blueColorForButton}"
+                        TextColor="{StaticResource white}"/>
+            </StackLayout>
+
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

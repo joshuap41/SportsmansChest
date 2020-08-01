@@ -36,5 +36,21 @@ namespace SportsmansChest.View
                 itemDetailsListView.ItemsSource = inventoryItem;
             }
         }
+
+        void Accessories_Clicked(System.Object sender, System.EventArgs e)
+        {
+        }
+
+        //void Accessories_Clicked_1(System.Object sender, System.EventArgs e)
+        //{
+        //}
+
+        void EditItem_Clicked(System.Object sender, System.EventArgs e)
+        {
+        }
+
+        void DeleteItem_Clicked(System.Object sender, System.EventArgs e)
+        {
+        }
     }
 }
