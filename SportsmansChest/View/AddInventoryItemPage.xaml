@@ -15,14 +15,14 @@
         <StackLayout>
 
             <StackLayout>
-                <Label Text="Manufacturer" FontAttributes="Bold" FontSize="Medium"/>
+                <Label Text="Manufacturer:" FontAttributes="Bold" FontSize="Medium"/>
                 <Entry x:Name="manufacturer" Placeholder="..." FontSize="Small"/>
 
-                <Label Text="Model" FontAttributes="Bold" FontSize="Medium"/>
+                <Label Text="Model:" FontAttributes="Bold" FontSize="Medium"/>
                 <Entry x:Name="model" Placeholder="..." FontSize="Small"/>
 
                 <!--Picker here-->
-                <Label Text="Grade" FontAttributes="Bold" FontSize="Medium"/>
+                <Label Text="Grade:" FontAttributes="Bold" FontSize="Medium"/>
                 <Picker x:Name="grade">
                     <Picker.Items>
                         <x:String>Standard</x:String>
@@ -32,26 +32,26 @@
                     </Picker.Items>
                 </Picker>
 
-                <Label Text="Serial Number" FontAttributes="Bold" FontSize="Medium"/>
-                <Editor x:Name="serialNumber" Placeholder="..." VerticalOptions="StartAndExpand" FontSize="Small" AutoSize="TextChanges"/>
+                <Label Text="Serial Number:" FontAttributes="Bold" FontSize="Medium"/>
+                <Entry x:Name="serialNumber" Placeholder="..." VerticalOptions="StartAndExpand" FontSize="Small"/>
                 
-                <Label Text="Declaired Value" FontAttributes="Bold" FontSize="Medium"/>
+                <Label Text="Declaired Value:" FontAttributes="Bold" FontSize="Medium"/>
                 <Entry x:Name="declairedValue" Placeholder="..." FontSize="Small"/>
 
                 <!--DatePicker-->
                 <StackLayout Orientation="Horizontal" Padding="0,10,4,0">
-                    <Label Text="Maintenance Date" FontAttributes="Bold" FontSize="Medium" Padding="0,5,0,0"/>
+                    <Label Text="Maintenance Date:" FontAttributes="Bold" FontSize="Medium" Padding="0,5,0,0"/>
                     <DatePicker x:Name="maintenanceDate"/>
                 </StackLayout>
                 
                 <!--Notificaitons-->
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Notifications" FontAttributes="Bold" FontSize="Medium"/>
+                    <Label Text="Notifications:" FontAttributes="Bold" FontSize="Medium"/>
                     <Switch x:Name="notification" OnColor="AliceBlue"/>
                 </StackLayout>
 
                 <!--Editor allows "AutoSize" which allows all text to be seen in the form-->
-                <Label Text="Notes" FontAttributes="Bold" FontSize="Medium"/>
+                <Label Text="Notes:" FontAttributes="Bold" FontSize="Medium"/>
                 <Editor x:Name="notes" Placeholder="..." FontSize="Small" VerticalOptions="StartAndExpand" AutoSize="TextChanges"/>
                 
                 <!--Pictures-->

@@ -20,8 +20,8 @@
                     <DataTemplate>
                         <ViewCell IsEnabled="True">
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                                <Label Text="{Binding Manufacturer}" TextColor="Blue" VerticalOptions="Center"/>
-                                <Label Text="{Binding Model}" TextColor="Blue" VerticalOptions="Center"/>
+                                <Label Text="{Binding Manufacturer}" FontSize="Medium" TextColor="Blue" VerticalOptions="Center"/>
+                                <Label Text="{Binding Model}" FontSize="Medium" TextColor="Blue" VerticalOptions="Center"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

@@ -41,8 +41,9 @@ namespace SportsmansChest.View
         {
         }
 
-        void EditItem_Clicked(System.Object sender, System.EventArgs e)
+        async void EditItem_Clicked(System.Object sender, System.EventArgs e)
         {
+            await Navigation.PushModalAsync(new NavigationPage(new EditInventoryItemPage(selectedInventoryItem)));
         }
 
         async void DeleteItem_Clicked(System.Object sender, System.EventArgs e)
@@ -53,9 +54,15 @@ namespace SportsmansChest.View
 
                 var confirmationAccept = await DisplayAlert("Delete Item", "Delete this item?", "Yes", "No");
                 if (confirmationAccept)
+                {
                     conn.Delete(selectedInventoryItem);
+                    await Navigation.PopAsync();
+                }
+                else
+                {
+
+                }
             }
-            await Navigation.PopAsync();
         }
     }
 }

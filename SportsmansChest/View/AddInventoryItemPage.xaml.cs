@@ -32,6 +32,7 @@ namespace SportsmansChest.View
                 MaintenanceDate = maintenanceDate.Date,
                 //been here done this but WTF
                 //Notification = notification.On == true ? 1 : 0,
+                //Notification = notification.On<>(),
                 Notes = notes.Text
             };
 
