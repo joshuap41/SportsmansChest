@@ -41,16 +41,21 @@ namespace SportsmansChest.View
         {
         }
 
-        //void Accessories_Clicked_1(System.Object sender, System.EventArgs e)
-        //{
-        //}
-
         void EditItem_Clicked(System.Object sender, System.EventArgs e)
         {
         }
 
-        void DeleteItem_Clicked(System.Object sender, System.EventArgs e)
+        async void DeleteItem_Clicked(System.Object sender, System.EventArgs e)
         {
+            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+            {
+                conn.CreateTable<InventoryItem>();
+
+                var confirmationAccept = await DisplayAlert("Delete Item", "Delete this item?", "Yes", "No");
+                if (confirmationAccept)
+                    conn.Delete(selectedInventoryItem);
+            }
+            await Navigation.PopAsync();
         }
     }
 }

@@ -39,11 +39,6 @@
         <Button Text="Run a report of some kind.."
                 Margin="2, 40, 2, 2"
                 TextColor="{StaticResource blueColorForButton}"/>
-
-
-
-
     </StackLayout>
    
-
 </ContentPage>

@@ -27,10 +27,7 @@ namespace SportsmansChest.View
                 conn.CreateTable<InventoryItem>();
                 var items = conn.Table<InventoryItem>().ToList();
                 itemListView.ItemsSource = items;
-
-                
             }
-
         }
 
         private void ItemListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -70,7 +67,6 @@ namespace SportsmansChest.View
                     itemListView.ItemsSource = foundItems;
                 }
             }
-
         }
     }
 }
