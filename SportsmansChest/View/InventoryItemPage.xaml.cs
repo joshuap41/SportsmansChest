@@ -39,6 +39,7 @@ namespace SportsmansChest.View
 
         void Accessories_Clicked(System.Object sender, System.EventArgs e)
         {
+            Navigation.PushAsync(new AccessoryPage(selectedInventoryItem));
         }
 
         async void EditItem_Clicked(System.Object sender, System.EventArgs e)

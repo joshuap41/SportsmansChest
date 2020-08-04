@@ -29,7 +29,7 @@ namespace SportsmansChest.View
             serialNumber.Text = selectedInventoryItem.SerialNumber;
             declairedValue.Text = selectedInventoryItem.DeclairedValue;
             maintenanceDate.Date = selectedInventoryItem.MaintenanceDate;
-            //Notifications here
+            notification.SelectedItem = selectedInventoryItem.Notification;
             notes.Text = selectedInventoryItem.Notes;
         }
 
@@ -46,7 +46,7 @@ namespace SportsmansChest.View
             selectedInventoryItem.SerialNumber = serialNumber.Text;
             selectedInventoryItem.DeclairedValue = declairedValue.Text;
             selectedInventoryItem.MaintenanceDate = maintenanceDate.Date;
-            //Notifications here
+            selectedInventoryItem.Notification = Convert.ToString(notification.SelectedItem);
             selectedInventoryItem.Notes = notes.Text;
 
             using(SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))

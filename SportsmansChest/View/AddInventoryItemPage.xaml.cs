@@ -30,9 +30,8 @@ namespace SportsmansChest.View
                 SerialNumber = serialNumber.Text,
                 DeclairedValue = declairedValue.Text,
                 MaintenanceDate = maintenanceDate.Date,
-                //been here done this but WTF
-                //Notification = notification.On == true ? 1 : 0,
-                //Notification = notification.On<>(),
+                //Notification Need to wrap in a "Switch Cell" to use like the other project...
+                Notification = Convert.ToString(notification.SelectedItem),
                 Notes = notes.Text
             };
 
@@ -43,8 +42,6 @@ namespace SportsmansChest.View
                 conn.Insert(newItem);
                 await Navigation.PopModalAsync();
                 //validate user input
-
-
             }
         }
     }

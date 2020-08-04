@@ -45,11 +45,14 @@
                 </StackLayout>
                 
                 <!--Notificaitons-->
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Notifications:" FontAttributes="Bold" FontSize="Medium"/>
-                    <Switch x:Name="notification" OnColor="AliceBlue"/>
-                </StackLayout>
-
+                <Label Text="Notification Status:" FontAttributes="Bold" FontSize="Medium"/>
+                <Picker x:Name="notification" MenuItem.Accelerator="Enabled">
+                    <Picker.Items>
+                        <x:String>Enabled</x:String>
+                        <x:String>Disabled</x:String>
+                    </Picker.Items>
+                </Picker>
+                
                 <!--Editor allows "AutoSize" which allows all text to be seen in the form-->
                 <Label Text="Notes:" FontAttributes="Bold" FontSize="Medium"/>
                 <Editor x:Name="notes" Placeholder="..." FontSize="Small" VerticalOptions="StartAndExpand" AutoSize="TextChanges"/>
