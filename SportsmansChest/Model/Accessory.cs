@@ -8,7 +8,7 @@ namespace SportsmansChest.Model
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
-        public int InventoryItem { get; set; }
+        public int InvItem { get; set; }
         public string Manufacturer { get; set; }
         public string Model { get; set; }
         public string SerialNumber { get; set; }
