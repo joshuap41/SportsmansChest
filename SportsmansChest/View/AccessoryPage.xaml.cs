@@ -29,7 +29,7 @@ namespace SportsmansChest.View
                 var accessoryTable = conn.Table<Accessory>().ToList();
                 //sifting for correct accessory for the item
                 var createdAccessoryList = (from accessory in accessoryTable
-                                            where accessory.Id == selectedInventoryItem.Id
+                                            where accessory.InvItem == selectedInventoryItem.Id
                                             select accessory).ToList();
 
                 accessoryListView.ItemsSource = createdAccessoryList;
