@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SportsmansChest.View.EditAccessoryPage"
+             Title="Edit Accessory">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel  "
+                     Clicked="CancelToolbarItem_Clicked"/>
+        <ToolbarItem Text="Save"
+                     Clicked="SaveToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+            <StackLayout>
+                <Label Text="Manufacturer:" FontAttributes="Bold" FontSize="Medium"/>
+                <Entry x:Name="manufacturer" Placeholder="..." FontSize="Small"/>
+
+                <Label Text="Model:" FontAttributes="Bold" FontSize="Medium"/>
+                <Entry x:Name="model" Placeholder="..." FontSize="Small"/>
+
+                <Label Text="Serial Number:" FontAttributes="Bold" FontSize="Medium"/>
+                <Entry x:Name="serialNumber" Placeholder="..." VerticalOptions="StartAndExpand" FontSize="Small"/>
+                
+                <Label Text="Declaired Value:" FontAttributes="Bold" FontSize="Medium"/>
+                <Entry x:Name="declairedValue" Placeholder="..." FontSize="Small"/>
+
+                <!--DatePicker-->
+                <StackLayout Orientation="Horizontal" Padding="0,10,4,0">
+                    <Label Text="Maintenance Date:" FontAttributes="Bold" FontSize="Medium" Padding="0,5,0,0"/>
+                    <DatePicker x:Name="maintenanceDate"/>
+                </StackLayout>
+                
+                <!--Notificaitons-->
+                <Label Text="Notification Status:" FontAttributes="Bold" FontSize="Medium"/>
+                <Picker x:Name="notification" MenuItem.Accelerator="Enabled">
+                    <Picker.Items>
+                        <x:String>Enabled</x:String>
+                        <x:String>Disabled</x:String>
+                    </Picker.Items>
+                </Picker>
+                
+                <!--Editor allows "AutoSize" which allows all text to be seen in the form-->
+                <Label Text="Notes:" FontAttributes="Bold" FontSize="Medium"/>
+                <Editor x:Name="notes" Placeholder="..." FontSize="Small" VerticalOptions="StartAndExpand" AutoSize="TextChanges"/>
+                
+                <!--Pictures-->
+
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

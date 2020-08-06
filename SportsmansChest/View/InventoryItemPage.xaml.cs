@@ -33,13 +33,13 @@ namespace SportsmansChest.View
                                      where InventoryItem.Id == selectedInventoryItem.Id
                                      select InventoryItem).ToList();
 
-                itemDetailsListView.ItemsSource = inventoryItem;
+                ItemDetailsListView.ItemsSource = inventoryItem;
             }
         }
 
         void Accessories_Clicked(System.Object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new AccessoryPage(selectedInventoryItem));
+           Navigation.PushAsync(new AccessoriesPage(selectedInventoryItem));
         }
 
         async void EditItem_Clicked(System.Object sender, System.EventArgs e)
@@ -53,7 +53,7 @@ namespace SportsmansChest.View
             {
                 conn.CreateTable<InventoryItem>();
 
-                var confirmationAccept = await DisplayAlert("Delete Item", "Delete this item?", "Yes", "No");
+                var confirmationAccept = await DisplayAlert("Delete", "Delete this item?", "Yes", "No");
                 if (confirmationAccept)
                 {
                     conn.Delete(selectedInventoryItem);

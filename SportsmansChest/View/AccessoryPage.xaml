@@ -2,27 +2,59 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SportsmansChest.View.AccessoryPage"
-             Title="Accessories">
+             Title="Accessory">
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add"
-                     Clicked="AddToolbarItem_Clicked"/>
-    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="AccessoryListView" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="Manufacturer:" FontAttributes="Bold" FontSize="Medium"/>
+                                <Label Text="{Binding Manufacturer}" FontSize="Small"/>
 
-    <!--Delete the stacklayout X:Name at the end cleanup-->
-    <StackLayout x:Name="createdAccessories" VerticalOptions="CenterAndExpand">
-        <SearchBar Placeholder="Search..." TextChanged="SearchBar_TextChanged"/>
-        <ListView x:Name="accessoryListView" ItemSelected="accessoryListView_ItemSelected" SeparatorVisibility="Default">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell IsEnabled="True">
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                            <Label Text="{Binding Manufacturer}" FontSize="Medium" TextColor="Blue" VerticalOptions="Center"/>
-                            <Label Text="{Binding Model}" FontSize="Medium" TextColor="Blue" VerticalOptions="Center"/>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
+                                <Label Text="Model:" FontAttributes="Bold" FontSize="Medium"/>
+                                <Label Text="{Binding Model}" FontSize="Small"/>
+
+                                <Label Text="Serial Number:" FontAttributes="Bold" FontSize="Medium"/>
+                                <Label Text="{Binding SerialNumber}" FontSize="Small"/>
+
+                                <Label Text="Declaired Value:" FontAttributes="Bold" FontSize="Medium"/>
+                                <Label Text="{Binding DeclairedValue}" FontSize="Small"/>
+
+                                <Label Text="Maintenance Date:" FontAttributes="Bold" FontSize="Medium"/>
+                                <Label Text="{Binding MaintenanceDate}" FontSize="Small"/>
+
+                                <Label Text="Notification:" FontAttributes="Bold" FontSize="Medium"/>
+                                <Label Text="{Binding Notification}" FontSize="Small"/>
+
+                                <Label Text="Notes:" FontAttributes="Bold" FontSize="Medium"/>
+                                <Label Text="{Binding Notes}" FontSize="Small"/>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackLayout>
+                <Button x:Name="EditAccessory"
+                        Margin="0, 0, 0, 0"
+                        HeightRequest="35"
+                        Text="Edit Accessory"
+                        Clicked="EditAccessory_Clicked"
+                        BackgroundColor="{StaticResource blueColorForButton}"
+                        TextColor="{StaticResource white}"/>
+                <Button x:Name="DeleteAccessory"
+                        Margin="0, 0, 0, 30"
+                        HeightRequest="35"
+                        Text="Delete Accessory"
+                        Clicked="DeleteAccessory_Clicked"
+                        BackgroundColor="{StaticResource blueColorForButton}"
+                        TextColor="{StaticResource white}"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

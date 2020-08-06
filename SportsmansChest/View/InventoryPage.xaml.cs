@@ -43,6 +43,7 @@ namespace SportsmansChest.View
             await Navigation.PushModalAsync(new NavigationPage(new AddInventoryItemPage()));
         }
 
+        //delete when complete
         void HomeToolbarItem_Clicked(System.Object sender, System.EventArgs e)
         {
             

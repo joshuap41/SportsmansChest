@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using SQLite;
+
 using Xamarin.Forms;
 using SportsmansChest.Model;
-
+using SQLite;
+using System.Linq;
 
 namespace SportsmansChest.View
 {
     public partial class AccessoryPage : ContentPage
     {
-        InventoryItem selectedInventoryItem;
+        private Accessory selectedAccessory;
 
-        public AccessoryPage(InventoryItem selectedInventoryItem)
+        public AccessoryPage(Accessory selectedAccessory)
         {
             InitializeComponent();
 
-            this.selectedInventoryItem = selectedInventoryItem;
+            this.selectedAccessory = selectedAccessory;
         }
 
         protected override void OnAppearing()
@@ -26,29 +26,39 @@ namespace SportsmansChest.View
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
                 conn.CreateTable<Accessory>();
-                var accessoryTable = conn.Table<Accessory>().ToList();
-                //sifting for correct accessory for the item
-                var createdAccessoryList = (from accessory in accessoryTable
-                                            where accessory.InvItem == selectedInventoryItem.Id
-                                            select accessory).ToList();
 
-                accessoryListView.ItemsSource = createdAccessoryList;
+                var accessoryTable = conn.Table<Accessory>().ToList();
+
+                var accessory = (from Accessory in accessoryTable
+                                 where Accessory.Id == selectedAccessory.Id
+                                 select Accessory).ToList();
+
+                AccessoryListView.ItemsSource = accessory;
             }
         }
 
-        async void AddToolbarItem_Clicked(System.Object sender, System.EventArgs e)
+        async void DeleteAccessory_Clicked(System.Object sender, System.EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new AddAccessoryPage(selectedInventoryItem)));
+            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+            {
+                conn.CreateTable<Accessory>();
+
+                var confirmationAccept = await DisplayAlert("Delete", "Delete this accessory?", "Yes", "No");
+                if (confirmationAccept)
+                {
+                    conn.Delete(selectedAccessory);
+                    await Navigation.PopAsync();
+                }
+                else
+                {
+
+                }
+            }
         }
 
-        void SearchBar_TextChanged(System.Object sender, Xamarin.Forms.TextChangedEventArgs e)
+        async void EditAccessory_Clicked(System.Object sender, System.EventArgs e)
         {
-            
-        }
-
-        void accessoryListView_ItemSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
-        {
-
+            await Navigation.PushModalAsync(new NavigationPage(new EditAccessoryPage(selectedAccessory)));
         }
     }
 }

@@ -6,7 +6,7 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="itemDetailsListView" SeparatorVisibility="None">
+            <ListView x:Name="ItemDetailsListView" SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -64,8 +64,6 @@
                         BackgroundColor="{StaticResource blueColorForButton}"
                         TextColor="{StaticResource white}"/>
             </StackLayout>
-
-
 
         </StackLayout>
     </ContentPage.Content>

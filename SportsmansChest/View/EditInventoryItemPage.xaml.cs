@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using Xamarin.Forms;
-using System.Linq;
 using SQLite;
 using SportsmansChest.Model;
-using SportsmansChest.View;
 
 namespace SportsmansChest.View
 {
     public partial class EditInventoryItemPage : ContentPage
     {
         private InventoryItem selectedInventoryItem;
+
         public EditInventoryItemPage(InventoryItem selectedInventoryItem)
         {
             InitializeComponent();
@@ -53,6 +51,7 @@ namespace SportsmansChest.View
             {
                 conn.CreateTable<InventoryItem>();
                 conn.Update(selectedInventoryItem);
+                //validate user input
                 
             }
             await Navigation.PopModalAsync();
