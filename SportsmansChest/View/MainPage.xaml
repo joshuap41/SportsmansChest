@@ -20,6 +20,9 @@
                HorizontalOptions="Center"
                VerticalOptions="Center"/>
 
+        <!-- Change backgound of buttons to a picture...
+        https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/images?tabs=macos#Local_Images
+        -->
         <Button Text="Inventory List"
                 x:Name="InventoryList"
                 Margin="2, 20, 2, 2"

@@ -19,5 +19,6 @@
 
   <ItemGroup>
     <Folder Include="View\" />
+    <Folder Include="View\PastEventPages\" />
   </ItemGroup>
 </Project>

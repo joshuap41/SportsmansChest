@@ -6,7 +6,8 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="ItemDetailsListView" SeparatorVisibility="None">
+
+            <ListView x:Name="ItemDetailsListView" HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -37,7 +38,7 @@
 
                             </StackLayout>
                         </ViewCell>
-                    </DataTemplate>
+                   </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
 
