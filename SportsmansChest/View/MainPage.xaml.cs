@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using SportsmansChest.View;
+using SportsmansChest.Model;
+using SQLite;
 
 namespace SportsmansChest
 {
@@ -17,6 +19,47 @@ namespace SportsmansChest
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            using (SQLiteConnection conn = new SQLiteConnection)
+            {
+                conn.CreateTable<InventoryItem>();
+                var items = conn.Table<InventoryItem>().ToList();
+
+                conn.CreateTable<Accessory>();
+                var accessories = conn.Table<Accessory>().ToList();
+
+                try
+                {
+                    if (appOpening)
+                    {
+                        var itemId = 0;
+
+                        var accessoryId = 0;
+
+                        appOpening = false;
+
+                        foreach (var InventoryItem in items)
+                        {
+                            if (InventoryItem.Notification == "Enabled")
+                            {
+                                if (InventoryItem.MaintenanceDate == DateTime.Today)
+                                {
+                                    CrossLocal
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    DisplayAlert("Failure", "Notifications failed to be displayed", "Ok");
+                }
+            }
         }
 
         void InventoryList_Clicked(System.Object sender, System.EventArgs e)

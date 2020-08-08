@@ -22,6 +22,9 @@ namespace SportsmansChest.View
         {
             base.OnAppearing();
 
+            //data to test with
+            App.FillerData();
+
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
                 conn.CreateTable<InventoryItem>();
