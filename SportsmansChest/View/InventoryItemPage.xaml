@@ -7,41 +7,71 @@
     <ContentPage.Content>
         <StackLayout>
 
-            <ListView x:Name="ItemDetailsListView" HasUnevenRows="True">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
+            <TableView Intent="Data" HasUnevenRows="True" x:Name="ItemDetailsListView">
+                <TableRoot>
+                    <TableSection Title="Item Details">
                         <ViewCell>
-                            <StackLayout Padding="10">
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
                                 <Label Text="Manufacturer:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label Text="{Binding Manufacturer}" FontSize="Small"/>
-
-                                <Label Text="Model:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label Text="{Binding Model}" FontSize="Small"/>
-
-                                <Label Text="Grade:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label Text="{Binding Grade}" FontSize="Small"/>
-
-                                <Label Text="Serial Number:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label Text="{Binding SerialNumber}" FontSize="Small"/>
-
-                                <Label Text="Declaired Value:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label Text="{Binding DeclairedValue}" FontSize="Small"/>
-
-                                <Label Text="Maintenance Date:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label Text="{Binding MaintenanceDate}" FontSize="Small"/>
-
-                                <Label Text="Notification:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label Text="{Binding Notification}" FontSize="Small"/>
-
-                                <Label Text="Notes:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label Text="{Binding Notes}" FontSize="Small"/>
-
+                                <Label x:Name="Manufacturer" FontSize="Small" HorizontalOptions="StartAndExpand"/>
                             </StackLayout>
                         </ViewCell>
-                   </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
 
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
+                                <Label Text="Model:" FontAttributes="Bold" FontSize="Medium" />
+                                <Label x:Name="Model" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
+                                <Label Text="Grade:" FontAttributes="Bold" FontSize="Medium"/>
+                                <Label x:Name="Grade" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
+                                <Label Text="Serial Number:" FontAttributes="Bold" FontSize="Medium"/>
+                                <Label x:Name="SerialNumnber" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
+                                <Label Text="Declaired Value:" FontAttributes="Bold" FontSize="Medium"/>
+                                <Label x:Name="DeclairedValue" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
+                                <Label Text="Maintenance Date:" FontAttributes="Bold" FontSize="Medium"/>
+                                <Label x:Name="MaintenanceDate" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
+                                <Label Text="Notification:" FontAttributes="Bold" FontSize="Medium"/>
+                                <Label x:Name="Notification" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="10">
+                                <Label Text="Notes:" FontAttributes="Bold" FontSize="Medium"/>
+                                <Editor x:Name="Notes" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+
+            <!--Keep-->
             <StackLayout>
                 <Button x:Name="Accessories"
                         Margin="0, 0, 0, 0"

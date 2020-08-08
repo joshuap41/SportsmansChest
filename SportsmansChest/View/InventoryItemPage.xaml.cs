@@ -17,24 +17,34 @@ namespace SportsmansChest.View
             InitializeComponent();
 
             this.selectedInventoryItem = selectedInventoryItem;
+
+            Manufacturer.Text = selectedInventoryItem.Manufacturer;
+            Model.Text = selectedInventoryItem.Model;
+            Grade.Text = selectedInventoryItem.Grade;
+            SerialNumnber.Text = selectedInventoryItem.SerialNumber;
+            DeclairedValue.Text = selectedInventoryItem.DeclairedValue;
+            MaintenanceDate.Text = selectedInventoryItem.MaintenanceDate.ToString(App.dateFormat);
+            Notification.Text = selectedInventoryItem.Notification;
+            Notes.Text = selectedInventoryItem.Notes;
+
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
-            {
-                conn.CreateTable<InventoryItem>();
+            //using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+            //{
+            //    conn.CreateTable<InventoryItem>();
 
-                var itemTable = conn.Table<InventoryItem>().ToList();
+            //    var itemTable = conn.Table<InventoryItem>().ToList();
 
-                var inventoryItem = (from InventoryItem in itemTable
-                                     where InventoryItem.Id == selectedInventoryItem.Id
-                                     select InventoryItem).ToList();
+            //    var inventoryItem = (from InventoryItem in itemTable
+            //                         where InventoryItem.Id == selectedInventoryItem.Id
+            //                         select InventoryItem).ToList();
 
-                ItemDetailsListView.ItemsSource = inventoryItem;
-            }
+            //    ItemDetailsListView.ItemsSource = inventoryItem;
+            //}
         }
 
         void Accessories_Clicked(System.Object sender, System.EventArgs e)

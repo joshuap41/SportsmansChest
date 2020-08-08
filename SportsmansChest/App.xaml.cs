@@ -6,6 +6,7 @@ namespace SportsmansChest
 {
     public partial class App : Application
     {
+        public static string dateFormat = " MM/dd/yyyy";
 
         public static string DatabaseLocation = string.Empty;
         public App()

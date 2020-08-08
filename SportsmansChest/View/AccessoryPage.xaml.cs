@@ -17,24 +17,33 @@ namespace SportsmansChest.View
             InitializeComponent();
 
             this.selectedAccessory = selectedAccessory;
+
+            Manufacturer.Text = selectedAccessory.Manufacturer;
+            Model.Text = selectedAccessory.Model;
+            SerialNumnber.Text = selectedAccessory.SerialNumber;
+            DeclairedValue.Text = selectedAccessory.DeclairedValue;
+            MaintenanceDate.Text = selectedAccessory.MaintenanceDate.ToString(App.dateFormat);
+            Notification.Text = selectedAccessory.Notification;
+            Notes.Text = selectedAccessory.Notes;
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
-            {
-                conn.CreateTable<Accessory>();
+            //unable to bind to the tableview need to update fast somehow
+            //using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+            //{
+            //    conn.CreateTable<Accessory>();
 
-                var accessoryTable = conn.Table<Accessory>().ToList();
+            //    var accessoryTable = conn.Table<Accessory>().ToList();
 
-                var accessory = (from Accessory in accessoryTable
-                                 where Accessory.Id == selectedAccessory.Id
-                                 select Accessory).ToList();
+            //    var accessory = (from Accessory in accessoryTable
+            //                     where Accessory.Id == selectedAccessory.Id
+            //                     select Accessory).ToList();
 
-                AccessoryListView.ItemsSource = accessory;
-            }
+            //    AccessoryListView.ItemsSource = accessory;
+            //}
         }
 
         async void DeleteAccessory_Clicked(System.Object sender, System.EventArgs e)
