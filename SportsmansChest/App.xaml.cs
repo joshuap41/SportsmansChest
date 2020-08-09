@@ -69,7 +69,7 @@ namespace SportsmansChest
                         Grade = "Standard",
                         SerialNumber = "589764",
                         DeclairedValue = "500.00",
-                        MaintenanceDate = new DateTime(2020, 09, 01),
+                        MaintenanceDate = new DateTime(2020, 08, 09),
                         Notification = "Enabled",
                         Notes = "This is my favorite bow to hunt with. I will need to get a maintenance kit for it soon"
                     };
@@ -81,7 +81,7 @@ namespace SportsmansChest
                         Model = "95c",
                         SerialNumber = "89352413",
                         DeclairedValue = "200.00",
-                        MaintenanceDate = new DateTime(2020, 10, 01),
+                        MaintenanceDate = new DateTime(2020, 08, 09),
                         Notification = "Enabled",
                         Notes = "This is my favorite scope to hunt with.",
                         InvItem = newItem.Id

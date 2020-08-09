@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Plugin.LocalNotifications;
 using Xamarin.Forms;
 using SportsmansChest.View;
 using SportsmansChest.Model;
@@ -25,14 +26,17 @@ namespace SportsmansChest
         {
             base.OnAppearing();
 
-            using (SQLiteConnection conn = new SQLiteConnection)
+            bool appOpening = true;
+
+            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
                 conn.CreateTable<InventoryItem>();
-                var items = conn.Table<InventoryItem>().ToList();
+                var itemsList = conn.Table<InventoryItem>().ToList();
 
                 conn.CreateTable<Accessory>();
                 var accessories = conn.Table<Accessory>().ToList();
 
+                //notifications
                 try
                 {
                     if (appOpening)
@@ -43,15 +47,23 @@ namespace SportsmansChest
 
                         appOpening = false;
 
-                        foreach (var InventoryItem in items)
+                        foreach (InventoryItem inventoryItem in itemsList)
                         {
-                            if (InventoryItem.Notification == "Enabled")
+                            itemId++;
+                            if (inventoryItem.Notification == "Enabled" && inventoryItem.MaintenanceDate == DateTime.Today)
                             {
-                                if (InventoryItem.MaintenanceDate == DateTime.Today)
-                                {
-                                    CrossLocal
-                                }
+                                //need a "nickName for the individual items to further decifer each one
+                                CrossLocalNotifications.Current.Show("Alert", "${inventoryItem.Manufacturer} needs maintenance today.", itemId);
                             }
+                        }
+                        foreach (Accessory accessory in accessories)
+                        {
+                            accessoryId++;
+                            if (accessory.Notification == "Enabled" && accessory.MaintenanceDate == DateTime.Today)
+                            {
+                                CrossLocalNotifications.Current.Show("Alert", "${accessory.Manufacturer} needs maintenance today", accessoryId);
+                            }
+
                         }
                     }
                 }

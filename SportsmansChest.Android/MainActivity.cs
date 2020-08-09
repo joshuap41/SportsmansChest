@@ -25,7 +25,6 @@ namespace SportsmansChest.Droid
 
 
             //added the following to create the sqlite db.
-
             string dbName = "travel_db.sqlite";
             string folderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             string fullPath = Path.Combine(folderPath, dbName);
