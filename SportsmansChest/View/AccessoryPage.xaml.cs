@@ -10,6 +10,7 @@ namespace SportsmansChest.View
 {
     public partial class AccessoryPage : ContentPage
     {
+
         private Accessory selectedAccessory;
 
         public AccessoryPage(Accessory selectedAccessory)
