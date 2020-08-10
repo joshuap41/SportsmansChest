@@ -54,7 +54,10 @@ namespace SportsmansChest.View
                 //validate user input
                 
             }
-            await Navigation.PopModalAsync();
+            //not updating the next page.......
+            await App.Current.MainPage.Navigation.PopModalAsync();
+            //await App.Current.MainPage.Navigation.PopAsync();
+            //await Navigation.PopModalAsync();
         }
     }
 }

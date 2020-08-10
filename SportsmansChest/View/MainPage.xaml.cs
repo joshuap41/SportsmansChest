@@ -50,18 +50,27 @@ namespace SportsmansChest
                         foreach (InventoryItem inventoryItem in itemsList)
                         {
                             itemId++;
-                            if (inventoryItem.Notification == "Enabled" && inventoryItem.MaintenanceDate == DateTime.Today)
+                            if (inventoryItem.Notification == "Enabled")
                             {
-                                //need a "nickName for the individual items to further decifer each one
-                                CrossLocalNotifications.Current.Show("Alert", "${inventoryItem.Manufacturer} needs maintenance today.", itemId);
+                                if (inventoryItem.MaintenanceDate == DateTime.Today)
+                                {
+                                    //need a "nickName for the individual items to further decifer each one
+                                    CrossLocalNotifications.Current.Show("Notification Received", $"{inventoryItem.Manufacturer} needs maintenance today.", itemId);
+                                }
+                               
                             }
                         }
                         foreach (Accessory accessory in accessories)
                         {
                             accessoryId++;
-                            if (accessory.Notification == "Enabled" && accessory.MaintenanceDate == DateTime.Today)
+                            if (accessory.Notification == "Enabled")
                             {
-                                CrossLocalNotifications.Current.Show("Alert", "${accessory.Manufacturer} needs maintenance today", accessoryId);
+                                if (accessory.MaintenanceDate == DateTime.Today)
+                                {
+                                    //need a "nickName for the individual items to further decifer each one
+                                    CrossLocalNotifications.Current.Show("Notification Received", $"Accessory: {accessory.Manufacturer} needs maintenance today", accessoryId);
+                                }
+                                
                             }
 
                         }
