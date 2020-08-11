@@ -14,10 +14,12 @@ namespace SportsmansChest.View
 
         public InventoryItemPage(InventoryItem selectedInventoryItem)
         {
-            InitializeComponent();
-
             this.selectedInventoryItem = selectedInventoryItem;
+            InitializeComponent();
+        }
 
+        protected override void OnAppearing()
+        {
             Manufacturer.Text = selectedInventoryItem.Manufacturer;
             Model.Text = selectedInventoryItem.Model;
             Grade.Text = selectedInventoryItem.Grade;
@@ -26,11 +28,6 @@ namespace SportsmansChest.View
             MaintenanceDate.Text = selectedInventoryItem.MaintenanceDate.ToString(App.dateFormat);
             Notification.Text = selectedInventoryItem.Notification;
             Notes.Text = selectedInventoryItem.Notes;
-
-        }
-
-        protected override void OnAppearing()
-        {
             base.OnAppearing();
 
             //using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))

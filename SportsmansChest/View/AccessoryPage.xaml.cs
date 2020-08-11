@@ -15,10 +15,12 @@ namespace SportsmansChest.View
 
         public AccessoryPage(Accessory selectedAccessory)
         {
-            InitializeComponent();
-
             this.selectedAccessory = selectedAccessory;
+            InitializeComponent();
+        }
 
+        protected override void OnAppearing()
+        {
             Manufacturer.Text = selectedAccessory.Manufacturer;
             Model.Text = selectedAccessory.Model;
             SerialNumnber.Text = selectedAccessory.SerialNumber;
@@ -26,10 +28,7 @@ namespace SportsmansChest.View
             MaintenanceDate.Text = selectedAccessory.MaintenanceDate.ToString(App.dateFormat);
             Notification.Text = selectedAccessory.Notification;
             Notes.Text = selectedAccessory.Notes;
-        }
 
-        protected override void OnAppearing()
-        {
             base.OnAppearing();
 
             //unable to bind to the tableview need to update fast somehow
