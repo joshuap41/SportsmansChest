@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SportsmansChest.View.ReportPage"
+             Title="Inventory Statistics Report">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Exit"
+                     Order="Default"
+                     Clicked="ExitToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Item Statistics"
+                   FontSize="Large"
+                   FontAttributes="Italic"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+
+            <TableView>
+                <TableSection>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
+                            <Label Text="Total Inventory Item Count: " FontAttributes="Bold" FontSize="Medium"/>
+                            <Label x:Name="TotalInvCount" Visual="Material" Padding="0,0,0,4"/>
+                        </StackLayout>
+                    </ViewCell>
+
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
+                            <Label Text="Different Manufacturers: " FontAttributes="Bold" FontSize="Medium"/>
+                            <Label x:Name="DifferentManufacturers" Visual="Material" Padding="0,0,0,4"/>
+                        </StackLayout>
+                    </ViewCell>
+
+                </TableSection>
+            </TableView>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

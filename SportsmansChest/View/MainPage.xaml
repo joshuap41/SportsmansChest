@@ -40,8 +40,9 @@
                 TextColor="{StaticResource white}"
                 Clicked="PastEvents_Clicked"/>
 
-        <Button Text="Run a report of some kind.."
+        <Button Text="Inventory Statistics Report"
                 Margin="2, 40, 2, 2"
+                Clicked="ReportButton_Clicked"
                 TextColor="{StaticResource blueColorForButton}"/>
     </StackLayout>
    

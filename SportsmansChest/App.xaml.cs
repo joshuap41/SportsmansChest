@@ -42,14 +42,59 @@ namespace SportsmansChest
         {
         }
 
-
-        public static void FillerData()
+        public static int ManufacturerCategoriesCount()
         {
-            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+            using (SQLiteConnection conn = new SQLiteConnection(DatabaseLocation))
             {
                 conn.CreateTable<InventoryItem>();
 
-                var item = conn.Table<InventoryItem>().ToList();
+                var inventoryList = conn.Table<InventoryItem>().ToList();
+
+                var categories = (from InventoryItem in inventoryList
+                                  orderby InventoryItem.Id
+                                  select InventoryItem.Manufacturer).Distinct().ToList();
+
+                var manufacturerCategoriesCount = categories.Count();
+
+                return manufacturerCategoriesCount;
+            }
+        }
+
+        public static int AccessoryCount()
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(DatabaseLocation))
+            {
+                conn.CreateTable<Accessory>();
+
+                var accessoryList = conn.Table<Accessory>().ToList();
+
+                var accessoryCount = accessoryList.Count();
+
+                return accessoryCount;
+            }
+        }
+
+        public static int InventoryItemCount()
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(DatabaseLocation))
+            {
+                conn.CreateTable<InventoryItem>();
+
+                var inventoryList = conn.Table<InventoryItem>().ToList();
+
+                var inventoryItemCount = inventoryList.Count();
+
+                return inventoryItemCount;
+            }
+        }
+
+        public static void FillerData()
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(DatabaseLocation))
+            {
+                conn.CreateTable<InventoryItem>();
+
+                var item =  conn.Table<InventoryItem>().ToList();
 
                 var inventoryItemList = (from InventoryItem in item
                                    where InventoryItem.Manufacturer == "Browning"

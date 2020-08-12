@@ -91,5 +91,10 @@ namespace SportsmansChest
         void PastEvents_Clicked(System.Object sender, System.EventArgs e)
         {
         }
+
+        async void ReportButton_Clicked(System.Object sender, System.EventArgs e)
+        {
+            await Navigation.PushModalAsync(new NavigationPage(new ReportPage()));
+        }
     }
 }
