@@ -59,10 +59,17 @@
                             </StackLayout>
                         </ViewCell>
 
-                        <ViewCell >
+                        <ViewCell>
                             <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="10">
                                 <Label Text="Notes:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Editor x:Name="Notes" FontSize="Small" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"/>
+                                <Editor x:Name="Notes"
+                                        FontSize="Small"
+                                        AutoSize="TextChanges"
+                                        MaxLength="250"
+                                        IsSpellCheckEnabled="True"
+                                        IsTextPredictionEnabled="True"
+                                        IsReadOnly="True"
+                                        VerticalOptions="FillAndExpand"/>
                             </StackLayout>
                         </ViewCell>
 

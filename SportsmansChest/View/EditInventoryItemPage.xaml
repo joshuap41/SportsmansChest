@@ -53,7 +53,13 @@
 
             <!--Editor allows "AutoSize" which allows all text to be seen in the form-->
             <Label Text="Notes:" FontAttributes="Bold" FontSize="Medium"/>
-            <Editor x:Name="notes" Placeholder="..." FontSize="Small" VerticalOptions="StartAndExpand" AutoSize="TextChanges"/>
+            <Editor x:Name="notes"
+                    FontSize="Small"
+                    AutoSize="TextChanges"
+                    MaxLength="250"
+                    IsSpellCheckEnabled="True"
+                    IsTextPredictionEnabled="True"
+                    HorizontalOptions="StartAndExpand"/>
                 
             <!--Pictures-->
 

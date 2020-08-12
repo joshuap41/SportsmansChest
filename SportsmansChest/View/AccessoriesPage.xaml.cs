@@ -37,10 +37,26 @@ namespace SportsmansChest.View
             }
         }
 
-        void SearchBar_TextChanged(System.Object sender, Xamarin.Forms.TextChangedEventArgs e)
-        {
-            
-        }
+        //void SearchBar_TextChanged(System.Object sender, Xamarin.Forms.TextChangedEventArgs e)
+        //{
+        //    using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+        //    {
+        //        conn.CreateTable<InventoryItem>();
+        //        var items = conn.Table<InventoryItem>().ToList();
+
+        //        if (string.IsNullOrEmpty(e.NewTextValue))
+        //        {
+        //            AccessoriesListView.ItemsSource = items;
+        //        }
+        //        else
+        //        {
+        //            var foundItems = (from InventoryItem in items
+        //                              where InventoryItem.Manufacturer.ToUpper().StartsWith(e.NewTextValue.ToUpper())
+        //                              select InventoryItem).ToList();
+        //            AccessoriesListView.ItemsSource = foundItems;
+        //        }
+        //    }
+        //}
 
         async void AddToolbarItem_Clicked(System.Object sender, System.EventArgs e)
         {
