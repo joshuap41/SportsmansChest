@@ -21,5 +21,11 @@ namespace SportsmansChest.Model
         public string Notes { get; set; }
 
         //pictures...
+
+
+        public int Addititon(int x, int y)
+        {
+            return x + y;
+        }
     }
 }

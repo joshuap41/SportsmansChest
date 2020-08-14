@@ -42,10 +42,7 @@ namespace SportsmansChest
         {
         }
 
-        public int Addititon(int x, int y)
-        {
-            return x + y;
-        }
+        
 
         public static int ManufacturerCategoriesCount()
         {

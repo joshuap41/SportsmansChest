@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6114D498-5868-4161-9A53-36DD10EFD2D7}</ProjectGuid>
+    <ProjectGuid>{A45F85E4-3D21-417A-B466-4BD544CE17D5}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>SportsmansChest.UnitTests</RootNamespace>
-    <AssemblyName>SportsmansChest.UnitTests</AssemblyName>
+    <RootNamespace>SportsmansChest.UITest</RootNamespace>
+    <AssemblyName>SportsmansChest.UITest</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -37,8 +37,6 @@
   <ItemGroup>
     <Compile Include="Tests.cs" />
     <Compile Include="AppInitializer.cs" />
-    <Compile Include="TestClassAttribute.cs" />
-    <Compile Include="TestMethodAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
