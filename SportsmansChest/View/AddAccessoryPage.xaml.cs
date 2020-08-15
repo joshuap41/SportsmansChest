@@ -33,6 +33,7 @@ namespace SportsmansChest.View
                 Model = model.Text,
                 SerialNumber = serialNumber.Text,
                 DeclairedValue = declairedValue.Text,
+                CreatedDate = DateTime.Now,
                 MaintenanceDate = maintenanceDate.Date,
                 //Notification Need to wrap in a "Switch Cell" to use like the other project...
                 Notification = Convert.ToString(notification.SelectedItem),

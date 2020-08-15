@@ -47,6 +47,13 @@
 
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
+                                <Label Text="Created Date:" FontAttributes="Bold" FontSize="Medium"/>
+                                <Label x:Name="CreatedDate" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
                                 <Label Text="Maintenance Date:" FontAttributes="Bold" FontSize="Medium"/>
                                 <Label x:Name="MaintenanceDate" FontSize="Small" HorizontalOptions="StartAndExpand"/>
                             </StackLayout>

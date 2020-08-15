@@ -25,6 +25,7 @@ namespace SportsmansChest.View
             Grade.Text = selectedInventoryItem.Grade;
             SerialNumnber.Text = selectedInventoryItem.SerialNumber;
             DeclairedValue.Text = selectedInventoryItem.DeclairedValue;
+            CreatedDate.Text = selectedInventoryItem.CreatedDate.ToString(App.dateFormat);
             MaintenanceDate.Text = selectedInventoryItem.MaintenanceDate.ToString(App.dateFormat);
             Notification.Text = selectedInventoryItem.Notification;
             Notes.Text = selectedInventoryItem.Notes;

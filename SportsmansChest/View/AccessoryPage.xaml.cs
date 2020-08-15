@@ -25,6 +25,7 @@ namespace SportsmansChest.View
             Model.Text = selectedAccessory.Model;
             SerialNumnber.Text = selectedAccessory.SerialNumber;
             DeclairedValue.Text = selectedAccessory.DeclairedValue;
+            CreatedDate.Text = selectedAccessory.CreatedDate.ToString(App.dateFormat);
             MaintenanceDate.Text = selectedAccessory.MaintenanceDate.ToString(App.dateFormat);
             Notification.Text = selectedAccessory.Notification;
             Notes.Text = selectedAccessory.Notes;
