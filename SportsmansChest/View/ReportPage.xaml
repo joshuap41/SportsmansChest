@@ -21,15 +21,22 @@
                 <TableSection>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
-                            <Label Text="Total Inventory Item Count: " FontAttributes="Bold" FontSize="Medium"/>
-                            <Label x:Name="TotalInvCount" Visual="Material" Padding="0,0,0,4"/>
+                            <Label Text="Report Run Date: " FontAttributes="Bold" FontSize="Medium"/>
+                            <Label x:Name="ReportRunDate" Visual="Material" Padding="0,3,0,4"/>
                         </StackLayout>
                     </ViewCell>
 
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
-                            <Label Text="Different Manufacturers: " FontAttributes="Bold" FontSize="Medium"/>
-                            <Label x:Name="DifferentManufacturers" Visual="Material" Padding="0,0,0,4"/>
+                            <Label Text="Total Inventory Item Count: " FontAttributes="Bold" FontSize="Medium"/>
+                            <Label x:Name="TotalInvCount" Visual="Material" Padding="0,3,0,4"/>
+                        </StackLayout>
+                    </ViewCell>
+
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
+                            <Label Text="Unique Item Manufacturers: " FontAttributes="Bold" FontSize="Medium"/>
+                            <Label x:Name="UniqueItemManufacturers" Visual="Material" Padding="0,3,0,4"/>
                         </StackLayout>
                     </ViewCell>
 
