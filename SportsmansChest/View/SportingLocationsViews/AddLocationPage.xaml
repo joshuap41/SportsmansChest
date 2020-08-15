@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SportsmansChest.View.SportingLocationsViews.AddLocationPage"
+             Title="Add Loction">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel  "
+                     Clicked="Cancel_Clicked"/>
+        <ToolbarItem Text="Save"
+                     Clicked="Save_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Location Name: " FontAttributes="Bold" FontSize="Medium"/>
+            <Entry x:Name="LocationName" Placeholder="..." FontSize="Small"/>
+
+            <Label Text="Longitude: " FontAttributes="Bold" FontSize="Medium"/>
+            <Entry x:Name="Longitude" Placeholder="..." FontSize="Small"/>
+
+            <Label Text="Latitude: " FontAttributes="Bold" FontSize="Medium"/>
+            <Entry x:Name="Latitude" Placeholder="..." FontSize="Small"/>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

@@ -29,6 +29,7 @@ namespace SportsmansChest.View
             MaintenanceDate.Text = selectedInventoryItem.MaintenanceDate.ToString(App.dateFormat);
             Notification.Text = selectedInventoryItem.Notification;
             Notes.Text = selectedInventoryItem.Notes;
+
             base.OnAppearing();
 
             //using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))

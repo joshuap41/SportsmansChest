@@ -29,9 +29,9 @@ namespace SportsmansChest.View.SportingLocationsViews
             }
         }
 
-        void AddButton_Clicked(System.Object sender, System.EventArgs e)
+        async void AddButton_Clicked(System.Object sender, System.EventArgs e)
         {
-
+            await Navigation.PushAsync(new AddLocationPage());
         }
 
         void SearchBar_TextChanged(System.Object sender, Xamarin.Forms.TextChangedEventArgs e)

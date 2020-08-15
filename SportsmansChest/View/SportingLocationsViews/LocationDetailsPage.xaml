@@ -39,6 +39,13 @@
 
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
+                                <Label Text="Created Date:" FontAttributes="Bold" FontSize="Medium"/>
+                                <Label x:Name="CreatedDate" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
                                 <Label Text="Return Date:" FontAttributes="Bold" FontSize="Medium"/>
                                 <Label x:Name="ReturnDate" FontSize="Small" HorizontalOptions="StartAndExpand"/>
                             </StackLayout>
@@ -63,9 +70,20 @@
             </TableView>
 
             <StackLayout>
-                <Button />
-                <Button />
-                <Button />
+                <Button Text="Edit Loction"
+                        x:Name="EditLocation"
+                        Clicked="EditLocation_Clicked"
+                        Margin="0, 0, 0, 0"
+                        HeightRequest="35"
+                        BackgroundColor="{StaticResource blueColorForButton}"
+                        TextColor="{StaticResource white}"/>
+                <Button Text="Delete Location"
+                        x:Name="DeleteLocation"
+                        Clicked="DeleteLocation_Clicked"
+                        Margin="0, 0, 0, 0"
+                        HeightRequest="35"
+                        BackgroundColor="{StaticResource blueColorForButton}"
+                        TextColor="{StaticResource white}"/>
             </StackLayout>
 
 

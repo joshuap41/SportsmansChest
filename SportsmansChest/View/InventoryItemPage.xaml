@@ -87,25 +87,25 @@
 
             <!--Keep-->
             <StackLayout>
-                <Button x:Name="Accessories"
-                        Margin="0, 0, 0, 0"
-                        HeightRequest="35"
-                        Text="Accessories"
+                <Button Text="Accessories"
+                        x:Name="Accessories"
                         Clicked="Accessories_Clicked"
-                        BackgroundColor="{StaticResource blueColorForButton}"
-                        TextColor="{StaticResource white}"/>
-                <Button x:Name="EditItem"
                         Margin="0, 0, 0, 0"
                         HeightRequest="35"
-                        Text="Edit Item"
-                        Clicked="EditItem_Clicked"
                         BackgroundColor="{StaticResource blueColorForButton}"
                         TextColor="{StaticResource white}"/>
-                <Button x:Name="DeleteItem"
+                <Button Text="Edit Item"
+                        x:Name="EditItem"
+                        Clicked="EditItem_Clicked"
+                        Margin="0, 0, 0, 0"
+                        HeightRequest="35"
+                        BackgroundColor="{StaticResource blueColorForButton}"
+                        TextColor="{StaticResource white}"/>
+                <Button Text="Delete Item"
+                        x:Name="DeleteItem"
+                        Clicked="DeleteItem_Clicked"
                         Margin="0, 0, 0, 30"
                         HeightRequest="35"
-                        Text="Delete Item"
-                        Clicked="DeleteItem_Clicked"
                         BackgroundColor="{StaticResource blueColorForButton}"
                         TextColor="{StaticResource white}"/>
             </StackLayout>
