@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SportsmansChest.View.SportingLocationsViews.LocationsPage"
+             Title="Saved Sporting Locations">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add"
+                     Clicked="AddButton_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout x:Name="CreatedSportingLocations" VerticalOptions="CenterAndExpand">
+        <SearchBar Placeholder="..." TextChanged="SearchBar_TextChanged"/>
+        <ListView x:Name="LocationListView" ItemSelected="LocationListView_ItemSelected" SeparatorVisibility="Default">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell IsEnabled="True">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                            <Label Text="{Binding LocationName}" FontSize="Medium" TextColor="Blue" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

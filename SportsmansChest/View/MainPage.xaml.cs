@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 using Plugin.LocalNotifications;
 using Xamarin.Forms;
 using SportsmansChest.View;
+using SportsmansChest.View.SportingLocationsViews;
 using SportsmansChest.Model;
 using SQLite;
+
 
 namespace SportsmansChest
 {
@@ -57,22 +59,16 @@ namespace SportsmansChest
                                     //need a "nickName for the individual items to further decifer each one
                                     CrossLocalNotifications.Current.Show("Notification Received", $"Inventory Item: {inventoryItem.Manufacturer} needs maintenance today.", itemId);
                                 }
-                               
                             }
                         }
                         foreach (Accessory accessory in accessories)
                         {
                             accessoryId++;
-                            if (accessory.Notification == "Enabled")
+                            if (accessory.Notification == "Enabled" && accessory.MaintenanceDate == DateTime.Today)
                             {
-                                if (accessory.MaintenanceDate == DateTime.Today)
-                                {
-                                    //need a "nickName for the individual items to further decifer each one
-                                    CrossLocalNotifications.Current.Show("Notification Received", $"Accessory: {accessory.Manufacturer} needs maintenance today", accessoryId);
-                                }
-                                
+                                //need a "nickName for the individual items to further decifer each one
+                                CrossLocalNotifications.Current.Show("Notification Received", $"Accessory: {accessory.Manufacturer} needs maintenance today", accessoryId);
                             }
-
                         }
                     }
                 }
@@ -88,8 +84,9 @@ namespace SportsmansChest
             Navigation.PushAsync(new InventoryPage());
         }
 
-        void PastEvents_Clicked(System.Object sender, System.EventArgs e)
+        async void SportingLocations_Clicked(System.Object sender, System.EventArgs e)
         {
+            await Navigation.PushAsync(new LocationsPage());
         }
 
         async void ReportButton_Clicked(System.Object sender, System.EventArgs e)

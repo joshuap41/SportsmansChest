@@ -19,5 +19,7 @@
 
   <ItemGroup>
     <Folder Include="View\" />
+    <Folder Include="View\SportingLocationsViews\" />
+    <Folder Include="Model\SportingLocationsModel\" />
   </ItemGroup>
 </Project>

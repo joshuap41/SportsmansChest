@@ -26,22 +26,22 @@
         -->
         <Button Text="Inventory List"
                 x:Name="InventoryList"
-                Margin="2, 20, 2, 2"
+                Margin="2, 30, 2, 2"
                 HeightRequest="80"
                 BackgroundColor="{StaticResource blueColorForButton}"
                 TextColor="{StaticResource white}"
                 Clicked="InventoryList_Clicked"/>
 
-        <Button Text="Past Events"
-                x:Name="PastEvents"
+        <Button Text="Sporting Locations"
+                x:Name="SportingLocations"
                 Margin="2"
                 HeightRequest="80"
                 BackgroundColor="{StaticResource blueColorForButton}"
                 TextColor="{StaticResource white}"
-                Clicked="PastEvents_Clicked"/>
+                Clicked="SportingLocations_Clicked"/>
 
         <Button Text="Inventory Statistics Report"
-                Margin="2, 40, 2, 2"
+                Margin="20, 40, 20, 20"
                 Clicked="ReportButton_Clicked"
                 TextColor="{StaticResource blueColorForButton}"/>
     </StackLayout>
