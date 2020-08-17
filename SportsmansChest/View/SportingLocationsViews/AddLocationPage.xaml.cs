@@ -33,20 +33,6 @@ namespace SportsmansChest.View.SportingLocationsViews
         
         async void Save_Clicked(System.Object sender, System.EventArgs e)
         {
-            //LocationDb loc = new LocationDb();
-
-            //loc.LocationName = locationN.Text;
-            //loc.Longitude = Convert.ToDouble(longitude.Text);
-            //loc.Latitude = Convert.ToDouble(latitude.Text);
-
-            //// a selected item must be done like this or an exception will occur
-            //loc.EventType = Convert.ToString(eventTypePicker.SelectedItem);
-            //loc.CreatedDate = DateTime.Now;
-            //loc.ReturnDate = returnDate.Date;
-            //loc.Notification = Convert.ToString(notificationStatus.SelectedItem);
-            //loc.Notes = notes.Text;
-
-            // not set to an instance of an object...... exception?
             LocationDb newLocation = new LocationDb
             {
                 LocationName = locationName.Text,

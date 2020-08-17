@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Plugin.LocalNotifications;
 using Xamarin.Forms;
 using SportsmansChest.View;
 using SportsmansChest.View.SportingLocationsViews;
 using SportsmansChest.Model;
 using SQLite;
-
 
 namespace SportsmansChest
 {
@@ -38,27 +33,26 @@ namespace SportsmansChest
                 conn.CreateTable<Accessory>();
                 var accessories = conn.Table<Accessory>().ToList();
 
+                conn.CreateTable<LocationDb>();
+                var locations = conn.Table<LocationDb>().ToList();
+
                 //notifications
                 try
                 {
                     if (appOpening)
                     {
                         var itemId = 0;
-
                         var accessoryId = 0;
-
+                        var locationId = 0;
                         appOpening = false;
 
                         foreach (InventoryItem inventoryItem in itemsList)
                         {
                             itemId++;
-                            if (inventoryItem.Notification == "Enabled")
+                            if (inventoryItem.Notification == "Enabled" && inventoryItem.MaintenanceDate == DateTime.Today)
                             {
-                                if (inventoryItem.MaintenanceDate == DateTime.Today)
-                                {
-                                    //need a "nickName for the individual items to further decifer each one
-                                    CrossLocalNotifications.Current.Show("Notification Received", $"Inventory Item: {inventoryItem.Manufacturer} needs maintenance today.", itemId);
-                                }
+                                //need a "nickName for the individual items to further decifer each one
+                                CrossLocalNotifications.Current.Show("Notification Received", $"Inventory Item: {inventoryItem.Manufacturer} needs maintenance today.", itemId);
                             }
                         }
                         foreach (Accessory accessory in accessories)
@@ -70,18 +64,26 @@ namespace SportsmansChest
                                 CrossLocalNotifications.Current.Show("Notification Received", $"Accessory: {accessory.Manufacturer} needs maintenance today", accessoryId);
                             }
                         }
+                        foreach (LocationDb location in locations)
+                        {
+                            locationId++;
+                            if (location.Notification == "Enabled")
+                            {
+                                CrossLocalNotifications.Current.Show("Notification Received", $"Location: {location.LocationName} needs to be visited today", locationId);
+                            }
+                        }
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     DisplayAlert("Failure", "Notifications failed to be displayed", "Ok");
                 }
             }
         }
 
-        void InventoryList_Clicked(System.Object sender, System.EventArgs e)
+        async void InventoryList_Clicked(System.Object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new InventoryPage());
+            await Navigation.PushAsync(new InventoryPage());
         }
 
         async void SportingLocations_Clicked(System.Object sender, System.EventArgs e)
