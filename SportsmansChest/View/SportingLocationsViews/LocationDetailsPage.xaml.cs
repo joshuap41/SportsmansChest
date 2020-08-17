@@ -50,8 +50,19 @@ namespace SportsmansChest.View.SportingLocationsViews
             }
         }
 
-        void Directions_Clicked(System.Object sender, System.EventArgs e)
+        async void Directions_Clicked(System.Object sender, System.EventArgs e)
         {
+            if (!double.TryParse(Latitude.Text, out double lat))
+                return;
+
+            if (!double.TryParse(Longitude.Text, out double lon))
+                return;
+
+            await Map.OpenAsync(lat, lon, new MapLaunchOptions
+            {
+                Name = LocationName.Text,
+                NavigationMode = NavigationMode.None
+            });
 
         }
     }
