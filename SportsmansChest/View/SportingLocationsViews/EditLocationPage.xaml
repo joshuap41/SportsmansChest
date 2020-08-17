@@ -10,6 +10,7 @@
                      Clicked="Save_Clicked"/>
     </ContentPage.ToolbarItems>
 
+
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Location Name: " FontAttributes="Bold" FontSize="Medium"/>
