@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SportsmansChest.View.SportingLocationsViews.LocationsPage"
-             Title="Saved Sporting Locations">
+             Title="Created Sporting Locations">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add"

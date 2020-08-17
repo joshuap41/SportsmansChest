@@ -20,6 +20,8 @@ namespace SportsmansChest.View.SportingLocationsViews
         {
             base.OnAppearing();
 
+            App.LocationTestingData();
+
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
                 conn.CreateTable<LocationDb>();

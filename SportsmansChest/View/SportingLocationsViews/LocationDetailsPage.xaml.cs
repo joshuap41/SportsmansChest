@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using SportsmansChest.Model;
 using SQLite;
-using System.Linq;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace SportsmansChest.View.SportingLocationsViews
@@ -49,15 +47,12 @@ namespace SportsmansChest.View.SportingLocationsViews
                     conn.Delete(selectedLocation);
                     await Navigation.PopAsync();
                 }
-                else
-                {
-
-                }
             }
         }
 
         void Directions_Clicked(System.Object sender, System.EventArgs e)
         {
+
         }
     }
 }

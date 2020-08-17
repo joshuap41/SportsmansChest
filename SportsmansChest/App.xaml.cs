@@ -93,7 +93,33 @@ namespace SportsmansChest
             }
         }
 
-        public static void FillerData()
+        public static void LocationTestingData()
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(DatabaseLocation))
+            {
+                conn.CreateTable<LocationDb>();
+
+                var location = conn.Table<LocationDb>().ToList();
+
+                if (!location.Any())
+                {
+                    LocationDb newLocaiton = new LocationDb()
+                    {
+                        LocationName = "Favorite Hunting Spot",
+                        Longitude = -84.317241,
+                        Latitude = 34.736907,
+                        EventType = "Hunting",
+                        CreatedDate = DateTime.Now,
+                        ReturnDate = DateTime.Now,
+                        Notification = "Enabled",
+                        Notes = "I saw a lot of bucks by the stream here!"
+                    };
+                    conn.Insert(newLocaiton);
+                }
+            }
+        }
+
+        public static void InventoryTestingData()
         {
             using (SQLiteConnection conn = new SQLiteConnection(DatabaseLocation))
             {
@@ -101,12 +127,12 @@ namespace SportsmansChest
 
                 var item =  conn.Table<InventoryItem>().ToList();
 
-                var inventoryItemList = (from InventoryItem in item
-                                   where InventoryItem.Manufacturer == "Browning"
-                                   select InventoryItem).Distinct().ToList();
+                //var inventoryItemList = (from InventoryItem in item
+                //                         where InventoryItem.Manufacturer == "Browning"
+                //                         select InventoryItem).Distinct().ToList();
 
-                var lists = (from InventoryItem in inventoryItemList
-                             select InventoryItem.Manufacturer == "Browning").ToList();
+                //var lists = (from InventoryItem in inventoryItemList
+                //             select InventoryItem.Manufacturer == "Browning").ToList();
 
                 conn.CreateTable<Accessory>();
 
@@ -120,7 +146,7 @@ namespace SportsmansChest
                         SerialNumber = "589764",
                         DeclairedValue = "500.00",
                         CreatedDate = DateTime.Now,
-                        MaintenanceDate = new DateTime(2020, 08, 14),
+                        MaintenanceDate = DateTime.Now,
                         Notification = "Enabled",
                         Notes = "This is my favorite bow to hunt with. I will need to get a maintenance kit for it soon"
                     };
@@ -133,7 +159,7 @@ namespace SportsmansChest
                         SerialNumber = "89352413",
                         DeclairedValue = "200.00",
                         CreatedDate = DateTime.Now,
-                        MaintenanceDate = new DateTime(2020, 08, 14),
+                        MaintenanceDate = DateTime.Now,
                         Notification = "Enabled",
                         Notes = "This is my favorite scope to hunt with.",
                         InvItem = newItem.Id

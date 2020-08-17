@@ -23,7 +23,7 @@ namespace SportsmansChest.View
             base.OnAppearing();
 
             //data to test with
-            App.FillerData();
+            App.InventoryTestingData();
 
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
