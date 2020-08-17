@@ -15,7 +15,7 @@
     </MasterDetailPage.Master>
     -->
     <StackLayout>
-        <Label Text="The Sportsmans Chest"
+        <Label Text="The Sportsman's Chest"
                FontSize="Title"
                FontAttributes="Bold"
                HorizontalOptions="Center"

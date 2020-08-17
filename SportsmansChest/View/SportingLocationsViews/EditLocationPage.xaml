@@ -11,6 +11,43 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Location Name: " FontAttributes="Bold" FontSize="Medium"/>
+            <Entry x:Name="locationName" Placeholder="..." FontSize="Small"/>
 
+            <Label Text="Longitude: " FontAttributes="Bold" FontSize="Medium"/>
+            <Entry x:Name="longitude" Placeholder="..." FontSize="Small"/>
+
+            <Label Text="Latitude: " FontAttributes="Bold" FontSize="Medium"/>
+            <Entry x:Name="latitude" Placeholder="..." FontSize="Small"/>
+
+            <Label Text="Event Type: " FontAttributes="Bold" FontSize="Medium"/>
+            <Picker x:Name="eventTypePicker" >
+                <Picker.Items>
+                    <x:String>Practice</x:String>
+                    <x:String>Hunting</x:String>
+                    <x:String>Club Meeting</x:String>
+                    <x:String>N/A</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <StackLayout Orientation="Horizontal" Padding="0,10,4,10">
+                <Label Text="Return Date: " FontAttributes="Bold" FontSize="Medium" Padding="0,5,5,5"/>
+            <DatePicker x:Name="returnDate" HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <Label Text="Notificaiton Status: " FontAttributes="Bold" FontSize="Medium"/>
+            <Picker x:Name="notificationStatus">
+                <Picker.Items>
+                    <x:String>Enabled</x:String>
+                    <x:String>Disabled</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Notes: " FontAttributes="Bold" FontSize="Medium"/>
+            <Editor x:Name="notes" Placeholder="..." FontSize="Small"
+                    VerticalOptions="StartAndExpand" AutoSize="TextChanges"/>
+
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

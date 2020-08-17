@@ -35,7 +35,6 @@ namespace SportsmansChest.View.SportingLocationsViews
         async void EditLocation_Clicked(System.Object sender, System.EventArgs e)
         {
             await Navigation.PushModalAsync(new NavigationPage(new EditLocationPage(selectedLocation)));
-            await Navigation.PushModalAsync(new NavigationPage(new EditInventoryItemPage(selectedInventoryItem)));
         }
 
         async void DeleteLocation_Clicked(System.Object sender, System.EventArgs e)
