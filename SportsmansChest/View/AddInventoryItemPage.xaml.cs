@@ -39,7 +39,6 @@ namespace SportsmansChest.View
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
                 conn.CreateTable<InventoryItem>();
-
                 conn.Insert(newItem);
                 await Navigation.PopModalAsync();
                 //validate user input

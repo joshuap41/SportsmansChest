@@ -41,12 +41,12 @@
                 <!--DatePicker-->
                 <StackLayout Orientation="Horizontal" Padding="0,10,4,0">
                     <Label Text="Maintenance Date:" FontAttributes="Bold" FontSize="Medium" Padding="0,5,0,0"/>
-                    <DatePicker x:Name="maintenanceDate"/>
+                    <DatePicker x:Name="maintenanceDate" HorizontalOptions="End"/>
                 </StackLayout>
                 
                 <!--Notificaitons-->
                 <Label Text="Notification Status:" FontAttributes="Bold" FontSize="Medium"/>
-                <Picker x:Name="notification" MenuItem.Accelerator="Enabled">
+                <Picker x:Name="notification">
                     <Picker.Items>
                         <x:String>Enabled</x:String>
                         <x:String>Disabled</x:String>

@@ -1,10 +1,12 @@
 ﻿using System;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 using Xamarin.Forms.Xaml;
 using SportsmansChest.Model;
 using SportsmansChest.View;
 using System.Linq;
 using SQLite;
+using System.Diagnostics;
 
 namespace SportsmansChest
 {

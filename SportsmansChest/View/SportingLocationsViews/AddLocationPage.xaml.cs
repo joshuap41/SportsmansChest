@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using Xamarin.Forms;
 using Xamarin.Essentials;
+using SportsmansChest.Model;
+using SportsmansChest.View.SportingLocationsViews;
+using SQLite;
 
 namespace SportsmansChest.View.SportingLocationsViews
 {
@@ -10,16 +13,54 @@ namespace SportsmansChest.View.SportingLocationsViews
     {
         private double currentLatitude = 0;
         private double currentLongitude = 0;
-
+        //private SQLiteAsyncConnection conn;
 
         public AddLocationPage()
         {
             InitializeComponent();
+            GetUserGPSLocation();
+            //SQLiteAsyncConnection conn = new SQLiteAsyncConnection(App.DatabaseLocation);
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+        }
+
+        async void Cancel_Clicked(System.Object sender, System.EventArgs e)
+        {
+            await Navigation.PopModalAsync();
+        }
+
+        //WTF
+        async void Save_Clicked(System.Object sender, System.EventArgs e)
+        {
+            SportLocationDb newLocation = new SportLocationDb
+            {
+                LocationName = locationName.Text,
+                Longitude = Convert.ToDouble(longitude.Text),
+                Latitude = Convert.ToDouble(latitude.Text),
+                EventType = eventTypePicker.SelectedItem.ToString(),
+                CreatedDate = DateTime.Now,
+                ReturnDate = returnDate.Date,
+                Notification = notificationStatus.SelectedItem.ToString(),
+                Notes = notes.Text
+            };
+
+            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+            {
+                conn.CreateTable<SportLocationDb>();
+                conn.Insert(newLocation);
+                //validate user input
+            }
+
+            await Navigation.PopModalAsync();
+        }
+
 
         //Geolocation
         //https://docs.microsoft.com/en-us/xamarin/essentials/geolocation?tabs=android
-        async protected override void OnAppearing()
+        async public void GetUserGPSLocation()
         {
             try
             {
@@ -33,7 +74,7 @@ namespace SportsmansChest.View.SportingLocationsViews
                     });
                 }
                 if (location == null)
-                { 
+                {
                     await DisplayAlert("GPS Error", "No GPS signal available", "Ok");
                 }
                 else
@@ -46,20 +87,8 @@ namespace SportsmansChest.View.SportingLocationsViews
             {
                 Debug.WriteLine($"Something is wrong: {ex.Message}");
             }
-            Longitude.Text = currentLongitude.ToString();
-            Latitude.Text = currentLatitude.ToString();
-
-            base.OnAppearing();
+            longitude.Text = currentLongitude.ToString();
+            latitude.Text = currentLatitude.ToString();
         }
-
-        void Cancel_Clicked(System.Object sender, System.EventArgs e)
-        {
-        }
-
-        void Save_Clicked(System.Object sender, System.EventArgs e)
-        {
-        }
-
-        
     }
 }

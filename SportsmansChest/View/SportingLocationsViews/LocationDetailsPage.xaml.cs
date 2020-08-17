@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using SportsmansChest.Model.SportingLocationsModel;
+using SportsmansChest.Model;
 using SQLite;
 using System.Linq;
 
@@ -10,9 +10,9 @@ namespace SportsmansChest.View.SportingLocationsViews
 {
     public partial class LocationDetailsPage : ContentPage
     {
-        private Location selectedLocation;
+        private SportLocationDb selectedLocation;
 
-        public LocationDetailsPage(Location selectedLocation)
+        public LocationDetailsPage(SportLocationDb selectedLocation)
         {
             this.selectedLocation = selectedLocation;
             InitializeComponent();
@@ -36,7 +36,26 @@ namespace SportsmansChest.View.SportingLocationsViews
         {
         }
 
-        void DeleteLocation_Clicked(System.Object sender, System.EventArgs e)
+        async void DeleteLocation_Clicked(System.Object sender, System.EventArgs e)
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+            {
+                conn.CreateTable<SportLocationDb>();
+
+                var confirmationAccept = await DisplayAlert("Delete", "Delete this item?", "Yes", "No");
+                if (confirmationAccept)
+                {
+                    conn.Delete(selectedLocation);
+                    await Navigation.PopAsync();
+                }
+                else
+                {
+
+                }
+            }
+        }
+
+        void Directions_Clicked(System.Object sender, System.EventArgs e)
         {
         }
     }

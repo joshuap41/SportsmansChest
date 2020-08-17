@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using SportsmansChest.Model;
 using SQLite;
 using System.Linq;
-using SportsmansChest.Model.SportingLocationsModel;
 
 using Xamarin.Forms;
 
@@ -23,23 +22,23 @@ namespace SportsmansChest.View.SportingLocationsViews
 
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
-                conn.CreateTable<Location>();
-                var locations = conn.Table<Location>().ToList();
+                conn.CreateTable<SportLocationDb>();
+                var locations = conn.Table<SportLocationDb>().ToList();
                 LocationListView.ItemsSource = locations;
             }
         }
 
         async void AddButton_Clicked(System.Object sender, System.EventArgs e)
         {
-            await Navigation.PushAsync(new AddLocationPage());
+            await Navigation.PushModalAsync(new NavigationPage(new AddLocationPage()));
         }
 
         void SearchBar_TextChanged(System.Object sender, Xamarin.Forms.TextChangedEventArgs e)
         {
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
-                conn.CreateTable<Location>();
-                var location = conn.Table<Location>().ToList();
+                conn.CreateTable<SportLocationDb>();
+                var location = conn.Table<SportLocationDb>().ToList();
 
                 if (string.IsNullOrEmpty(e.NewTextValue))
                 {
@@ -57,7 +56,7 @@ namespace SportsmansChest.View.SportingLocationsViews
 
         void LocationListView_ItemSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
-            var selectedLocation = LocationListView.SelectedItem as Location;
+            var selectedLocation = LocationListView.SelectedItem as SportLocationDb;
 
             if (selectedLocation != null)
                 Navigation.PushAsync(new LocationDetailsPage(selectedLocation));

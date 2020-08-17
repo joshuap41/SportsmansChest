@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Essentials;
 
-
-
-using Xamarin.Forms;
-
 namespace SportsmansChest.View
 {
     public partial class ReportPage : ContentPage

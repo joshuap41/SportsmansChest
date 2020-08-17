@@ -70,6 +70,14 @@
             </TableView>
 
             <StackLayout>
+                <Button Text="Directions"
+                        x:Name="Directions"
+                        Clicked="Directions_Clicked"
+                        Margin="0, 0, 0, 0"
+                        HeightRequest="35"
+                        BackgroundColor="{StaticResource blueColorForButton}"
+                        TextColor="{StaticResource white}"/>
+
                 <Button Text="Edit Loction"
                         x:Name="EditLocation"
                         Clicked="EditLocation_Clicked"
