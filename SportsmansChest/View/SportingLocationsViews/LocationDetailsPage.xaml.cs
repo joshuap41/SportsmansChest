@@ -10,9 +10,9 @@ namespace SportsmansChest.View.SportingLocationsViews
 {
     public partial class LocationDetailsPage : ContentPage
     {
-        private SportLocationDb selectedLocation;
+        private LocationDb selectedLocation;
 
-        public LocationDetailsPage(SportLocationDb selectedLocation)
+        public LocationDetailsPage(LocationDb selectedLocation)
         {
             this.selectedLocation = selectedLocation;
             InitializeComponent();
@@ -40,7 +40,7 @@ namespace SportsmansChest.View.SportingLocationsViews
         {
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
-                conn.CreateTable<SportLocationDb>();
+                conn.CreateTable<LocationDb>();
 
                 var confirmationAccept = await DisplayAlert("Delete", "Delete this item?", "Yes", "No");
                 if (confirmationAccept)

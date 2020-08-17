@@ -13,13 +13,11 @@ namespace SportsmansChest.View.SportingLocationsViews
     {
         private double currentLatitude = 0;
         private double currentLongitude = 0;
-        //private SQLiteAsyncConnection conn;
 
         public AddLocationPage()
         {
             InitializeComponent();
             GetUserGPSLocation();
-            //SQLiteAsyncConnection conn = new SQLiteAsyncConnection(App.DatabaseLocation);
         }
 
         protected override void OnAppearing()
@@ -32,29 +30,44 @@ namespace SportsmansChest.View.SportingLocationsViews
             await Navigation.PopModalAsync();
         }
 
-        //WTF
+        
         async void Save_Clicked(System.Object sender, System.EventArgs e)
         {
-            SportLocationDb newLocation = new SportLocationDb
+            //LocationDb loc = new LocationDb();
+
+            //loc.LocationName = locationN.Text;
+            //loc.Longitude = Convert.ToDouble(longitude.Text);
+            //loc.Latitude = Convert.ToDouble(latitude.Text);
+
+            //// a selected item must be done like this or an exception will occur
+            //loc.EventType = Convert.ToString(eventTypePicker.SelectedItem);
+            //loc.CreatedDate = DateTime.Now;
+            //loc.ReturnDate = returnDate.Date;
+            //loc.Notification = Convert.ToString(notificationStatus.SelectedItem);
+            //loc.Notes = notes.Text;
+
+            // not set to an instance of an object...... exception?
+            LocationDb newLocation = new LocationDb
             {
                 LocationName = locationName.Text,
                 Longitude = Convert.ToDouble(longitude.Text),
                 Latitude = Convert.ToDouble(latitude.Text),
-                EventType = eventTypePicker.SelectedItem.ToString(),
+                EventType = Convert.ToString(eventTypePicker.SelectedItem),
                 CreatedDate = DateTime.Now,
                 ReturnDate = returnDate.Date,
-                Notification = notificationStatus.SelectedItem.ToString(),
+                Notification = Convert.ToString(notificationStatus.SelectedItem),
                 Notes = notes.Text
             };
 
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
-                conn.CreateTable<SportLocationDb>();
+                conn.CreateTable<LocationDb>();
                 conn.Insert(newLocation);
                 //validate user input
+                await Navigation.PopModalAsync();
             }
+            
 
-            await Navigation.PopModalAsync();
         }
 
 
