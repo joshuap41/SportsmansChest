@@ -12,18 +12,19 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-            <StackLayout>
+        <ScrollView>
+            <StackLayout Padding="5">
                 <Label Text="Manufacturer:" FontAttributes="Bold" FontSize="Medium"/>
-                <Entry x:Name="manufacturer" Placeholder="..." FontSize="Small"/>
+                <Entry x:Name="manufacturer" Placeholder="..." FontSize="Medium"/>
 
                 <Label Text="Model:" FontAttributes="Bold" FontSize="Medium"/>
-                <Entry x:Name="model" Placeholder="..." FontSize="Small"/>
+                <Entry x:Name="model" Placeholder="..." FontSize="Medium"/>
 
                 <Label Text="Serial Number:" FontAttributes="Bold" FontSize="Medium"/>
-                <Entry x:Name="serialNumber" Placeholder="..." VerticalOptions="StartAndExpand" FontSize="Small"/>
+                <Entry x:Name="serialNumber" Placeholder="..." VerticalOptions="StartAndExpand" FontSize="Medium"/>
                 
                 <Label Text="Declaired Value:" FontAttributes="Bold" FontSize="Medium"/>
-                <Entry x:Name="declairedValue" Placeholder="..." FontSize="Small"/>
+                <Entry x:Name="declairedValue" Placeholder="..." FontSize="Medium"/>
 
                 <!--DatePicker-->
                 <StackLayout Orientation="Horizontal" Padding="0,10,4,0">
@@ -42,10 +43,16 @@
                 
                 <!--Editor allows "AutoSize" which allows all text to be seen in the form-->
                 <Label Text="Notes:" FontAttributes="Bold" FontSize="Medium"/>
-                <Editor x:Name="notes" Placeholder="..." FontSize="Small" VerticalOptions="StartAndExpand" AutoSize="TextChanges"/>
+                <Editor x:Name="notes"
+                        FontSize="Medium"
+                        MaxLength="250"
+                        IsSpellCheckEnabled="True"
+                        IsTextPredictionEnabled="True"
+                        VerticalOptions="StartAndExpand"
+                        HeightRequest="200"/>
                 
                 <!--Pictures-->
-
             </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

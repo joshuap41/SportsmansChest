@@ -41,7 +41,13 @@
                     </Picker.Items>
                 </Picker>
                 
-                <Editor x:Name="notes" Placeholder="Notes" FontSize="Medium" VerticalOptions="StartAndExpand" HeightRequest="200"/>
+                <Editor x:Name="notes"
+                        Placeholder="Notes"
+                        FontSize="Medium"
+                        IsSpellCheckEnabled="True"
+                        IsTextPredictionEnabled="True"
+                        VerticalOptions="StartAndExpand"
+                        HeightRequest="200"/>
                 
                 <!--Pictures-->
 

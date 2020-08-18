@@ -52,12 +52,9 @@ namespace SportsmansChest.View
                 conn.CreateTable<InventoryItem>();
                 conn.Update(selectedInventoryItem);
                 //validate user input
-                
             }
-            //not updating the next page.......
-            await App.Current.MainPage.Navigation.PopModalAsync();
-            //await App.Current.MainPage.Navigation.PopAsync();
-            //await Navigation.PopModalAsync();
+            await Navigation.PopModalAsync();
+            //await App.Current.MainPage.Navigation.PopModalAsync();
         }
     }
 }

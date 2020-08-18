@@ -12,38 +12,46 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout Padding="5">
-            <Entry x:Name="locationName" Placeholder="Location Name" FontSize="Medium"/>
+        <ScrollView>
+            <StackLayout Padding="5">
+                <Entry x:Name="locationName" Placeholder="Location Name" FontSize="Medium"/>
 
-            <Label Text="Longitude: " FontAttributes="Bold" FontSize="Medium"/>
-            <Entry x:Name="longitude" Placeholder="Longitude Coordinates" FontSize="Medium"/>
+                <Label Text="Longitude: " FontAttributes="Bold" FontSize="Medium"/>
+                <Entry x:Name="longitude" Placeholder="Longitude Coordinates" FontSize="Medium"/>
 
-            <Label Text="Latitude: " FontAttributes="Bold" FontSize="Medium"/>
-            <Entry x:Name="latitude" Placeholder="Latitude Coordinates" FontSize="Medium"/>
+                <Label Text="Latitude: " FontAttributes="Bold" FontSize="Medium"/>
+                <Entry x:Name="latitude" Placeholder="Latitude Coordinates" FontSize="Medium"/>
 
-            <Picker Title="Event Type" x:Name="eventTypePicker" FontSize="Medium">
-                <Picker.Items>
-                    <x:String>Practice</x:String>
-                    <x:String>Hunting</x:String>
-                    <x:String>Club Meeting</x:String>
-                    <x:String>N/A</x:String>
-                </Picker.Items>
-            </Picker>
+                <Picker Title="Event Type" x:Name="eventTypePicker" FontSize="Medium">
+                    <Picker.Items>
+                        <x:String>Practice</x:String>
+                        <x:String>Hunting</x:String>
+                        <x:String>Club Meeting</x:String>
+                        <x:String>N/A</x:String>
+                    </Picker.Items>
+                </Picker>
 
-            <StackLayout Orientation="Horizontal" Padding="5,10,5,10">
-                <Label Text="Return Date: " FontAttributes="Bold" FontSize="Medium" Padding="0,10,0,0"/>
-            <DatePicker x:Name="returnDate" HorizontalOptions="Center"/>
+                <StackLayout Orientation="Horizontal" Padding="5,10,5,10">
+                    <Label Text="Return Date: " FontAttributes="Bold" FontSize="Medium" Padding="0,10,0,0"/>
+                <DatePicker x:Name="returnDate" HorizontalOptions="Center"/>
+                </StackLayout>
+
+                <Picker Title="Enable Return Date Notifications" x:Name="notificationStatus" HorizontalOptions="StartAndExpand" WidthRequest="500" FontSize="Medium">
+                    <Picker.Items>
+                        <x:String>Enabled</x:String>
+                        <x:String>Disabled</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Editor x:Name="notes"
+                        Placeholder="Notes"
+                        FontSize="Medium"
+                        IsSpellCheckEnabled="True"
+                        IsTextPredictionEnabled="True"
+                        VerticalOptions="StartAndExpand"
+                        HeightRequest="200"/>
             </StackLayout>
-
-            <Picker Title="Enable Return Date Notifications" x:Name="notificationStatus" HorizontalOptions="StartAndExpand" WidthRequest="500" FontSize="Medium">
-                <Picker.Items>
-                    <x:String>Enabled</x:String>
-                    <x:String>Disabled</x:String>
-                </Picker.Items>
-            </Picker>
-
-            <Editor x:Name="notes" Placeholder="Notes" FontSize="Medium" VerticalOptions="StartAndExpand" HeightRequest="200"/>
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 
 </ContentPage>

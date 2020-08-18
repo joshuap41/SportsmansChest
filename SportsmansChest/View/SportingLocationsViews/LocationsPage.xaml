@@ -8,20 +8,21 @@
         <ToolbarItem Text="Add"
                      Clicked="AddButton_Clicked"/>
     </ContentPage.ToolbarItems>
-
-    <StackLayout x:Name="CreatedSportingLocations" VerticalOptions="CenterAndExpand">
-        <SearchBar Placeholder="..." TextChanged="SearchBar_TextChanged"/>
-        <ListView x:Name="LocationListView" ItemSelected="LocationListView_ItemSelected" SeparatorVisibility="Default">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell IsEnabled="True">
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                            <Label Text="{Binding LocationName}" FontSize="Medium" TextColor="Blue" VerticalOptions="Center"/>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
+    <ScrollView>
+        <StackLayout x:Name="CreatedSportingLocations" VerticalOptions="CenterAndExpand">
+            <SearchBar Placeholder="..." TextChanged="SearchBar_TextChanged"/>
+            <ListView x:Name="LocationListView" ItemSelected="LocationListView_ItemSelected" SeparatorVisibility="Default">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell IsEnabled="True">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                <Label Text="{Binding LocationName}" FontSize="Medium" TextColor="Blue" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
 
 </ContentPage>

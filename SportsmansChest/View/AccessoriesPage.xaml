@@ -10,19 +10,21 @@
     </ContentPage.ToolbarItems>
 
     <!--Delete the stacklayout X:Name at the end cleanup-->
-    <StackLayout VerticalOptions="CenterAndExpand" Padding="5">
-        <ListView x:Name="AccessoriesListView" ItemSelected="AccessoriesListView_ItemSelected" SeparatorVisibility="Default">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell IsEnabled="True">
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                            <Label Text="{Binding Manufacturer}" FontSize="Medium" TextColor="Blue" VerticalOptions="Center"/>
-                            <Label Text="{Binding Model}" FontSize="Medium" TextColor="Blue" VerticalOptions="Center" Padding="8,0,0,0"/>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
+    <ScrollView>
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="5">
+            <ListView x:Name="AccessoriesListView" ItemSelected="AccessoriesListView_ItemSelected" SeparatorVisibility="Default">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell IsEnabled="True">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                <Label Text="{Binding Manufacturer}" FontSize="Medium" TextColor="Blue" VerticalOptions="Center"/>
+                                <Label Text="{Binding Model}" FontSize="Medium" TextColor="Blue" VerticalOptions="Center" Padding="8,0,0,0"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
 

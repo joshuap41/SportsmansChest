@@ -6,70 +6,70 @@
 
     <ContentPage.Content>
         <StackLayout Padding="5">
-            
-            <TableView Intent="Data" HasUnevenRows="True">
-                <TableRoot>
-                    <TableSection Title="Item Details" TextColor="{StaticResource blueColorForButton}">
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
-                                <Label Text="Manufacturer:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label x:Name="Manufacturer" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
-                            </StackLayout>
-                        </ViewCell>
+            <ScrollView>
+                <TableView Intent="Data" HasUnevenRows="True">
+                    <TableRoot>
+                        <TableSection Title="Item Details" TextColor="{StaticResource blueColorForButton}">
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
+                                    <Label Text="Manufacturer:" FontAttributes="Bold" FontSize="Medium"/>
+                                    <Label x:Name="Manufacturer" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
+                                </StackLayout>
+                            </ViewCell>
 
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
-                                <Label Text="Model:" FontAttributes="Bold" FontSize="Medium" />
-                                <Label x:Name="Model" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
-                            </StackLayout>
-                        </ViewCell>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
+                                    <Label Text="Model:" FontAttributes="Bold" FontSize="Medium" />
+                                    <Label x:Name="Model" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
+                                </StackLayout>
+                            </ViewCell>
 
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
-                                <Label Text="Serial Number:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label x:Name="SerialNumnber" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
-                            </StackLayout>
-                        </ViewCell>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
+                                    <Label Text="Serial Number:" FontAttributes="Bold" FontSize="Medium"/>
+                                    <Label x:Name="SerialNumnber" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
+                                </StackLayout>
+                            </ViewCell>
 
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
-                                <Label Text="Declaired Value:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label x:Name="DeclairedValue" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
-                            </StackLayout>
-                        </ViewCell>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
+                                    <Label Text="Declaired Value:" FontAttributes="Bold" FontSize="Medium"/>
+                                    <Label x:Name="DeclairedValue" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
+                                </StackLayout>
+                            </ViewCell>
 
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
-                                <Label Text="Created Date:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label x:Name="CreatedDate" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
-                            </StackLayout>
-                        </ViewCell>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
+                                    <Label Text="Created Date:" FontAttributes="Bold" FontSize="Medium"/>
+                                    <Label x:Name="CreatedDate" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
+                                </StackLayout>
+                            </ViewCell>
 
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
-                                <Label Text="Maintenance Date:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label x:Name="MaintenanceDate" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
-                            </StackLayout>
-                        </ViewCell>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
+                                    <Label Text="Maintenance Date:" FontAttributes="Bold" FontSize="Medium"/>
+                                    <Label x:Name="MaintenanceDate" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
+                                </StackLayout>
+                            </ViewCell>
 
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
-                                <Label Text="Notification:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label x:Name="Notification" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
-                            </StackLayout>
-                        </ViewCell>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
+                                    <Label Text="Notification:" FontAttributes="Bold" FontSize="Medium"/>
+                                    <Label x:Name="Notification" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
+                                </StackLayout>
+                            </ViewCell>
 
-                        <ViewCell Height="200">
-                            <StackLayout Orientation="Vertical" Padding="10">
-                                <Label Text="Notes:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label x:Name="Notes" FontSize="Small" VerticalOptions="FillAndExpand"/>
-                            </StackLayout>
-                        </ViewCell>
+                            <ViewCell Height="200">
+                                <StackLayout Orientation="Vertical" Padding="10">
+                                    <Label Text="Notes:" FontAttributes="Bold" FontSize="Medium"/>
+                                    <Label x:Name="Notes" FontSize="Small" VerticalOptions="FillAndExpand"/>
+                                </StackLayout>
+                            </ViewCell>
 
-                    </TableSection>
-                </TableRoot>
-            </TableView>
-
+                        </TableSection>
+                    </TableRoot>
+                </TableView>
+            </ScrollView>
             <StackLayout>
                 <Button x:Name="EditAccessory"
                         Margin="0, 0, 0, 0"
