@@ -10,7 +10,7 @@
             <ScrollView>
                 <TableView Intent="Data" HasUnevenRows="True">
                     <TableRoot>
-                        <TableSection Title="Location Details" TextColor="{StaticResource blueColorForButton}">
+                        <TableSection Title="Details" TextColor="{StaticResource blueColorForButton}">
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
                                     <Label Text="Location Name:" FontAttributes="Bold" FontSize="Medium"/>
