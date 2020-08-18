@@ -63,7 +63,9 @@
                             <ViewCell Height="200">
                                 <StackLayout Orientation="Vertical" Padding="10">
                                     <Label Text="Notes:" FontAttributes="Bold" FontSize="Medium"/>
-                                    <Label x:Name="Notes" FontSize="Small" VerticalOptions="StartAndExpand"/>
+                                    <ScrollView>
+                                        <Label x:Name="Notes" FontSize="Small" VerticalOptions="StartAndExpand"/>
+                                    </ScrollView>
                                 </StackLayout>
                             </ViewCell>
 

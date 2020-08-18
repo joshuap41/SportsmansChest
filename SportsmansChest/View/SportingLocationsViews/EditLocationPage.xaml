@@ -52,7 +52,7 @@
                         IsSpellCheckEnabled="True"
                         IsTextPredictionEnabled="True"
                         VerticalOptions="StartAndExpand"
-                        HeightRequest="200"/>
+                        AutoSize="TextChanges"/>
 
             </StackLayout>
         </ScrollView>

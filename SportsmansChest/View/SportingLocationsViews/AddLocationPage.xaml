@@ -42,7 +42,6 @@
                         <x:String>Disabled</x:String>
                     </Picker.Items>
                 </Picker>
-
                 <Editor x:Name="notes"
                         Placeholder="Notes"
                         FontSize="Medium"

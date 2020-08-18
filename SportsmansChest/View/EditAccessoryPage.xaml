@@ -21,7 +21,7 @@
                 <Entry x:Name="model" Placeholder="..." FontSize="Medium"/>
 
                 <Label Text="Serial Number:" FontAttributes="Bold" FontSize="Medium"/>
-                <Entry x:Name="serialNumber" Placeholder="..." VerticalOptions="StartAndExpand" FontSize="Medium"/>
+                <Entry x:Name="serialNumber" Placeholder="..." FontSize="Medium"/>
                 
                 <Label Text="Declaired Value:" FontAttributes="Bold" FontSize="Medium"/>
                 <Entry x:Name="declairedValue" Placeholder="..." FontSize="Medium"/>
@@ -49,7 +49,7 @@
                         IsSpellCheckEnabled="True"
                         IsTextPredictionEnabled="True"
                         VerticalOptions="StartAndExpand"
-                        HeightRequest="200"/>
+                        AutoSize="TextChanges"/>
                 
                 <!--Pictures-->
             </StackLayout>
