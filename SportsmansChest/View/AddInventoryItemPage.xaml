@@ -12,18 +12,12 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout>
-
-            <StackLayout>
-                <Label Text="Manufacturer:" FontAttributes="Bold" FontSize="Medium"/>
-                <Entry x:Name="manufacturer" Placeholder="..." FontSize="Small"/>
-
-                <Label Text="Model:" FontAttributes="Bold" FontSize="Medium"/>
-                <Entry x:Name="model" Placeholder="..." FontSize="Small"/>
-
-                <!--Picker here-->
-                <Label Text="Grade:" FontAttributes="Bold" FontSize="Medium"/>
-                <Picker x:Name="grade">
+        <ScrollView>
+            <StackLayout Padding="5">
+                <Entry x:Name="manufacturer" Placeholder="Manufacturer Name" FontSize="Medium"/>
+                <Entry x:Name="model" Placeholder="Model" FontSize="Medium"/>
+                
+                <Picker x:Name="grade" HorizontalOptions="StartAndExpand" WidthRequest="500" Title="Choose a Grade of Item">
                     <Picker.Items>
                         <x:String>Standard</x:String>
                         <x:String>Delux</x:String>
@@ -31,36 +25,27 @@
                         <x:String>N/A</x:String>
                     </Picker.Items>
                 </Picker>
-
-                <Label Text="Serial Number:" FontAttributes="Bold" FontSize="Medium"/>
-                <Entry x:Name="serialNumber" Placeholder="..." VerticalOptions="StartAndExpand" FontSize="Small"/>
                 
-                <Label Text="Declaired Value:" FontAttributes="Bold" FontSize="Medium"/>
-                <Entry x:Name="declairedValue" Placeholder="..." FontSize="Small"/>
+                <Entry x:Name="serialNumber" Placeholder="Serial Number" VerticalOptions="StartAndExpand" FontSize="Medium"/>
+                <Entry x:Name="declairedValue" Placeholder="Declaired Value" FontSize="Medium"/>
 
-                <!--DatePicker-->
-                <StackLayout Orientation="Horizontal" Padding="0,10,4,0">
-                    <Label Text="Maintenance Date:" FontAttributes="Bold" FontSize="Medium" Padding="0,5,0,0"/>
-                    <DatePicker x:Name="maintenanceDate" HorizontalOptions="End"/>
+                <StackLayout Orientation="Horizontal" Padding="5, 10, 5, 10">
+                    <Label Text="Maintenance Date:" FontAttributes="Bold" FontSize="Medium" Padding="0,10,0,0"/>
+                    <DatePicker x:Name="maintenanceDate" FontSize="Medium" HorizontalOptions="Center"/>
                 </StackLayout>
-                
-                <!--Notificaitons-->
-                <Label Text="Notification Status:" FontAttributes="Bold" FontSize="Medium"/>
-                <Picker x:Name="notification">
+
+                <Picker Title="Enable Maintenance Notifications" x:Name="notification" HorizontalOptions="StartAndExpand" WidthRequest="500" FontSize="Medium">
                     <Picker.Items>
                         <x:String>Enabled</x:String>
                         <x:String>Disabled</x:String>
                     </Picker.Items>
                 </Picker>
                 
-                <!--Editor allows "AutoSize" which allows all text to be seen in the form-->
-                <Label Text="Notes:" FontAttributes="Bold" FontSize="Medium"/>
-                <Editor x:Name="notes" Placeholder="..." FontSize="Small" VerticalOptions="StartAndExpand" AutoSize="TextChanges"/>
+                <Editor x:Name="notes" Placeholder="Notes" FontSize="Medium" VerticalOptions="StartAndExpand" HeightRequest="200"/>
                 
                 <!--Pictures-->
 
             </StackLayout>
-            
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

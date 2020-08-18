@@ -12,58 +12,60 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Manufacturer:" FontAttributes="Bold" FontSize="Medium"/>
-            <Entry x:Name="manufacturer" Placeholder="..." FontSize="Small"/>
+        <ScrollView>
+            <StackLayout Padding="5">
+                <Label Text="Manufacturer:" FontAttributes="Bold" FontSize="Medium"/>
+                <Entry x:Name="manufacturer" Placeholder="..." FontSize="Medium"/>
 
-             <Label Text="Model:" FontAttributes="Bold" FontSize="Medium"/>
-            <Entry x:Name="model" Placeholder="..." FontSize="Small"/>
+                 <Label Text="Model:" FontAttributes="Bold" FontSize="Medium"/>
+                <Entry x:Name="model" Placeholder="..." FontSize="Medium"/>
 
-            <!--Picker here-->
-            <Label Text="Grade:" FontAttributes="Bold" FontSize="Medium"/>
-            <Picker x:Name="grade">
-                <Picker.Items>
-                    <x:String>Standard</x:String>
-                    <x:String>Delux</x:String>
-                    <x:String>Custom</x:String>
-                    <x:String>N/A</x:String>
-                </Picker.Items>
-            </Picker>
-
-            <Label Text="Serial Number:" FontAttributes="Bold" FontSize="Medium"/>
-            <Entry x:Name="serialNumber" Placeholder="..." FontSize="Small"/>
-                
-            <Label Text="Declaired Value:" FontAttributes="Bold" FontSize="Medium"/>
-            <Entry x:Name="declairedValue" Placeholder="..." FontSize="Small"/>
-
-            <!--DatePicker-->
-            <StackLayout Orientation="Horizontal" Padding="0,10,4,0">
-                <Label Text="Maintenance Date:" FontAttributes="Bold" FontSize="Medium" Padding="0,5,0,0"/>
-                <DatePicker x:Name="maintenanceDate"/>
-            </StackLayout>
-                
-            <!--Notificaitons-->
-            <Label Text="Notification Status:" FontAttributes="Bold" FontSize="Medium"/>
-                <Picker x:Name="notification" MenuItem.Accelerator="Enabled">
+                <!--Picker here-->
+                <Label Text="Grade:" FontAttributes="Bold" FontSize="Medium"/>
+                <Picker x:Name="grade">
                     <Picker.Items>
-                        <x:String>Enabled</x:String>
-                        <x:String>Disabled</x:String>
+                        <x:String>Standard</x:String>
+                        <x:String>Delux</x:String>
+                        <x:String>Custom</x:String>
+                        <x:String>N/A</x:String>
                     </Picker.Items>
                 </Picker>
 
-            <!--Editor allows "AutoSize" which allows all text to be seen in the form-->
-            <Label Text="Notes:" FontAttributes="Bold" FontSize="Medium"/>
-            <Editor x:Name="notes"
-                    FontSize="Small"
-                    AutoSize="TextChanges"
-                    MaxLength="250"
-                    IsSpellCheckEnabled="True"
-                    IsTextPredictionEnabled="True"
-                    HorizontalOptions="StartAndExpand"/>
+                <Label Text="Serial Number:" FontAttributes="Bold" FontSize="Medium"/>
+                <Entry x:Name="serialNumber" Placeholder="..." FontSize="Medium"/>
                 
-            <!--Pictures-->
+                <Label Text="Declaired Value:" FontAttributes="Bold" FontSize="Medium"/>
+                <Entry x:Name="declairedValue" Placeholder="..." FontSize="Medium"/>
 
-        </StackLayout>
+                <!--DatePicker-->
+                <StackLayout Orientation="Horizontal" Padding="0,10,4,0">
+                    <Label Text="Maintenance Date:" FontAttributes="Bold" FontSize="Medium" Padding="0,5,0,0"/>
+                    <DatePicker x:Name="maintenanceDate"/>
+                </StackLayout>
+                
+                <!--Notificaitons-->
+                <Label Text="Notification Status:" FontAttributes="Bold" FontSize="Medium"/>
+                    <Picker x:Name="notification" MenuItem.Accelerator="Enabled">
+                        <Picker.Items>
+                            <x:String>Enabled</x:String>
+                            <x:String>Disabled</x:String>
+                        </Picker.Items>
+                    </Picker>
+
+                <!--Editor allows "AutoSize" which allows all text to be seen in the form-->
+                <Label Text="Notes:" FontAttributes="Bold" FontSize="Medium"/>
+                <Editor x:Name="notes"
+                        FontSize="Medium"
+                        MaxLength="250"
+                        IsSpellCheckEnabled="True"
+                        IsTextPredictionEnabled="True"
+                        VerticalOptions="StartAndExpand"
+                        HeightRequest="200"/>
+                
+                <!--Pictures-->
+
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 
 </ContentPage>

@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using Xamarin.Forms;
 using SQLite;
 using SportsmansChest.Model;
-using SportsmansChest.View;
 
 namespace SportsmansChest.View
 {
@@ -31,24 +30,11 @@ namespace SportsmansChest.View
             Notes.Text = selectedInventoryItem.Notes;
 
             base.OnAppearing();
-
-            //using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
-            //{
-            //    conn.CreateTable<InventoryItem>();
-
-            //    var itemTable = conn.Table<InventoryItem>().ToList();
-
-            //    var inventoryItem = (from InventoryItem in itemTable
-            //                         where InventoryItem.Id == selectedInventoryItem.Id
-            //                         select InventoryItem).ToList();
-
-            //    ItemDetailsListView.ItemsSource = inventoryItem;
-            //}
         }
 
-        void Accessories_Clicked(System.Object sender, System.EventArgs e)
+        async void Accessories_Clicked(System.Object sender, System.EventArgs e)
         {
-           Navigation.PushAsync(new AccessoriesPage(selectedInventoryItem));
+           await Navigation.PushAsync(new AccessoriesPage(selectedInventoryItem));
         }
 
         async void EditItem_Clicked(System.Object sender, System.EventArgs e)
@@ -67,10 +53,6 @@ namespace SportsmansChest.View
                 {
                     conn.Delete(selectedInventoryItem);
                     await Navigation.PopAsync();
-                }
-                else
-                {
-
                 }
             }
         }

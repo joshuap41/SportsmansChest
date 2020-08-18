@@ -37,38 +37,17 @@ namespace SportsmansChest.View
             }
         }
 
-        //void SearchBar_TextChanged(System.Object sender, Xamarin.Forms.TextChangedEventArgs e)
-        //{
-        //    using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
-        //    {
-        //        conn.CreateTable<InventoryItem>();
-        //        var items = conn.Table<InventoryItem>().ToList();
-
-        //        if (string.IsNullOrEmpty(e.NewTextValue))
-        //        {
-        //            AccessoriesListView.ItemsSource = items;
-        //        }
-        //        else
-        //        {
-        //            var foundItems = (from InventoryItem in items
-        //                              where InventoryItem.Manufacturer.ToUpper().StartsWith(e.NewTextValue.ToUpper())
-        //                              select InventoryItem).ToList();
-        //            AccessoriesListView.ItemsSource = foundItems;
-        //        }
-        //    }
-        //}
-
         async void AddToolbarItem_Clicked(System.Object sender, System.EventArgs e)
         {
             await Navigation.PushModalAsync(new NavigationPage(new AddAccessoryPage(selectedInventoryItem)));
         }
 
-        void AccessoriesListView_ItemSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        async void AccessoriesListView_ItemSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
             var selectedAccessory = AccessoriesListView.SelectedItem as Accessory;
 
             if (selectedAccessory != null)
-                Navigation.PushAsync(new AccessoryPage(selectedAccessory));
+                await Navigation.PushAsync(new AccessoryPage(selectedAccessory));
         }
     }
 }

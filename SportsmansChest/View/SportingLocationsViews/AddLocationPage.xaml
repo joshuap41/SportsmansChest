@@ -12,18 +12,16 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Location Name: " FontAttributes="Bold" FontSize="Medium"/>
-            <Entry x:Name="locationName" Placeholder="..." FontSize="Small"/>
+        <StackLayout Padding="5">
+            <Entry x:Name="locationName" Placeholder="Location Name" FontSize="Medium"/>
 
             <Label Text="Longitude: " FontAttributes="Bold" FontSize="Medium"/>
-            <Entry x:Name="longitude" Placeholder="..." FontSize="Small"/>
+            <Entry x:Name="longitude" Placeholder="Longitude Coordinates" FontSize="Medium"/>
 
             <Label Text="Latitude: " FontAttributes="Bold" FontSize="Medium"/>
-            <Entry x:Name="latitude" Placeholder="..." FontSize="Small"/>
+            <Entry x:Name="latitude" Placeholder="Latitude Coordinates" FontSize="Medium"/>
 
-            <Label Text="Event Type: " FontAttributes="Bold" FontSize="Medium"/>
-            <Picker x:Name="eventTypePicker" >
+            <Picker Title="Event Type" x:Name="eventTypePicker" FontSize="Medium">
                 <Picker.Items>
                     <x:String>Practice</x:String>
                     <x:String>Hunting</x:String>
@@ -32,27 +30,19 @@
                 </Picker.Items>
             </Picker>
 
-            <StackLayout Orientation="Horizontal" Padding="0,10,4,10">
-                <Label Text="Return Date: " FontAttributes="Bold" FontSize="Medium" Padding="0,5,5,5"/>
+            <StackLayout Orientation="Horizontal" Padding="5,10,5,10">
+                <Label Text="Return Date: " FontAttributes="Bold" FontSize="Medium" Padding="0,10,0,0"/>
             <DatePicker x:Name="returnDate" HorizontalOptions="Center"/>
             </StackLayout>
 
-            <Label Text="Notificaiton Status: " FontAttributes="Bold" FontSize="Medium"/>
-            <Picker x:Name="notificationStatus">
+            <Picker Title="Enable Return Date Notifications" x:Name="notificationStatus" HorizontalOptions="StartAndExpand" WidthRequest="500" FontSize="Medium">
                 <Picker.Items>
                     <x:String>Enabled</x:String>
                     <x:String>Disabled</x:String>
                 </Picker.Items>
             </Picker>
 
-            <Label Text="Notes: " FontAttributes="Bold" FontSize="Medium"/>
-            <Editor x:Name="notes" Placeholder="..." FontSize="Small"
-                    VerticalOptions="StartAndExpand" AutoSize="TextChanges"/>
-            
-            
-
-
-
+            <Editor x:Name="notes" Placeholder="Notes" FontSize="Medium" VerticalOptions="StartAndExpand" HeightRequest="200"/>
         </StackLayout>
     </ContentPage.Content>
 

@@ -5,71 +5,64 @@
              Title="Accessory">
 
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="5">
             
-            <TableView Intent="Data" HasUnevenRows="True" x:Name="ItemDetailsListView">
+            <TableView Intent="Data" HasUnevenRows="True">
                 <TableRoot>
-                    <TableSection Title="Item Details">
+                    <TableSection Title="Item Details" TextColor="{StaticResource blueColorForButton}">
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
                                 <Label Text="Manufacturer:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label x:Name="Manufacturer" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                                <Label x:Name="Manufacturer" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
                             </StackLayout>
                         </ViewCell>
 
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
                                 <Label Text="Model:" FontAttributes="Bold" FontSize="Medium" />
-                                <Label x:Name="Model" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                                <Label x:Name="Model" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
                             </StackLayout>
                         </ViewCell>
 
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
                                 <Label Text="Serial Number:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label x:Name="SerialNumnber" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                                <Label x:Name="SerialNumnber" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
                             </StackLayout>
                         </ViewCell>
 
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
                                 <Label Text="Declaired Value:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label x:Name="DeclairedValue" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                                <Label x:Name="DeclairedValue" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
                             </StackLayout>
                         </ViewCell>
 
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
                                 <Label Text="Created Date:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label x:Name="CreatedDate" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                                <Label x:Name="CreatedDate" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
                             </StackLayout>
                         </ViewCell>
 
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
                                 <Label Text="Maintenance Date:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label x:Name="MaintenanceDate" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                                <Label x:Name="MaintenanceDate" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
                             </StackLayout>
                         </ViewCell>
 
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
                                 <Label Text="Notification:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label x:Name="Notification" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                                <Label x:Name="Notification" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
                             </StackLayout>
                         </ViewCell>
 
-                        <ViewCell>
-                            <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="10">
+                        <ViewCell Height="200">
+                            <StackLayout Orientation="Vertical" Padding="10">
                                 <Label Text="Notes:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Editor x:Name="Notes"
-                                        FontSize="Small"
-                                        AutoSize="TextChanges"
-                                        MaxLength="250"
-                                        IsSpellCheckEnabled="True"
-                                        IsTextPredictionEnabled="True"
-                                        HorizontalOptions="StartAndExpand"
-                                        IsReadOnly="True"/>
+                                <Label x:Name="Notes" FontSize="Small" VerticalOptions="FillAndExpand"/>
                             </StackLayout>
                         </ViewCell>
 

@@ -5,63 +5,63 @@
              Title="Location Details">
 
     <ContentPage.Content>
-        <StackLayout>
-            <TableView>
+        <StackLayout Padding="5">
+            <TableView Intent="Data" HasUnevenRows="True">
                 <TableRoot>
-                    <TableSection Title="Location Details">
+                    <TableSection Title="Location Details" TextColor="{StaticResource blueColorForButton}">
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
                                 <Label Text="Location Name:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label x:Name="LocationName" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                                <Label x:Name="LocationName" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
                             </StackLayout>
                         </ViewCell>
 
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
                                 <Label Text="Longitude:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label x:Name="Longitude" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                                <Label x:Name="Longitude" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
                             </StackLayout>
                         </ViewCell>
 
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
                                 <Label Text="Latitude:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label x:Name="Latitude" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                                <Label x:Name="Latitude" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
                             </StackLayout>
                         </ViewCell>
 
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
                                 <Label Text="Event Type:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label x:Name="EventType" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                                <Label x:Name="EventType" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
                             </StackLayout>
                         </ViewCell>
 
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
                                 <Label Text="Created Date:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label x:Name="CreatedDate" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                                <Label x:Name="CreatedDate" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
                             </StackLayout>
                         </ViewCell>
 
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
                                 <Label Text="Return Date:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label x:Name="ReturnDate" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                                <Label x:Name="ReturnDate" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
                             </StackLayout>
                         </ViewCell>
 
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
                                 <Label Text="Notification:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label x:Name="Notification" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                                <Label x:Name="Notification" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
                             </StackLayout>
                         </ViewCell>
 
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
+                        <ViewCell Height="200">
+                            <StackLayout Orientation="Vertical" Padding="10">
                                 <Label Text="Notes:" FontAttributes="Bold" FontSize="Medium"/>
-                                <Label x:Name="Notes" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                                <Label x:Name="Notes" FontSize="Small" VerticalOptions="StartAndExpand"/>
                             </StackLayout>
                         </ViewCell>
 
