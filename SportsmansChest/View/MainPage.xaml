@@ -40,7 +40,7 @@
                 BackgroundColor="{StaticResource blueColorForButton}"
                 TextColor="{StaticResource white}"/>
 
-        <Button Text="Inventory Statistics Report"
+        <Button Text="Sportsman's Chest Statistics Report"
                 Clicked="ReportButton_Clicked"
                 Margin="80"
                 HeightRequest="60"

@@ -93,6 +93,21 @@ namespace SportsmansChest
             }
         }
 
+        public static int TotalLocationCount()
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(DatabaseLocation))
+            {
+                conn.CreateTable<LocationDb>();
+
+                var locationList = conn.Table<LocationDb>().ToList();
+
+                var createdLocationCount = locationList.Count();
+
+                return createdLocationCount;
+            }
+        }
+
+
         public static void LocationTestingData()
         {
             using (SQLiteConnection conn = new SQLiteConnection(DatabaseLocation))
@@ -109,8 +124,8 @@ namespace SportsmansChest
                         Longitude = -84.317241,
                         Latitude = 34.736907,
                         EventType = "Hunting",
-                        CreatedDate = DateTime.Now,
-                        ReturnDate = DateTime.Now,
+                        CreatedDate = DateTime.Today,
+                        ReturnDate = DateTime.Today,
                         Notification = "Enabled",
                         Notes = "I saw a lot of bucks by the stream here!"
                     };
@@ -123,16 +138,10 @@ namespace SportsmansChest
         {
             using (SQLiteConnection conn = new SQLiteConnection(DatabaseLocation))
             {
+
                 conn.CreateTable<InventoryItem>();
 
                 var item =  conn.Table<InventoryItem>().ToList();
-
-                //var inventoryItemList = (from InventoryItem in item
-                //                         where InventoryItem.Manufacturer == "Browning"
-                //                         select InventoryItem).Distinct().ToList();
-
-                //var lists = (from InventoryItem in inventoryItemList
-                //             select InventoryItem.Manufacturer == "Browning").ToList();
 
                 conn.CreateTable<Accessory>();
 
@@ -145,8 +154,8 @@ namespace SportsmansChest
                         Grade = "Standard",
                         SerialNumber = "589764",
                         DeclairedValue = "500.00",
-                        CreatedDate = DateTime.Now,
-                        MaintenanceDate = DateTime.Now,
+                        CreatedDate = DateTime.Today,
+                        MaintenanceDate = DateTime.Today,
                         Notification = "Enabled",
                         Notes = "This is my favorite bow to hunt with. I will need to get a maintenance kit for it soon"
                     };
@@ -158,8 +167,8 @@ namespace SportsmansChest
                         Model = "95c",
                         SerialNumber = "89352413",
                         DeclairedValue = "200.00",
-                        CreatedDate = DateTime.Now,
-                        MaintenanceDate = DateTime.Now,
+                        CreatedDate = DateTime.Today,
+                        MaintenanceDate = DateTime.Today,
                         Notification = "Enabled",
                         Notes = "This is my favorite scope to hunt with.",
                         InvItem = newItem.Id

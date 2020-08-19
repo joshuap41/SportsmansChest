@@ -23,8 +23,11 @@ namespace SportsmansChest
         {
             base.OnAppearing();
 
-            bool appOpening = true;
+            bool invAppOpening = true;
+            bool invAccOpening = true;
+            bool locAppOpening = true;
 
+            // Notifications
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
                 conn.CreateTable<InventoryItem>();
@@ -36,40 +39,61 @@ namespace SportsmansChest
                 conn.CreateTable<LocationDb>();
                 var locations = conn.Table<LocationDb>().ToList();
 
-                //notifications
                 try
                 {
-                    if (appOpening)
+                    if (invAppOpening)
                     {
                         var itemId = 0;
-                        var accessoryId = 0;
-                        var locationId = 0;
-                        appOpening = false;
+                        invAppOpening = false;
 
                         foreach (InventoryItem inventoryItem in itemsList)
                         {
                             itemId++;
-                            if (inventoryItem.Notification == "Enabled" && inventoryItem.MaintenanceDate == DateTime.Today)
+                            if (inventoryItem.Notification == "Enabled")
                             {
-                                //need a "nickName for the individual items to further decifer each one
-                                CrossLocalNotifications.Current.Show("Notification Received", $"Inventory Item: {inventoryItem.Manufacturer} needs maintenance today.", itemId);
+                                if (inventoryItem.MaintenanceDate == DateTime.Today)
+                                {
+                                    // need a "nickName for the individual items to further decifer each one
+                                    CrossLocalNotifications.Current.Show("Notification Received", $"Inventory Item: {inventoryItem.Manufacturer} needs maintenance today.", itemId);
+                                }
                             }
                         }
+                    }
+
+                    if (invAccOpening)
+                    {
+                        invAccOpening = false;
+                        var accessoryId = 0;
+
                         foreach (Accessory accessory in accessories)
                         {
                             accessoryId++;
-                            if (accessory.Notification == "Enabled" && accessory.MaintenanceDate == DateTime.Today)
+                            if (accessory.Notification == "Enabled")
                             {
-                                //need a "nickName for the individual items to further decifer each one
-                                CrossLocalNotifications.Current.Show("Notification Received", $"Accessory: {accessory.Manufacturer} needs maintenance today", accessoryId);
+                                if (accessory.MaintenanceDate == DateTime.Today)
+                                {
+                                    //need a "nickName for the individual items to further decifer each one
+                                    CrossLocalNotifications.Current.Show("Notification Received", $"Accessory: {accessory.Manufacturer} needs maintenance today", accessoryId);
+                                }
                             }
                         }
+                    }
+
+                    if (locAppOpening)
+                    {
+                        var locationId = 0;
+                        locAppOpening = false;
+
                         foreach (LocationDb location in locations)
                         {
                             locationId++;
                             if (location.Notification == "Enabled")
                             {
-                                CrossLocalNotifications.Current.Show("Notification Received", $"Location: {location.LocationName} needs to be visited today", locationId);
+                                if (location.ReturnDate == DateTime.Today)
+                                {
+                                    CrossLocalNotifications.Current.Show("Notification Received", $"Location: {location.LocationName} needs to be visited today", locationId);
+
+                                }
                             }
                         }
                     }

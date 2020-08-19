@@ -10,15 +10,21 @@ namespace SportsmansChest.View
         {
             InitializeComponent();
 
-            //total Inventory Items
+            // total Inventory Items
             var totalInventoryItemCount = App.InventoryItemCount();
             TotalInvCount.Text = totalInventoryItemCount.ToString();
-            //Unique item Manufacturers
+
+            // unique item Manufacturers
             var manufacturerCategoriesCount = App.ManufacturerCategoriesCount();
             UniqueItemManufacturers.Text = manufacturerCategoriesCount.ToString();
+
+            // total created locations
+            var totalLocationCount = App.TotalLocationCount();
+            TotalLocationCount.Text = totalLocationCount.ToString();
+            
             //Displays the Report run date
-            var reportRunDate = DateTime.Now;
-            ReportRunDate.Text = reportRunDate.ToString(App.dateFormat);
+            var reportCreationDate = DateTime.Now;
+            ReportCreationDate.Text = reportCreationDate.ToString(App.dateFormat);
         }
 
         async void ExitToolbarItem_Clicked(System.Object sender, System.EventArgs e)

@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SportsmansChest.View.ReportPage"
-             Title="Inventory Statistics Report">
+             Title="Statistics Report">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Exit"
                      Order="Default"
@@ -11,18 +11,12 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Item Statistics"
-                   FontSize="Large"
-                   FontAttributes="Italic"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"/>
-
-            <TableView>
+            <TableView Intent="Data">
                 <TableSection>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
-                            <Label Text="Report Run Date: " FontAttributes="Bold" FontSize="Medium"/>
-                            <Label x:Name="ReportRunDate" Visual="Material" Padding="0,3,0,4"/>
+                            <Label Text="Report Creation Date: " FontAttributes="Bold" FontSize="Medium"/>
+                            <Label x:Name="ReportCreationDate" Visual="Material" Padding="0,3,0,4"/>
                         </StackLayout>
                     </ViewCell>
 
@@ -40,9 +34,15 @@
                         </StackLayout>
                     </ViewCell>
 
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
+                            <Label Text="Total Sporting Locaitons Created: " FontAttributes="Bold" FontSize="Medium"/>
+                            <Label x:Name="TotalLocationCount" Visual="Material" Padding="0,3,0,4"/>
+                        </StackLayout>
+                    </ViewCell>
+
                 </TableSection>
             </TableView>
         </StackLayout>
     </ContentPage.Content>
-
 </ContentPage>
