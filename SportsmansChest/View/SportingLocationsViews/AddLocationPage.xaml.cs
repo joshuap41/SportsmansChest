@@ -49,11 +49,20 @@ namespace SportsmansChest.View.SportingLocationsViews
             {
                 conn.CreateTable<LocationDb>();
                 conn.Insert(newLocation);
-                //validate user input
-                await Navigation.PopModalAsync();
-            }
-            
 
+                if (string.IsNullOrWhiteSpace(locationName.Text) || string.IsNullOrWhiteSpace(longitude.Text) ||
+                    string.IsNullOrWhiteSpace(latitude.Text) || string.IsNullOrWhiteSpace(Convert.ToString(eventTypePicker.SelectedItem)) ||
+                    string.IsNullOrWhiteSpace(Convert.ToString(notificationStatus.SelectedItem)) || string.IsNullOrWhiteSpace(notes.Text))
+                {
+                    await DisplayAlert("Failure", "Please enter information for all location fields", "OK");
+                }
+                else
+                {
+                    conn.Insert(newLocation);
+                    await DisplayAlert("Success", "Item successfully created", "OK");
+                    await Navigation.PopModalAsync();
+                }
+            }
         }
 
 
@@ -64,6 +73,7 @@ namespace SportsmansChest.View.SportingLocationsViews
             try
             {
                 var location = await Geolocation.GetLastKnownLocationAsync();
+
                 if (location == null)
                 {
                     location = await Geolocation.GetLocationAsync(new GeolocationRequest

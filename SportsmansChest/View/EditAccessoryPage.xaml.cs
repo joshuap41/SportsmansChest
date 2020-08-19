@@ -49,10 +49,21 @@ namespace SportsmansChest.View
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
                 conn.CreateTable<Accessory>();
-                conn.Update(selectedAccessory);
-                //validate user inptu
+
+                if (string.IsNullOrWhiteSpace(manufacturer.Text) || string.IsNullOrWhiteSpace(model.Text) ||
+                    string.IsNullOrWhiteSpace(serialNumber.Text) || string.IsNullOrWhiteSpace(declairedValue.Text) ||
+                    string.IsNullOrWhiteSpace(Convert.ToString(notification.SelectedItem)) ||
+                    string.IsNullOrWhiteSpace(notes.Text))
+                {
+                    await DisplayAlert("Failure", "Please provide enter information for all accessory fields", "OK");
+                }
+                else
+                {
+                    conn.Update(selectedAccessory);
+                    await DisplayAlert("Success", "Accessory successfully updated", "OK");
+                    await Navigation.PopModalAsync();
+                }
             }
-            await Navigation.PopModalAsync();
         }
     }
 }

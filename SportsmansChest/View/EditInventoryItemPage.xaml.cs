@@ -50,11 +50,21 @@ namespace SportsmansChest.View
             using(SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
                 conn.CreateTable<InventoryItem>();
-                conn.Update(selectedInventoryItem);
-                //validate user input
+
+                if (string.IsNullOrWhiteSpace(manufacturer.Text) || string.IsNullOrWhiteSpace(model.Text) ||
+                    string.IsNullOrWhiteSpace(Convert.ToString(grade.SelectedItem)) || string.IsNullOrWhiteSpace(serialNumber.Text) ||
+                    string.IsNullOrWhiteSpace(declairedValue.Text) || string.IsNullOrWhiteSpace(Convert.ToString(notification.SelectedItem)) ||
+                    string.IsNullOrWhiteSpace(notes.Text))
+                {
+                    await DisplayAlert("Failure", "Please enter information for all item fields", "OK");
+                }
+                else
+                {
+                    conn.Update(selectedInventoryItem);
+                    await DisplayAlert("Success", "Item successfully updated", "OK");
+                    await Navigation.PopModalAsync();
+                }
             }
-            await Navigation.PopModalAsync();
-            //await App.Current.MainPage.Navigation.PopModalAsync();
         }
     }
 }

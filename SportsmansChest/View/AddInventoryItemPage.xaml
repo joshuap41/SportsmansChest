@@ -26,7 +26,7 @@
                     </Picker.Items>
                 </Picker>
                 
-                <Entry x:Name="serialNumber" Placeholder="Serial Number" VerticalOptions="StartAndExpand" FontSize="Medium"/>
+                <Entry x:Name="serialNumber" Placeholder="Serial Number" FontSize="Medium"/>
                 <Entry x:Name="declairedValue" Placeholder="Declaired Value" FontSize="Medium"/>
 
                 <StackLayout Orientation="Horizontal" Padding="5, 10, 5, 10">

@@ -30,8 +30,6 @@ namespace SportsmansChest.View
                 SerialNumber = serialNumber.Text,
                 DeclairedValue = declairedValue.Text,
                 CreatedDate = DateTime.Now,
-                MaintenanceDate = maintenanceDate.Date,
-                //Notification Need to wrap in a "Switch Cell" to use like the other project...
                 Notification = Convert.ToString(notification.SelectedItem),
                 Notes = notes.Text
             };
@@ -39,9 +37,20 @@ namespace SportsmansChest.View
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
                 conn.CreateTable<InventoryItem>();
-                conn.Insert(newItem);
-                await Navigation.PopModalAsync();
-                //validate user input
+
+                if (string.IsNullOrWhiteSpace(manufacturer.Text) || string.IsNullOrWhiteSpace(model.Text) ||
+                    string.IsNullOrWhiteSpace(Convert.ToString(grade.SelectedItem)) || string.IsNullOrWhiteSpace(serialNumber.Text) ||
+                    string.IsNullOrWhiteSpace(declairedValue.Text) || string.IsNullOrWhiteSpace(Convert.ToString(notification.SelectedItem)) ||
+                    string.IsNullOrWhiteSpace(notes.Text))
+                {
+                    await DisplayAlert("Failure", "Please enter information for all item fields", "OK");
+                }
+                else
+                {
+                    conn.Insert(newItem);
+                    await DisplayAlert("Success", "Item successfully Created", "OK");
+                    await Navigation.PopModalAsync();
+                }
             }
         }
     }

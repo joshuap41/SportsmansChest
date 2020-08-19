@@ -29,6 +29,7 @@ namespace SportsmansChest.View.SportingLocationsViews
             notificationStatus.SelectedItem = Convert.ToString(selectedLocation.Notification);
             notes.Text = selectedLocation.Notes;
         }
+
         async void Cancel_Clicked(System.Object sender, System.EventArgs e)
         {
             await Navigation.PopModalAsync();
@@ -36,7 +37,6 @@ namespace SportsmansChest.View.SportingLocationsViews
 
         async void Save_Clicked(System.Object sender, System.EventArgs e)
         {
-
             selectedLocation.LocationName = locationName.Text;
             selectedLocation.Longitude = Convert.ToDouble(longitude.Text);
             selectedLocation.Latitude = Convert.ToDouble(latitude.Text);
@@ -48,12 +48,20 @@ namespace SportsmansChest.View.SportingLocationsViews
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
                 conn.CreateTable<LocationDb>();
-                conn.Update(selectedLocation);
-                // validate user input here
 
-                
+                if (string.IsNullOrWhiteSpace(locationName.Text) || string.IsNullOrWhiteSpace(longitude.Text) ||
+                    string.IsNullOrWhiteSpace(latitude.Text) || string.IsNullOrWhiteSpace(Convert.ToString(eventTypePicker.SelectedItem)) ||
+                    string.IsNullOrWhiteSpace(Convert.ToString(notificationStatus.SelectedItem)) || string.IsNullOrWhiteSpace(notes.Text))
+                {
+                    await DisplayAlert("Failure", "Please enter information for all location fields", "OK");
+                }
+                else
+                {
+                    conn.Update(selectedLocation);
+                    await DisplayAlert("Success", "Item successfully updated", "OK");
+                    await Navigation.PopModalAsync();
+                }
             }
-            await Navigation.PopModalAsync();
         }
     }
 }
