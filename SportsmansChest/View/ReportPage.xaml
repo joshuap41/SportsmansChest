@@ -41,6 +41,13 @@
                         </StackLayout>
                     </ViewCell>
 
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
+                            <Label Text="User Details: " FontAttributes="Bold" FontSize="Medium"/>
+                            <Label x:Name="UserDetails" Visual="Material" Padding="0,3,0,4"/>
+                        </StackLayout>
+                    </ViewCell>
+
                 </TableSection>
             </TableView>
         </StackLayout>

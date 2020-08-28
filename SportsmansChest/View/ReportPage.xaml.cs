@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
+using SportsmansChest.Model;
 
 namespace SportsmansChest.View
 {
@@ -25,6 +26,12 @@ namespace SportsmansChest.View
             //Displays the Report run date
             var reportCreationDate = DateTime.Now;
             ReportCreationDate.Text = reportCreationDate.ToString(App.dateFormat);
+
+            // Display the user details for Polymorphism requirement
+            StatisticsReport rep = new StatisticsReport();
+
+            var userDetails = rep.GetUserInfo();
+            UserDetails.Text = userDetails;
         }
 
         async void ExitToolbarItem_Clicked(System.Object sender, System.EventArgs e)
