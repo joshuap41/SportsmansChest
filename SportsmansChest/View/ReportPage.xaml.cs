@@ -28,9 +28,8 @@ namespace SportsmansChest.View
             ReportCreationDate.Text = reportCreationDate.ToString(App.dateFormat);
 
             // Display the user details for Polymorphism requirement
-            StatisticsReport rep = new StatisticsReport();
-
-            var userDetails = rep.GetUserInfo();
+            //StatisticsReport rep = new StatisticsReport();
+            var userDetails = StatisticsReport.GetUserInfo();
             UserDetails.Text = userDetails;
         }
 

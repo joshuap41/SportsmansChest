@@ -6,9 +6,7 @@ namespace SportsmansChest.Model
 {
     public class StatisticsReport
     {
-        //private string r;
-
-        public string GetUserInfo()
+        public static string GetUserInfo()
         {
             SportmsnsChestUser user1 = new SportmsnsChestUser("Hunting", "Joshua");
             return user1.ShowDetails();
@@ -22,7 +20,7 @@ namespace SportsmansChest.Model
             {
                 this.Name = name;
             }
-
+            //virtual allows the derived class method to be called.
             public virtual string ShowDetails()
             {
                 StringBuilder details = new StringBuilder("Name: " + Name);
@@ -31,7 +29,7 @@ namespace SportsmansChest.Model
         }
 
 
-
+        // Derived class from User-- Inheritance.
         public class SportmsnsChestUser : User
         {
             public string UserInterest { get; set; }
@@ -40,11 +38,11 @@ namespace SportsmansChest.Model
             {
                 this.UserInterest = userInterest;
             }
-
+            // used the override access modifier to allow Polymorphism to be used.
             public override string ShowDetails()
             {
                 //SportmsnsChestUser user1 = new SportmsnsChestUser("Hunting", "Joshua", "Male");
-                StringBuilder details = new StringBuilder("User Interest: " + UserInterest + ";  Name: " + Name);
+                StringBuilder details = new StringBuilder("Interest: " + UserInterest + ";  Name: " + Name);
 
                 return details.ToString();
             }

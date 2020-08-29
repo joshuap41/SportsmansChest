@@ -7,6 +7,7 @@ namespace SportsmansChest.MethodTest
     [TestClass]
     public class UnitTest1
     {
+        // This testing method only works on a Windows Machine
         [TestMethod]
         public void TestMethod1()
         {
