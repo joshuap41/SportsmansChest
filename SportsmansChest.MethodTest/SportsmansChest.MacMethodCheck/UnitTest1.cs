@@ -15,7 +15,7 @@ namespace SportsmansChest.MacMethodCheck
         public void Test1()
         {
             // Arrange
-            StatisticsReport statistics = new StatisticsReport();
+            //StatisticsReport statistics = new StatisticsReport();
             string expectedResult = "Interest: Hunting;  Name: Joshua";
 
             // Act
