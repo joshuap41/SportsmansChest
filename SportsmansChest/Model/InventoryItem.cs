@@ -23,6 +23,7 @@ namespace SportsmansChest.Model
         //pictures...
 
 
+        //Delete after final testing
         public int Addititon(int x, int y)
         {
             return x + y;

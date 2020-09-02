@@ -49,5 +49,31 @@ namespace SportsmansChest.View
             if (selectedAccessory != null)
                 await Navigation.PushAsync(new AccessoryPage(selectedAccessory));
         }
+
+        void SearchBar_TextChanged(System.Object sender, Xamarin.Forms.TextChangedEventArgs e)
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+            {
+                conn.CreateTable<Accessory>();
+                var associatedAccessories = conn.Table<Accessory>().ToList();
+
+                if (string.IsNullOrEmpty(e.NewTextValue))
+                {
+                    var defaultAccessories = (from Accessory in associatedAccessories
+                                              where Accessory.InvItem == selectedInventoryItem.Id
+                                              select Accessory).ToList();
+                    AccessoriesListView.ItemsSource = defaultAccessories;
+                    //AccessoriesListView.ItemsSource = associatedAccessories;
+                }
+                else
+                {
+                    var foundAccessories = (from Accessory in associatedAccessories
+                                      where (Accessory.Manufacturer.ToUpper().StartsWith(e.NewTextValue.ToUpper())) &&
+                                      (Accessory.InvItem == selectedInventoryItem.Id)
+                                      select Accessory).ToList();
+                    AccessoriesListView.ItemsSource = foundAccessories;
+                }
+            }
+        }
     }
 }

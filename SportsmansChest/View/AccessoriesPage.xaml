@@ -12,6 +12,7 @@
     <!--Delete the stacklayout X:Name at the end cleanup-->
     <ScrollView>
         <StackLayout VerticalOptions="CenterAndExpand" Padding="5">
+            <SearchBar Placeholder="Search..." TextChanged="SearchBar_TextChanged"/>
             <ListView x:Name="AccessoriesListView" ItemSelected="AccessoriesListView_ItemSelected" SeparatorVisibility="Default">
                 <ListView.ItemTemplate>
                     <DataTemplate>
