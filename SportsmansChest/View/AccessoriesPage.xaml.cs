@@ -63,7 +63,6 @@ namespace SportsmansChest.View
                                               where Accessory.InvItem == selectedInventoryItem.Id
                                               select Accessory).ToList();
                     AccessoriesListView.ItemsSource = defaultAccessories;
-                    //AccessoriesListView.ItemsSource = associatedAccessories;
                 }
                 else
                 {
