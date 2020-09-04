@@ -1,27 +1,26 @@
 using NUnit.Framework;
 using SportsmansChest.Model;
 
-namespace SportsmansChest.MacMethodCheck
+namespace SportsmansChest.GetUserInfoTest
 {
-    public class Tests
+    public class GetUserInfoPolyTest
     {
         [SetUp]
         public void Setup()
         {
         }
 
-        //Testing for Polymorphism output on my mac
+        //Testing for GetUserInfo() Polymorphism output
         [Test]
         public void Test1()
         {
             // Arrange
-            //StatisticsReport statistics = new StatisticsReport();
             string expectedResult = "Interest: Hunting;  Name: Joshua";
 
             // Act
             string actualResult = StatisticsReport.GetUserInfo();
 
-            //Assert
+            // Assert
             Assert.AreEqual(expectedResult, actualResult);
         }
     }
