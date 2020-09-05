@@ -11,9 +11,6 @@ namespace SportsmansChest.View.SportingLocationsViews
 {
     public partial class AddLocationPage : ContentPage
     {
-        private double currentLatitude = 0;
-        private double currentLongitude = 0;
-
         public AddLocationPage()
         {
             InitializeComponent();
@@ -30,7 +27,6 @@ namespace SportsmansChest.View.SportingLocationsViews
             await Navigation.PopModalAsync();
         }
 
-        
         async void Save_Clicked(System.Object sender, System.EventArgs e)
         {
             LocationDb newLocation = new LocationDb
@@ -48,7 +44,6 @@ namespace SportsmansChest.View.SportingLocationsViews
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
                 conn.CreateTable<LocationDb>();
-                conn.Insert(newLocation);
 
                 if (string.IsNullOrWhiteSpace(locationName.Text) || string.IsNullOrWhiteSpace(longitude.Text) ||
                     string.IsNullOrWhiteSpace(latitude.Text) || string.IsNullOrWhiteSpace(Convert.ToString(eventTypePicker.SelectedItem)) ||
@@ -64,7 +59,6 @@ namespace SportsmansChest.View.SportingLocationsViews
                 }
             }
         }
-
 
         //Geolocation
         //https://docs.microsoft.com/en-us/xamarin/essentials/geolocation?tabs=android
@@ -88,16 +82,14 @@ namespace SportsmansChest.View.SportingLocationsViews
                 }
                 else
                 {
-                    location.Latitude = this.currentLatitude;
-                    location.Longitude = this.currentLongitude;
+                    longitude.Text = location.Longitude.ToString();
+                    latitude.Text = location.Latitude.ToString();
                 }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"Something is wrong: {ex.Message}");
             }
-            longitude.Text = currentLongitude.ToString();
-            latitude.Text = currentLatitude.ToString();
         }
     }
 }
