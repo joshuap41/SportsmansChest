@@ -10,7 +10,7 @@ namespace SportsmansChest.Model
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
-        //need a "nickName for the individual items to further decifer each one
+
         public string Manufacturer { get; set; }
         public string Model { get; set; }
         public string Grade { get; set; }
@@ -20,13 +20,6 @@ namespace SportsmansChest.Model
         public DateTime MaintenanceDate { get; set; }
         public string Notification { get; set; }
         public string Notes { get; set; }
-        //pictures...
 
-
-        //Delete after final testing
-        public int Addititon(int x, int y)
-        {
-            return x + y;
-        }
     }
 }

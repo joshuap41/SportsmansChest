@@ -15,7 +15,5 @@ namespace SportsmansChest.Model
         public DateTime ReturnDate { get; set; }
         public string Notification { get; set; }
         public string Notes { get; set; }
-        //pictures
-
     }
 }

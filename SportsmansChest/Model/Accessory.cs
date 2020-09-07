@@ -8,7 +8,7 @@ namespace SportsmansChest.Model
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
-        //need a "nickName for the individual items to further decifer each one
+        
         public int InvItem { get; set; }
         public string Manufacturer { get; set; }
         public string Model { get; set; }
