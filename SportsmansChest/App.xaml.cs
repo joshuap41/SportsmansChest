@@ -16,11 +16,13 @@ namespace SportsmansChest
 
         public static string DatabaseLocation = string.Empty;
 
+        public static int UserLoggedIn { get; set; }
+
         public App()
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage( new MainPage());
+            MainPage = new NavigationPage( new LoginPage());
         }
 
         //used for DB
@@ -28,7 +30,7 @@ namespace SportsmansChest
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new LoginPage());
 
             DatabaseLocation = databaseLocation;
         }
@@ -134,14 +136,35 @@ namespace SportsmansChest
             }
         }
 
-        public static void InventoryTestingData()
+        public static void UserForTesting()
         {
             using (SQLiteConnection conn = new SQLiteConnection(DatabaseLocation))
             {
+                conn.CreateTable<User>();
+                var testUser = conn.Table<User>().ToList();
+
+                if (!testUser.Any())
+                {
+                    User newUser = new User()
+                    {
+                        UserName = "test",
+                        UserPassword = "test"
+                    };
+                    conn.Insert(newUser);
+                }
+            }
+        }
+
+
+        public static void InventoryTestingData(int UserLoggedIn)
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(DatabaseLocation))
+            {
+                conn.CreateTable<User>();
+                var testUser = conn.Table<User>().ToList();
 
                 conn.CreateTable<InventoryItem>();
-
-                var item =  conn.Table<InventoryItem>().ToList();
+                var item = conn.Table<InventoryItem>().ToList();
 
                 conn.CreateTable<Accessory>();
 
@@ -149,6 +172,7 @@ namespace SportsmansChest
                 {
                     InventoryItem newItem = new InventoryItem()
                     {
+                        CurrentUser = UserLoggedIn,
                         Manufacturer = "Browning",
                         Model = "CB16",
                         Grade = "Standard",
@@ -158,6 +182,7 @@ namespace SportsmansChest
                         MaintenanceDate = DateTime.Today,
                         Notification = "Enabled",
                         Notes = "This is my favorite bow to hunt with. I will need to get a maintenance kit for it soon"
+                        
                     };
                     conn.Insert(newItem);
 

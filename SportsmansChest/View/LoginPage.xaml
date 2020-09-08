@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SportsmansChest.View.LoginPage"
+             Title="Login Page">
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Margin="20">
+            <Label Text="The Sportsman's Chest"
+                   Margin="0, 0, 0, 80"
+                   FontSize="Title"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+
+            <Entry x:Name="username" Placeholder="Username" FontSize="Medium" Margin="0, 0, 0, 10"/>
+            <Entry x:Name="password" Placeholder="Password" FontSize="Medium" IsPassword="True"/>
+
+            <Button Text="Log in"
+                    Clicked="LoginButton_Clicked"
+                    Margin="0, 50, 0, 0"
+                    HeightRequest="60"
+                    BackgroundColor="{StaticResource blueColorForButton}"
+                    TextColor="{StaticResource white}"/>
+
+            <Button Text="Register New User"
+                    Clicked="RegisterNewUser_Clicked"
+                    Margin="0, 30, 0, 0"
+                    HeightRequest="60"
+                    BackgroundColor="{StaticResource blueColorForButton}"
+                    TextColor="{StaticResource white}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

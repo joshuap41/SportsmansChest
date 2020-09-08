@@ -4,6 +4,7 @@ using System.Linq;
 
 using Xamarin.Forms;
 using SportsmansChest.Model;
+using SportsmansChest.View;
 using SQLite;
 
 
@@ -21,13 +22,18 @@ namespace SportsmansChest.View
         {
             base.OnAppearing();
             //data to test with
-            App.InventoryTestingData();
+            App.InventoryTestingData(App.UserLoggedIn);
 
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
                 conn.CreateTable<InventoryItem>();
                 var items = conn.Table<InventoryItem>().ToList();
-                itemListView.ItemsSource = items;
+
+                var userItems = (from InventoryItem in items
+                                 where InventoryItem.Id == App.UserLoggedIn
+                                 select InventoryItem).ToList();
+
+                itemListView.ItemsSource = userItems;
             }
         }
 

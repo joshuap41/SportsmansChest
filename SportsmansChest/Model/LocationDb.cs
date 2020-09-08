@@ -7,6 +7,7 @@ namespace SportsmansChest.Model
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
+        public int CurrentUser { get; set; }
         public string LocationName { get; set; }
         public double Longitude { get; set; }
         public double Latitude { get; set; }
@@ -15,5 +16,6 @@ namespace SportsmansChest.Model
         public DateTime ReturnDate { get; set; }
         public string Notification { get; set; }
         public string Notes { get; set; }
+
     }
 }
