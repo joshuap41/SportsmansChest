@@ -147,6 +147,7 @@ namespace SportsmansChest
                 {
                     User newUser = new User()
                     {
+                        Id = 200,
                         UserName = "test",
                         UserPassword = "test"
                     };

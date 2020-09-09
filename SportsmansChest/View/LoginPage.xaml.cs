@@ -17,64 +17,46 @@ namespace SportsmansChest.View
 
         protected override void OnAppearing()
         {
-
-            //App.UserForTesting();
             base.OnAppearing();
         }
 
         async void LoginButton_Clicked(System.Object sender, System.EventArgs e)
         {
-            // Adds a specific user for testing.
-            
-
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
                 conn.CreateTable<User>();
                 var users = conn.Table<User>().ToList();
 
                 var userId = 0;
-                bool userExists = false;
+                
                 var testUserNameCheck = string.Empty;
+                var testUserPasswordCheck = string.Empty;
 
-                foreach (User user in users)
-                {
-                    userId++;
+                //App.UserForTesting();
 
-                    if (user.UserName == username.Text && user.UserPassword == password.Text)
-                    {
-                        userExists = true;
-                        App.UserLoggedIn = user.Id;
-                        testUserNameCheck = user.UserName;
-
-                    }
-                    else
-                    {
-                        userExists = false;
-                    }
-                }
+                
 
                 //Needs work here
 
-
-
                 if (!string.IsNullOrWhiteSpace(username.Text) || !string.IsNullOrWhiteSpace(password.Text))
                 {
-                    if (userExists)
+                    bool userExists = false;
+
+                    foreach (User user in users)
                     {
-                        if (testUserNameCheck == "test")
+                        userId++;
+
+                        if (user.UserName == username.Text && user.UserPassword == password.Text)
                         {
+                            userExists = true;
+                            App.UserLoggedIn = user.Id;
                             await Navigation.PushAsync(new MainPage());
+                            return;
                         }
                         else
                         {
-                            App.UserForTesting()
-                            await Navigation.PushAsync(new MainPage());
+                            userExists = false;
                         }
-                        
-                    }
-                    else
-                    {
-                        await DisplayAlert("User Error", "The use does not exist", "OK");
                     }
                 }
                 else
