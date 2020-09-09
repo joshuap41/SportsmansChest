@@ -45,20 +45,6 @@
                                 </StackLayout>
                             </ViewCell>
 
-                            <ViewCell>
-                                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
-                                    <Label Text="Maintenance Date:" FontAttributes="Bold" FontSize="Medium"/>
-                                    <Label x:Name="MaintenanceDate" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
-                                </StackLayout>
-                            </ViewCell>
-
-                            <ViewCell>
-                                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
-                                    <Label Text="Notification:" FontAttributes="Bold" FontSize="Medium"/>
-                                    <Label x:Name="Notification" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
-                                </StackLayout>
-                            </ViewCell>
-
                             <ViewCell Height="200">
                                 <StackLayout Orientation="Vertical" Padding="10">
                                     <Label Text="Notes:" FontAttributes="Bold" FontSize="Medium"/>

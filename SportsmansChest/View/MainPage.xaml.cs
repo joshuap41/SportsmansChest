@@ -24,7 +24,6 @@ namespace SportsmansChest
             base.OnAppearing();
 
             bool invAppOpening = true;
-            bool invAccOpening = true;
             bool locAppOpening = true;
 
             // Notifications
@@ -32,9 +31,6 @@ namespace SportsmansChest
             {
                 conn.CreateTable<InventoryItem>();
                 var itemsList = conn.Table<InventoryItem>().ToList();
-
-                conn.CreateTable<Accessory>();
-                var accessories = conn.Table<Accessory>().ToList();
 
                 conn.CreateTable<LocationDb>();
                 var locations = conn.Table<LocationDb>().ToList();
@@ -58,25 +54,6 @@ namespace SportsmansChest
                                         // need a "nickName for the individual items to further decifer each one
                                         CrossLocalNotifications.Current.Show("Notification Received", $"Inventory Item: {inventoryItem.Manufacturer} needs maintenance today.", itemId);
                                     }
-                                }
-                            }
-                        }
-                    }
-
-                    if (invAccOpening)
-                    {
-                        invAccOpening = false;
-                        var accessoryId = 0;
-
-                        foreach (Accessory accessory in accessories)
-                        {
-                            accessoryId++;
-                            if (accessory.Notification == "Enabled")
-                            {
-                                if (accessory.MaintenanceDate == DateTime.Today)
-                                {
-                                    //need a "nickName for the individual items to further decifer each one
-                                    CrossLocalNotifications.Current.Show("Notification Received", $"Accessory: {accessory.Manufacturer} needs maintenance today", accessoryId);
                                 }
                             }
                         }

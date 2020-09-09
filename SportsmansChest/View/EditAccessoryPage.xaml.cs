@@ -26,8 +26,6 @@ namespace SportsmansChest.View
             model.Text = selectedAccessory.Model;
             serialNumber.Text = selectedAccessory.SerialNumber;
             declairedValue.Text = selectedAccessory.DeclairedValue;
-            maintenanceDate.Date = selectedAccessory.MaintenanceDate;
-            notification.SelectedItem = selectedAccessory.MaintenanceDate;
             notes.Text = selectedAccessory.Notes;
         }
 
@@ -42,8 +40,6 @@ namespace SportsmansChest.View
             selectedAccessory.Model = model.Text;
             selectedAccessory.SerialNumber = serialNumber.Text;
             selectedAccessory.DeclairedValue = declairedValue.Text;
-            selectedAccessory.MaintenanceDate = maintenanceDate.Date;
-            selectedAccessory.Notification = Convert.ToString(notification.SelectedItem);
             selectedAccessory.Notes = notes.Text;
 
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
@@ -52,7 +48,6 @@ namespace SportsmansChest.View
 
                 if (string.IsNullOrWhiteSpace(manufacturer.Text) || string.IsNullOrWhiteSpace(model.Text) ||
                     string.IsNullOrWhiteSpace(serialNumber.Text) || string.IsNullOrWhiteSpace(declairedValue.Text) ||
-                    string.IsNullOrWhiteSpace(Convert.ToString(notification.SelectedItem)) ||
                     string.IsNullOrWhiteSpace(notes.Text))
                 {
                     await DisplayAlert("Failure", "Please provide enter information for all accessory fields", "OK");

@@ -185,8 +185,6 @@ namespace SportsmansChest
                         SerialNumber = "89352413",
                         DeclairedValue = "200.00",
                         CreatedDate = DateTime.Today,
-                        MaintenanceDate = DateTime.Today,
-                        Notification = "Enabled",
                         Notes = "This testing data is for the assessor will appear with any user created",
                         InvItem = newItem.Id
                     };

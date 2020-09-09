@@ -19,18 +19,6 @@
                     <Entry x:Name="serialNumber" Placeholder="Serial Number" FontSize="Medium"/>
                     <Entry x:Name="declairedValue" Placeholder="Declaired Value" FontSize="Medium"/>
 
-                    <StackLayout Orientation="Horizontal" Padding="5,10,5,10">
-                        <Label Text="Maintenance Date:" FontAttributes="Bold" FontSize="Medium" Padding="0,10,0,0"/>
-                        <DatePicker x:Name="maintenanceDate" FontSize="Medium" HorizontalOptions="Center"/>
-                    </StackLayout>
-                
-                    <Picker Title="Enable Maintenance Notifications" x:Name="notification" HorizontalOptions="StartAndExpand" WidthRequest="500" FontSize="Medium">
-                        <Picker.Items>
-                            <x:String>Enabled</x:String>
-                            <x:String>Disabled</x:String>
-                        </Picker.Items>
-                    </Picker>
-
                     <Editor x:Name="notes"
                             Placeholder="Notes"
                             FontSize="Medium"

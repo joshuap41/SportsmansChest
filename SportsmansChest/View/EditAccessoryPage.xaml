@@ -25,21 +25,6 @@
                 
                 <Label Text="Declaired Value:" FontAttributes="Bold" FontSize="Medium"/>
                 <Entry x:Name="declairedValue" Placeholder="..." FontSize="Medium"/>
-
-                <!--DatePicker-->
-                <StackLayout Orientation="Horizontal" Padding="0,10,4,0">
-                    <Label Text="Maintenance Date:" FontAttributes="Bold" FontSize="Medium" Padding="0,5,0,0"/>
-                    <DatePicker x:Name="maintenanceDate"/>
-                </StackLayout>
-                
-                <!--Notificaitons-->
-                <Label Text="Notification Status:" FontAttributes="Bold" FontSize="Medium"/>
-                <Picker x:Name="notification" MenuItem.Accelerator="Enabled">
-                    <Picker.Items>
-                        <x:String>Enabled</x:String>
-                        <x:String>Disabled</x:String>
-                    </Picker.Items>
-                </Picker>
                 
                 <!--Editor allows "AutoSize" which allows all text to be seen in the form-->
                 <Label Text="Notes:" FontAttributes="Bold" FontSize="Medium"/>
