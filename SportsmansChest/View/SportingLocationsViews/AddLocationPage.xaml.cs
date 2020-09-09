@@ -31,6 +31,7 @@ namespace SportsmansChest.View.SportingLocationsViews
         {
             LocationDb newLocation = new LocationDb
             {
+                CurrentUser = App.UserLoggedIn,
                 LocationName = locationName.Text,
                 Longitude = Convert.ToDouble(longitude.Text),
                 Latitude = Convert.ToDouble(latitude.Text),

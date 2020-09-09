@@ -26,7 +26,12 @@ namespace SportsmansChest.View.SportingLocationsViews
             {
                 conn.CreateTable<LocationDb>();
                 var locations = conn.Table<LocationDb>().ToList();
-                LocationListView.ItemsSource = locations;
+
+                var userLocations = (from LocationDb in locations
+                                 where LocationDb.CurrentUser == App.UserLoggedIn
+                                 select LocationDb).ToList();
+
+                LocationListView.ItemsSource = userLocations;
             }
         }
 
@@ -44,12 +49,16 @@ namespace SportsmansChest.View.SportingLocationsViews
 
                 if (string.IsNullOrEmpty(e.NewTextValue))
                 {
-                    LocationListView.ItemsSource = location;
+                    var defaultLocations = (from Location in location
+                                            where Location.CurrentUser == App.UserLoggedIn
+                                            select Location).ToList();
+                    LocationListView.ItemsSource = defaultLocations;
                 }
                 else
                 {
                     var foundLocation = (from Location in location
-                                         where Location.LocationName.ToUpper().StartsWith(e.NewTextValue.ToUpper())
+                                         where (Location.LocationName.ToUpper().StartsWith(e.NewTextValue.ToUpper())) &&
+                                         (Location.CurrentUser == App.UserLoggedIn)
                                          select Location).ToList();
                     LocationListView.ItemsSource = foundLocation;
                 }

@@ -28,15 +28,8 @@ namespace SportsmansChest.View
                 var users = conn.Table<User>().ToList();
 
                 var userId = 0;
-                
-                var testUserNameCheck = string.Empty;
-                var testUserPasswordCheck = string.Empty;
 
                 //App.UserForTesting();
-
-                
-
-                //Needs work here
 
                 if (!string.IsNullOrWhiteSpace(username.Text) || !string.IsNullOrWhiteSpace(password.Text))
                 {
@@ -62,7 +55,6 @@ namespace SportsmansChest.View
                 else
                 {
                     await DisplayAlert("Invalid Input", "Please enter the username and password", "OK");
-
                 }
                 
             }

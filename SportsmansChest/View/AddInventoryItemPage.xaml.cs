@@ -24,6 +24,7 @@ namespace SportsmansChest.View
         {
             InventoryItem newItem = new InventoryItem
             {
+                CurrentUser = App.UserLoggedIn,
                 Manufacturer = manufacturer.Text,
                 Model = model.Text,
                 Grade = Convert.ToString(grade.SelectedItem),
