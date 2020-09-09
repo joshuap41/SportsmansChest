@@ -29,8 +29,8 @@ namespace SportsmansChest.View
 
             // Display the user details for Polymorphism requirement
             //StatisticsReport rep = new StatisticsReport();
-            var userDetails = StatisticsReport.GetUserInfo();
-            UserDetails.Text = userDetails;
+            var developerDetails = StatisticsReport.GetUserInfo();
+            DeveloperDetails.Text = developerDetails;
         }
 
         async void ExitToolbarItem_Clicked(System.Object sender, System.EventArgs e)

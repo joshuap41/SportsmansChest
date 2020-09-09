@@ -24,6 +24,7 @@ namespace SportsmansChest.View
         {
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
+                App.UserForTesting();
                 conn.CreateTable<User>();
                 var users = conn.Table<User>().ToList();
 
@@ -51,10 +52,11 @@ namespace SportsmansChest.View
                             userExists = false;
                         }
                     }
+                    await DisplayAlert("Invalid Input", "This user does not exist. Please register a new user.", "OK");
                 }
                 else
                 {
-                    await DisplayAlert("Invalid Input", "Please enter the username and password", "OK");
+                    await DisplayAlert("Invalid Input", "Please enter the username and password.", "OK");
                 }
                 
             }

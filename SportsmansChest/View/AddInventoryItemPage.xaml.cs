@@ -30,6 +30,7 @@ namespace SportsmansChest.View
                 Grade = Convert.ToString(grade.SelectedItem),
                 SerialNumber = serialNumber.Text,
                 DeclairedValue = declairedValue.Text,
+                MaintenanceDate = maintenanceDate.Date,
                 CreatedDate = DateTime.Now,
                 Notification = Convert.ToString(notification.SelectedItem),
                 Notes = notes.Text

@@ -115,6 +115,7 @@ namespace SportsmansChest
                 {
                     LocationDb newLocaiton = new LocationDb()
                     {
+                        CurrentUser = UserLoggedIn,
                         LocationName = "Favorite Hunting Spot",
                         Longitude = -84.317241,
                         Latitude = 34.736907,
@@ -122,7 +123,7 @@ namespace SportsmansChest
                         CreatedDate = DateTime.Today,
                         ReturnDate = DateTime.Today,
                         Notification = "Enabled",
-                        Notes = "I saw a lot of bucks by the stream here!"
+                        Notes = "This testing data is for the assessor will appear with any user created"
                     };
                     conn.Insert(newLocaiton);
                 }
@@ -136,16 +137,13 @@ namespace SportsmansChest
                 conn.CreateTable<User>();
                 var testUser = conn.Table<User>().ToList();
 
-                if (!testUser.Any())
+                User newUser = new User()
                 {
-                    User newUser = new User()
-                    {
-                        Id = 200,
-                        UserName = "test",
-                        UserPassword = "test"
-                    };
-                    conn.Insert(newUser);
-                }
+                    Id = 1,
+                    UserName = "test",
+                    UserPassword = "test"
+                };
+                conn.Insert(newUser);
             }
         }
 
@@ -166,7 +164,7 @@ namespace SportsmansChest
                 {
                     InventoryItem newItem = new InventoryItem()
                     {
-                        CurrentUser = 200,
+                        CurrentUser = UserLoggedIn,
                         Manufacturer = "Browning",
                         Model = "CB16",
                         Grade = "Standard",
@@ -175,8 +173,8 @@ namespace SportsmansChest
                         CreatedDate = DateTime.Today,
                         MaintenanceDate = DateTime.Today,
                         Notification = "Enabled",
-                        Notes = "This is my favorite bow to hunt with. I will need to get a maintenance kit for it soon"
-                        
+                        Notes = "This testing data is for the assessor will appear with any user created"
+
                     };
                     conn.Insert(newItem);
 
@@ -189,7 +187,7 @@ namespace SportsmansChest
                         CreatedDate = DateTime.Today,
                         MaintenanceDate = DateTime.Today,
                         Notification = "Enabled",
-                        Notes = "This is my favorite scope to hunt with.",
+                        Notes = "This testing data is for the assessor will appear with any user created",
                         InvItem = newItem.Id
                     };
                     conn.Insert(newAccessory);

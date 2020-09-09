@@ -18,10 +18,10 @@
                 <Entry x:Name="locationName" Placeholder="..." FontSize="Medium"/>
 
                 <Label Text="Longitude: " FontAttributes="Bold" FontSize="Medium"/>
-                <Entry x:Name="longitude" Placeholder="..." FontSize="Medium"/>
+                <Label x:Name="longitude" FontSize="Medium"/>
 
                 <Label Text="Latitude: " FontAttributes="Bold" FontSize="Medium"/>
-                <Entry x:Name="latitude" Placeholder="..." FontSize="Medium"/>
+                <Label x:Name="latitude" FontSize="Medium"/>
 
                 <Label Text="Event Type: " FontAttributes="Bold" FontSize="Medium"/>
                 <Picker x:Name="eventTypePicker" >

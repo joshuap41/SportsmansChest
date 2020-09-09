@@ -21,8 +21,9 @@ namespace SportsmansChest.View
         protected override void OnAppearing()
         {
             base.OnAppearing();
+
             //data to test with
-            //App.InventoryTestingData(App.UserLoggedIn);
+            //App.InventoryTestingData();
 
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {

@@ -8,15 +8,15 @@ namespace SportsmansChest.Model
     {
         public static string GetUserInfo()
         {
-            SportsmansChestUser user1 = new SportsmansChestUser("Hunting", "Joshua");
+            SportsmansChestDeveloper user1 = new SportsmansChestDeveloper("Hunting", "Joshua");
             return user1.ShowDetails();
         }
 
-        public class User
+        public class Developer
         {
             public string Name { get; set; }
 
-            public User(string name)
+            public Developer(string name)
             {
                 this.Name = name;
             }
@@ -31,27 +31,22 @@ namespace SportsmansChest.Model
 
 
         // Derived class from User--Inheritance.
-        public class SportsmansChestUser : User
+        public class SportsmansChestDeveloper : Developer
         {
-            public string UserInterest { get; set; }
+            public string DeveloperInterest { get; set; }
 
-            public SportsmansChestUser(string userInterest, string name) : base(name)
+            public SportsmansChestDeveloper(string developerInterest, string name) : base(name)
             {
-                this.UserInterest = userInterest;
+                this.DeveloperInterest = developerInterest;
             }
 
             // used the override access modifier to allow Polymorphism to be used.
             public override string ShowDetails()
             {
-                StringBuilder details = new StringBuilder("Interest: " + UserInterest + ";  Name: " + Name);
+                StringBuilder details = new StringBuilder("Interest: " + DeveloperInterest + ";  Name: " + Name);
 
                 return details.ToString();
             }
         }
     }
-
-
-
-    
-
 }

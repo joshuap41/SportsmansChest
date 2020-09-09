@@ -29,31 +29,36 @@ namespace SportsmansChest.View.SportingLocationsViews
 
         async void Save_Clicked(System.Object sender, System.EventArgs e)
         {
-            LocationDb newLocation = new LocationDb
-            {
-                CurrentUser = App.UserLoggedIn,
-                LocationName = locationName.Text,
-                Longitude = Convert.ToDouble(longitude.Text),
-                Latitude = Convert.ToDouble(latitude.Text),
-                EventType = Convert.ToString(eventTypePicker.SelectedItem),
-                CreatedDate = DateTime.Now,
-                ReturnDate = returnDate.Date,
-                Notification = Convert.ToString(notificationStatus.SelectedItem),
-                Notes = notes.Text
-            };
+            
 
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
                 conn.CreateTable<LocationDb>();
 
-                if (string.IsNullOrWhiteSpace(locationName.Text) || string.IsNullOrWhiteSpace(longitude.Text) ||
-                    string.IsNullOrWhiteSpace(latitude.Text) || string.IsNullOrWhiteSpace(Convert.ToString(eventTypePicker.SelectedItem)) ||
-                    string.IsNullOrWhiteSpace(Convert.ToString(notificationStatus.SelectedItem)) || string.IsNullOrWhiteSpace(notes.Text))
+                // handles Longitude and Latitude input
+                //double longitudeOut;
+                //bool longParsed = double.TryParse(longitude.Text, out longitudeOut);
+                //bool longValid = double.IsNaN(longitudeOut);
+
+                if (string.IsNullOrWhiteSpace(locationName.Text) || string.IsNullOrWhiteSpace(Convert.ToString(eventTypePicker.SelectedItem)) ||
+                    string.IsNullOrWhiteSpace(Convert.ToString(notificationStatus.SelectedItem)) || string.IsNullOrWhiteSpace(notes.Text)) 
                 {
-                    await DisplayAlert("Failure", "Please enter information for all location fields", "OK");
+                    await DisplayAlert("Failure", "Please enter valid information for all location fields including only numbers/decimil for Longitude and Latitude.", "OK");
                 }
                 else
                 {
+                    LocationDb newLocation = new LocationDb
+                    {
+                        CurrentUser = App.UserLoggedIn,
+                        LocationName = locationName.Text,
+                        Longitude = Convert.ToDouble(latitude.Text),
+                        Latitude = Convert.ToDouble(latitude.Text),
+                        EventType = Convert.ToString(eventTypePicker.SelectedItem),
+                        CreatedDate = DateTime.Now,
+                        ReturnDate = returnDate.Date,
+                        Notification = Convert.ToString(notificationStatus.SelectedItem),
+                        Notes = notes.Text
+                    };
                     conn.Insert(newLocation);
                     await DisplayAlert("Success", "Item successfully created", "OK");
                     await Navigation.PopModalAsync();
