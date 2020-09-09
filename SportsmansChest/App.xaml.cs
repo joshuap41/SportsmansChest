@@ -47,8 +47,6 @@ namespace SportsmansChest
         {
         }
 
-        
-
         public static int ManufacturerCategoriesCount()
         {
             using (SQLiteConnection conn = new SQLiteConnection(DatabaseLocation))
@@ -58,26 +56,13 @@ namespace SportsmansChest
                 var inventoryList = conn.Table<InventoryItem>().ToList();
 
                 var categories = (from InventoryItem in inventoryList
+                                  where InventoryItem.CurrentUser == App.UserLoggedIn
                                   orderby InventoryItem.Id
                                   select InventoryItem.Manufacturer).Distinct().ToList();
 
                 var manufacturerCategoriesCount = categories.Count();
 
                 return manufacturerCategoriesCount;
-            }
-        }
-
-        public static int AccessoryCount()
-        {
-            using (SQLiteConnection conn = new SQLiteConnection(DatabaseLocation))
-            {
-                conn.CreateTable<Accessory>();
-
-                var accessoryList = conn.Table<Accessory>().ToList();
-
-                var accessoryCount = accessoryList.Count();
-
-                return accessoryCount;
             }
         }
 
@@ -89,7 +74,11 @@ namespace SportsmansChest
 
                 var inventoryList = conn.Table<InventoryItem>().ToList();
 
-                var inventoryItemCount = inventoryList.Count();
+                var userItems = (from InventoryItem in inventoryList
+                                 where InventoryItem.CurrentUser == App.UserLoggedIn
+                                 select InventoryItem).ToList();
+
+                var inventoryItemCount = userItems.Count();
 
                 return inventoryItemCount;
             }
@@ -103,7 +92,11 @@ namespace SportsmansChest
 
                 var locationList = conn.Table<LocationDb>().ToList();
 
-                var createdLocationCount = locationList.Count();
+                var userLocations = (from Location in locationList
+                                     where Location.CurrentUser == App.UserLoggedIn
+                                     select Location).ToString();
+
+                var createdLocationCount = userLocations.Count();
 
                 return createdLocationCount;
             }
@@ -157,7 +150,7 @@ namespace SportsmansChest
         }
 
 
-        public static void InventoryTestingData(int UserLoggedIn)
+        public static void InventoryTestingData()
         {
             using (SQLiteConnection conn = new SQLiteConnection(DatabaseLocation))
             {
@@ -173,7 +166,7 @@ namespace SportsmansChest
                 {
                     InventoryItem newItem = new InventoryItem()
                     {
-                        CurrentUser = UserLoggedIn,
+                        CurrentUser = 200,
                         Manufacturer = "Browning",
                         Model = "CB16",
                         Grade = "Standard",
@@ -200,6 +193,7 @@ namespace SportsmansChest
                         InvItem = newItem.Id
                     };
                     conn.Insert(newAccessory);
+
                 }
             }
         }
