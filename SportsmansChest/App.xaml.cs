@@ -94,7 +94,7 @@ namespace SportsmansChest
 
                 var userLocations = (from Location in locationList
                                      where Location.CurrentUser == App.UserLoggedIn
-                                     select Location).ToString();
+                                     select Location).ToList();
 
                 var createdLocationCount = userLocations.Count();
 
@@ -111,20 +111,21 @@ namespace SportsmansChest
 
                 var location = conn.Table<LocationDb>().ToList();
 
-                if (!location.Any())
+                LocationDb newLocaiton = new LocationDb()
                 {
-                    LocationDb newLocaiton = new LocationDb()
-                    {
-                        CurrentUser = UserLoggedIn,
-                        LocationName = "Favorite Hunting Spot",
-                        Longitude = -84.317241,
-                        Latitude = 34.736907,
-                        EventType = "Hunting",
-                        CreatedDate = DateTime.Today,
-                        ReturnDate = DateTime.Today,
-                        Notification = "Enabled",
-                        Notes = "This testing data is for the assessor will appear with any user created"
-                    };
+                    CurrentUser = UserLoggedIn,
+                    LocationName = "Favorite Hunting Spot",
+                    Longitude = -84.317241,
+                    Latitude = 34.736907,
+                    EventType = "Hunting",
+                    CreatedDate = DateTime.Today,
+                    ReturnDate = DateTime.Today,
+                    Notification = "Enabled",
+                    Notes = "This testing data is for the assessor will appear with any user created"
+                };
+
+                if (UserLoggedIn != newLocaiton.CurrentUser)
+                {
                     conn.Insert(newLocaiton);
                 }
             }

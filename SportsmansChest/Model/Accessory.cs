@@ -15,8 +15,6 @@ namespace SportsmansChest.Model
         public string SerialNumber { get; set; }
         public string DeclairedValue { get; set; }
         public DateTime CreatedDate { get; set; }
-        //public DateTime MaintenanceDate { get; set; }
-        //public string Notification { get; set; }
         public string Notes { get; set; }
     }
 }

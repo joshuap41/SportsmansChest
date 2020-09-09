@@ -11,7 +11,7 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <TableView Intent="Data">
+            <TableView Intent="Data" HasUnevenRows="True">
                 <TableSection>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
@@ -43,7 +43,7 @@
 
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
-                            <Label Text="Developer Details: " FontAttributes="Bold" FontSize="Medium"/>
+                            <Label Text="Developer Info: " FontAttributes="Bold" FontSize="Medium"/>
                             <Label x:Name="DeveloperDetails" Visual="Material" Padding="0,3,0,4"/>
                         </StackLayout>
                     </ViewCell>

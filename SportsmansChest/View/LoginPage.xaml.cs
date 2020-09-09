@@ -24,13 +24,10 @@ namespace SportsmansChest.View
         {
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
-                App.UserForTesting();
                 conn.CreateTable<User>();
                 var users = conn.Table<User>().ToList();
 
                 var userId = 0;
-
-                //App.UserForTesting();
 
                 if (!string.IsNullOrWhiteSpace(username.Text) || !string.IsNullOrWhiteSpace(password.Text))
                 {
