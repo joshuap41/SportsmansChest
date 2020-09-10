@@ -20,6 +20,7 @@ namespace SportsmansChest.View
             base.OnAppearing();
             username.Text = string.Empty;
             password.Text = string.Empty;
+
         }
 
         async void LoginButton_Clicked(System.Object sender, System.EventArgs e)
