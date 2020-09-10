@@ -105,27 +105,28 @@ namespace SportsmansChest
 
         public static void LocationTestingData()
         {
+            var locCount = TotalLocationCount();
+
             using (SQLiteConnection conn = new SQLiteConnection(DatabaseLocation))
             {
                 conn.CreateTable<LocationDb>();
 
                 var location = conn.Table<LocationDb>().ToList();
 
-                LocationDb newLocaiton = new LocationDb()
+                if (locCount < 1)
                 {
-                    CurrentUser = UserLoggedIn,
-                    LocationName = "Favorite Hunting Spot",
-                    Longitude = -84.317241,
-                    Latitude = 34.736907,
-                    EventType = "Hunting",
-                    CreatedDate = DateTime.Today,
-                    ReturnDate = DateTime.Today,
-                    Notification = "Enabled",
-                    Notes = "This testing data is for the assessor will appear with any user created"
-                };
-
-                if (UserLoggedIn != newLocaiton.CurrentUser)
-                {
+                    LocationDb newLocaiton = new LocationDb()
+                    {
+                        CurrentUser = UserLoggedIn,
+                        LocationName = "Favorite Hunting Spot",
+                        Longitude = -84.317241,
+                        Latitude = 34.736907,
+                        EventType = "Hunting",
+                        CreatedDate = DateTime.Today,
+                        ReturnDate = DateTime.Today,
+                        Notification = "Enabled",
+                        Notes = "This testing data is for the assessor and will appear at the login page with any new user created"
+                    };
                     conn.Insert(newLocaiton);
                 }
             }
@@ -151,6 +152,8 @@ namespace SportsmansChest
 
         public static void InventoryTestingData()
         {
+            var invCount = InventoryItemCount();
+
             using (SQLiteConnection conn = new SQLiteConnection(DatabaseLocation))
             {
                 conn.CreateTable<User>();
@@ -161,7 +164,7 @@ namespace SportsmansChest
 
                 conn.CreateTable<Accessory>();
 
-                if (!item.Any())
+                if (invCount < 1)
                 {
                     InventoryItem newItem = new InventoryItem()
                     {
@@ -174,7 +177,7 @@ namespace SportsmansChest
                         CreatedDate = DateTime.Today,
                         MaintenanceDate = DateTime.Today,
                         Notification = "Enabled",
-                        Notes = "This testing data is for the assessor will appear with any user created"
+                        Notes = "This testing data is for the assessor and will appear at the login page with any new user created"
 
                     };
                     conn.Insert(newItem);
@@ -186,7 +189,7 @@ namespace SportsmansChest
                         SerialNumber = "89352413",
                         DeclairedValue = "200.00",
                         CreatedDate = DateTime.Today,
-                        Notes = "This testing data is for the assessor will appear with any user created",
+                        Notes = "This testing data is for the assessor and will appear at the login page with any new user created",
                         InvItem = newItem.Id
                     };
                     conn.Insert(newAccessory);

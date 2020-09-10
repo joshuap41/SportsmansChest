@@ -41,6 +41,8 @@ namespace SportsmansChest.View
                         {
                             userExists = true;
                             App.UserLoggedIn = user.Id;
+                            App.LocationTestingData();
+                            App.InventoryTestingData();
                             await Navigation.PushAsync(new MainPage());
                             return;
                         }

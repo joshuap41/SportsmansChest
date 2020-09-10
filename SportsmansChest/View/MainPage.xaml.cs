@@ -23,6 +23,8 @@ namespace SportsmansChest
         {
             base.OnAppearing();
 
+            
+
             bool invAppOpening = true;
             bool locAppOpening = true;
 
