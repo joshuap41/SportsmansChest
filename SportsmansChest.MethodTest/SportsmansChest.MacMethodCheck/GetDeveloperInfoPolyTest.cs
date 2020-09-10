@@ -1,9 +1,9 @@
 using NUnit.Framework;
 using SportsmansChest.Model;
 
-namespace SportsmansChest.GetUserInfoTest
+namespace SportsmansChest.GetDeveloperInfoTest
 {
-    public class GetUserInfoPolyTest
+    public class GetDeveloperInfoPolyTest
     {
         [SetUp]
         public void Setup()
@@ -15,10 +15,10 @@ namespace SportsmansChest.GetUserInfoTest
         public void Test1()
         {
             // Arrange
-            string expectedResult = "Interest: Hunting;  Name: Joshua";
+            string expectedResult = "Interest: Hunting; Name: Joshua";
 
             // Act
-            string actualResult = StatisticsReport.GetUserInfo();
+            string actualResult = StatisticsReport.GetDeveloperInfo();
 
             // Assert
             Assert.AreEqual(expectedResult, actualResult);

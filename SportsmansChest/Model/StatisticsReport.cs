@@ -6,7 +6,7 @@ namespace SportsmansChest.Model
 {
     public class StatisticsReport
     {
-        public static string GetUserInfo()
+        public static string GetDeveloperInfo()
         {
             SportsmansChestDeveloper user1 = new SportsmansChestDeveloper("Hunting", "Joshua");
             return user1.ShowDetails();
@@ -43,7 +43,7 @@ namespace SportsmansChest.Model
             // used the override access modifier to allow Polymorphism to be used.
             public override string ShowDetails()
             {
-                StringBuilder details = new StringBuilder("Interest: " + DeveloperInterest + ";  Name: " + Name);
+                StringBuilder details = new StringBuilder("Interest: " + DeveloperInterest + "; Name: " + Name);
 
                 return details.ToString();
             }

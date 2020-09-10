@@ -29,7 +29,7 @@ namespace SportsmansChest.View
 
             // Display the user details for Polymorphism requirement
             //StatisticsReport rep = new StatisticsReport();
-            var developerDetails = StatisticsReport.GetUserInfo();
+            var developerDetails = StatisticsReport.GetDeveloperInfo();
             DeveloperDetails.Text = developerDetails;
         }
 
