@@ -17,9 +17,10 @@ namespace SportsmansChest.View
 
         protected override void OnAppearing()
         {
-            base.OnAppearing();
+            
             username.Text = string.Empty;
             password.Text = string.Empty;
+            base.OnAppearing();
         }
 
         async void LoginButton_Clicked(System.Object sender, System.EventArgs e)
@@ -45,6 +46,9 @@ namespace SportsmansChest.View
                             App.UserLoggedIn = user.Id;
                             App.LocationTestingData();
                             App.InventoryTestingData();
+
+                            // Change this to happen without the App being open.
+                            App.DisplayNotifications();
                             await Navigation.PushAsync(new MainPage());
                             return;
                         }

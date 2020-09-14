@@ -14,6 +14,9 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="5">
+                <Label Text="Description:" FontAttributes="Bold" FontSize="Medium"/>
+                <Entry x:Name="description" Placeholder="..." FontSize="Medium"/>
+
                 <Label Text="Manufacturer:" FontAttributes="Bold" FontSize="Medium"/>
                 <Entry x:Name="manufacturer" Placeholder="..." FontSize="Medium"/>
 

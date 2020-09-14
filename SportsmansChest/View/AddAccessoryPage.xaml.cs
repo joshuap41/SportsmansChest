@@ -29,6 +29,7 @@ namespace SportsmansChest.View
             Accessory newAccessory = new Accessory
             {
                 InvItem = selectedInventoryItem.Id,
+                Description = selectedInventoryItem.Description,
                 Manufacturer = manufacturer.Text,
                 Model = model.Text,
                 SerialNumber = serialNumber.Text,
@@ -41,9 +42,9 @@ namespace SportsmansChest.View
             {
                 conn.CreateTable<Accessory>();
 
-                if (string.IsNullOrWhiteSpace(manufacturer.Text) || string.IsNullOrWhiteSpace(model.Text) ||
-                    string.IsNullOrWhiteSpace(serialNumber.Text) || string.IsNullOrWhiteSpace(declairedValue.Text) ||
-                    string.IsNullOrWhiteSpace(notes.Text))
+                if (string.IsNullOrWhiteSpace(description.Text) || string.IsNullOrWhiteSpace(manufacturer.Text) ||
+                    string.IsNullOrWhiteSpace(model.Text) || string.IsNullOrWhiteSpace(serialNumber.Text) ||
+                    string.IsNullOrWhiteSpace(declairedValue.Text))
                 {
                     await DisplayAlert("Failure", "Please enter information for all accessory fields", "OK");
                 }

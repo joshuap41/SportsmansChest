@@ -11,6 +11,7 @@ namespace SportsmansChest.Model
         public int Id { get; set; }
 
         public int CurrentUser { get; set; }
+        public string Description { get; set; }
         public string Manufacturer { get; set; }
         public string Model { get; set; }
         public string Grade { get; set; }
@@ -21,5 +22,6 @@ namespace SportsmansChest.Model
         public string Notification { get; set; }
         public string Notes { get; set; }
 
+        // Pictures... Byte?
     }
 }

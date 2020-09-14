@@ -14,13 +14,14 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="5">
+                    <Entry x:Name="description" Placeholder="Description" FontSize="Medium"/>
                     <Entry x:Name="manufacturer" Placeholder="Manufacturer" FontSize="Medium"/>
                     <Entry x:Name="model" Placeholder="Model" FontSize="Medium"/>
                     <Entry x:Name="serialNumber" Placeholder="Serial Number" FontSize="Medium"/>
                     <Entry x:Name="declairedValue" Placeholder="Declaired Value" FontSize="Medium"/>
 
                     <Editor x:Name="notes"
-                            Placeholder="Notes"
+                            Placeholder="Notes (Optional)"
                             FontSize="Medium"
                             IsSpellCheckEnabled="True"
                             IsTextPredictionEnabled="True"

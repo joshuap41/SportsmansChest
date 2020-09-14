@@ -22,6 +22,7 @@ namespace SportsmansChest.View
         {
             base.OnAppearing();
 
+            description.Text = selectedAccessory.Description;
             manufacturer.Text = selectedAccessory.Manufacturer;
             model.Text = selectedAccessory.Model;
             serialNumber.Text = selectedAccessory.SerialNumber;
@@ -36,6 +37,7 @@ namespace SportsmansChest.View
 
         async void SaveToolbarItem_Clicked(System.Object sender, System.EventArgs e)
         {
+            selectedAccessory.Description = description.Text;
             selectedAccessory.Manufacturer = manufacturer.Text;
             selectedAccessory.Model = model.Text;
             selectedAccessory.SerialNumber = serialNumber.Text;
@@ -46,9 +48,9 @@ namespace SportsmansChest.View
             {
                 conn.CreateTable<Accessory>();
 
-                if (string.IsNullOrWhiteSpace(manufacturer.Text) || string.IsNullOrWhiteSpace(model.Text) ||
-                    string.IsNullOrWhiteSpace(serialNumber.Text) || string.IsNullOrWhiteSpace(declairedValue.Text) ||
-                    string.IsNullOrWhiteSpace(notes.Text))
+                if (string.IsNullOrWhiteSpace(description.Text) || string.IsNullOrWhiteSpace(manufacturer.Text) ||
+                    string.IsNullOrWhiteSpace(model.Text) || string.IsNullOrWhiteSpace(serialNumber.Text) ||
+                    string.IsNullOrWhiteSpace(declairedValue.Text))
                 {
                     await DisplayAlert("Failure", "Please provide enter information for all accessory fields", "OK");
                 }

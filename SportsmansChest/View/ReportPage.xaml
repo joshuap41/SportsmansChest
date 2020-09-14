@@ -4,9 +4,9 @@
              x:Class="SportsmansChest.View.ReportPage"
              Title="Statistics Report">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Exit"
+        <ToolbarItem Text="Close"
                      Order="Default"
-                     Clicked="ExitToolbarItem_Clicked"/>
+                     Clicked="CloseToolbarItem_Clicked"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>

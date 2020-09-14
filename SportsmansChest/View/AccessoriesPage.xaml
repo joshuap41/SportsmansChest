@@ -18,8 +18,7 @@
                     <DataTemplate>
                         <ViewCell IsEnabled="True">
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                                <Label Text="{Binding Manufacturer}" FontSize="Medium" TextColor="Blue" VerticalOptions="Center"/>
-                                <Label Text="{Binding Model}" FontSize="Medium" TextColor="Blue" VerticalOptions="Center" Padding="8,0,0,0"/>
+                                <Label Text="{Binding Description}" FontSize="Medium" TextColor="Blue" VerticalOptions="Center"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

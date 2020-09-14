@@ -13,6 +13,13 @@
 
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
+                                    <Label Text="Description:" FontAttributes="Bold" FontSize="Medium"/>
+                                    <Label x:Name="Description" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
+                                </StackLayout>
+                            </ViewCell>
+
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
                                     <Label Text="Manufacturer:" FontAttributes="Bold" FontSize="Medium"/>
                                     <Label x:Name="Manufacturer" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
                                 </StackLayout>

@@ -28,7 +28,7 @@ namespace SportsmansChest.View
             ReportCreationDate.Text = reportCreationDate.ToString(App.dateFormat);
         }
 
-        async void ExitToolbarItem_Clicked(System.Object sender, System.EventArgs e)
+        async void CloseToolbarItem_Clicked(System.Object sender, System.EventArgs e)
         {
             await Navigation.PopModalAsync();
         }

@@ -21,6 +21,7 @@ namespace SportsmansChest.View
         {
             base.OnAppearing();
 
+            description.Text = selectedInventoryItem.Description;
             manufacturer.Text = selectedInventoryItem.Manufacturer;
             model.Text = selectedInventoryItem.Model;
             grade.SelectedItem = selectedInventoryItem.Grade;
@@ -39,6 +40,7 @@ namespace SportsmansChest.View
         async void SaveToolbarItem_Clicked(System.Object sender, System.EventArgs e)
         {
             selectedInventoryItem.Manufacturer = manufacturer.Text;
+            selectedInventoryItem.Description = description.Text;
             selectedInventoryItem.Model = model.Text;
             selectedInventoryItem.Grade = Convert.ToString(grade.SelectedItem);
             selectedInventoryItem.SerialNumber = serialNumber.Text;
@@ -51,10 +53,9 @@ namespace SportsmansChest.View
             {
                 conn.CreateTable<InventoryItem>();
 
-                if (string.IsNullOrWhiteSpace(manufacturer.Text) || string.IsNullOrWhiteSpace(model.Text) ||
+                if (string.IsNullOrWhiteSpace(description.Text) || string.IsNullOrWhiteSpace(manufacturer.Text) || string.IsNullOrWhiteSpace(model.Text) ||
                     string.IsNullOrWhiteSpace(Convert.ToString(grade.SelectedItem)) || string.IsNullOrWhiteSpace(serialNumber.Text) ||
-                    string.IsNullOrWhiteSpace(declairedValue.Text) || string.IsNullOrWhiteSpace(Convert.ToString(notification.SelectedItem)) ||
-                    string.IsNullOrWhiteSpace(notes.Text))
+                    string.IsNullOrWhiteSpace(declairedValue.Text) || string.IsNullOrWhiteSpace(Convert.ToString(notification.SelectedItem)))
                 {
                     await DisplayAlert("Failure", "Please enter information for all item fields", "OK");
                 }

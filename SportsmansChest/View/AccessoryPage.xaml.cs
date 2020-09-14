@@ -19,6 +19,7 @@ namespace SportsmansChest.View
 
         protected override void OnAppearing()
         {
+            Description.Text = selectedAccessory.Description;
             Manufacturer.Text = selectedAccessory.Manufacturer;
             Model.Text = selectedAccessory.Model;
             SerialNumnber.Text = selectedAccessory.SerialNumber;

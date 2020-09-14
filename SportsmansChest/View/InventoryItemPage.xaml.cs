@@ -19,6 +19,7 @@ namespace SportsmansChest.View
 
         protected override void OnAppearing()
         {
+            Description.Text = selectedInventoryItem.Description;
             Manufacturer.Text = selectedInventoryItem.Manufacturer;
             Model.Text = selectedInventoryItem.Model;
             Grade.Text = selectedInventoryItem.Grade;

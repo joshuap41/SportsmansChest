@@ -25,6 +25,7 @@ namespace SportsmansChest.View
             InventoryItem newItem = new InventoryItem
             {
                 CurrentUser = App.UserLoggedIn,
+                Description = description.Text,
                 Manufacturer = manufacturer.Text,
                 Model = model.Text,
                 Grade = Convert.ToString(grade.SelectedItem),
@@ -40,10 +41,9 @@ namespace SportsmansChest.View
             {
                 conn.CreateTable<InventoryItem>();
 
-                if (string.IsNullOrWhiteSpace(manufacturer.Text) || string.IsNullOrWhiteSpace(model.Text) ||
+                if (string.IsNullOrWhiteSpace(description.Text) || string.IsNullOrWhiteSpace(manufacturer.Text) || string.IsNullOrWhiteSpace(model.Text) ||
                     string.IsNullOrWhiteSpace(Convert.ToString(grade.SelectedItem)) || string.IsNullOrWhiteSpace(serialNumber.Text) ||
-                    string.IsNullOrWhiteSpace(declairedValue.Text) || string.IsNullOrWhiteSpace(Convert.ToString(notification.SelectedItem)) ||
-                    string.IsNullOrWhiteSpace(notes.Text))
+                    string.IsNullOrWhiteSpace(declairedValue.Text) || string.IsNullOrWhiteSpace(Convert.ToString(notification.SelectedItem)))
                 {
                     await DisplayAlert("Failure", "Please enter information for all item fields", "OK");
                 }

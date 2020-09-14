@@ -6,6 +6,7 @@ using SportsmansChest.Model;
 using SportsmansChest.View;
 using System.Linq;
 using SQLite;
+using Plugin.LocalNotifications;
 using System.Diagnostics;
 
 namespace SportsmansChest
@@ -196,6 +197,78 @@ namespace SportsmansChest
 
                 }
             }
+        }
+
+        public static void DisplayNotifications()
+        {
+            bool invAppOpening = true;
+            bool locAppOpening = true;
+
+            // Notifications
+            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+            {
+                conn.CreateTable<InventoryItem>();
+                var itemsList = conn.Table<InventoryItem>().ToList();
+
+                conn.CreateTable<LocationDb>();
+                var locations = conn.Table<LocationDb>().ToList();
+
+                try
+                {
+                    if (invAppOpening)
+                    {
+                        var itemId = 0;
+                        invAppOpening = false;
+
+                        foreach (InventoryItem inventoryItem in itemsList)
+                        {
+                            itemId++;
+                            if (inventoryItem.Notification == "Enabled")
+                            {
+                                if (inventoryItem.MaintenanceDate == DateTime.Today)
+                                {
+                                    if (inventoryItem.CurrentUser == App.UserLoggedIn)
+                                    {
+                                        // need a "nickName for the individual items to further decifer each one
+                                        CrossLocalNotifications.Current.Show("Notification Received", $"Inventory Item: {inventoryItem.Manufacturer} needs maintenance today.", itemId);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    if (locAppOpening)
+                    {
+                        var locationId = 0;
+                        locAppOpening = false;
+
+                        foreach (LocationDb location in locations)
+                        {
+                            locationId++;
+                            if (location.Notification == "Enabled")
+                            {
+                                if (location.ReturnDate == DateTime.Today)
+                                {
+                                    if (location.CurrentUser == App.UserLoggedIn)
+                                    {
+                                        CrossLocalNotifications.Current.Show("Notification Received", $"Location: {location.LocationName} needs to be visited today", locationId);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    DisplayAlert("Failure", "Notifications failed to be displayed", "Ok");
+                }
+            }
+        }
+
+        // Need to test this somehow
+        private static void DisplayAlert(string v1, string v2, string v3)
+        {
+            throw new NotImplementedException();
         }
     }
 }

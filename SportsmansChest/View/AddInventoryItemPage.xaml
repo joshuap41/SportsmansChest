@@ -14,6 +14,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="5">
+                <Entry x:Name="description" Placeholder="Item Description" FontSize="Medium"/>
                 <Entry x:Name="manufacturer" Placeholder="Manufacturer Name" FontSize="Medium"/>
                 <Entry x:Name="model" Placeholder="Model" FontSize="Medium"/>
                 
@@ -42,7 +43,7 @@
                 </Picker>
                 
                 <Editor x:Name="notes"
-                        Placeholder="Notes"
+                        Placeholder="Notes (Optional)"
                         FontSize="Medium"
                         IsSpellCheckEnabled="True"
                         IsTextPredictionEnabled="True"
