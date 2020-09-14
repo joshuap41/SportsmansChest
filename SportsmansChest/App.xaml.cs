@@ -129,6 +129,20 @@ namespace SportsmansChest
                         Notes = "This testing data is for the assessor and is created at the login page with any new user created that doesn't contain any data"
                     };
                     conn.Insert(newLocaiton);
+
+                    LocationDb newLocaiton2 = new LocationDb()
+                    {
+                        CurrentUser = UserLoggedIn,
+                        LocationName = "Favorite Hunting Spot 2",
+                        Longitude = -84.317241,
+                        Latitude = 34.736907,
+                        EventType = "Hunting",
+                        CreatedDate = DateTime.Today,
+                        ReturnDate = DateTime.Today,
+                        Notification = "Enabled",
+                        Notes = "This testing data is for the assessor and is created at the login page with any new user created that doesn't contain any data"
+                    };
+                    conn.Insert(newLocaiton2);
                 }
             }
         }
@@ -170,6 +184,7 @@ namespace SportsmansChest
                     InventoryItem newItem = new InventoryItem()
                     {
                         CurrentUser = UserLoggedIn,
+                        Description = "First Gun",
                         Manufacturer = "Browning",
                         Model = "CB16",
                         Grade = "Standard",
@@ -183,8 +198,26 @@ namespace SportsmansChest
                     };
                     conn.Insert(newItem);
 
+                    InventoryItem newItem2 = new InventoryItem()
+                    {
+                        CurrentUser = UserLoggedIn,
+                        Description = "First Gun 2",
+                        Manufacturer = "Browning",
+                        Model = "CB16",
+                        Grade = "Standard",
+                        SerialNumber = "589764",
+                        DeclairedValue = "500.00",
+                        CreatedDate = DateTime.Today,
+                        MaintenanceDate = DateTime.Today,
+                        Notification = "Enabled",
+                        Notes = "This testing data is for the assessor and is created at the login page with any new user created that doesn't contain any data"
+
+                    };
+                    conn.Insert(newItem2);
+
                     Accessory newAccessory = new Accessory()
                     {
+                        Description = "First Scope",
                         Manufacturer = "AR",
                         Model = "95c",
                         SerialNumber = "89352413",
@@ -195,6 +228,18 @@ namespace SportsmansChest
                     };
                     conn.Insert(newAccessory);
 
+                    Accessory newAccessory2 = new Accessory()
+                    {
+                        Description = "First Scope 2",
+                        Manufacturer = "AR",
+                        Model = "95c",
+                        SerialNumber = "89352413",
+                        DeclairedValue = "200.00",
+                        CreatedDate = DateTime.Today,
+                        Notes = "This testing data is for the assessor and is created at the login page with any new user created that doesn't contain any data",
+                        InvItem = newItem.Id
+                    };
+                    conn.Insert(newAccessory2);
                 }
             }
         }
@@ -269,6 +314,51 @@ namespace SportsmansChest
         private static void DisplayAlert(string v1, string v2, string v3)
         {
             throw new NotImplementedException();
+        }
+
+        public static void DeleteAlInventoryItems()
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+            {
+                conn.CreateTable<InventoryItem>();
+
+                var rowsBefore = conn.Table<InventoryItem>().Count();
+
+                conn.Execute("DELETE FROM InventoryItem");
+
+                var rowsAfter = conn.Table<InventoryItem>().Count();
+
+            }
+        }
+
+        public static void DeleteAllAccessories()
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+            {
+                conn.CreateTable<Accessory>();
+
+                var rowsBefore = conn.Table<Accessory>().Count();
+
+                conn.Execute("DELETE FROM Accessory");
+
+                var rowsAfter = conn.Table<Accessory>().Count();
+
+            }
+        }
+
+        public static void DeleteAllLocations()
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+            {
+                conn.CreateTable<LocationDb>();
+
+                var rowsBefore = conn.Table<LocationDb>().Count();
+
+                conn.Execute("DELETE FROM LocationDb");
+
+                var rowsAfter = conn.Table<LocationDb>().Count();
+
+            }
         }
     }
 }

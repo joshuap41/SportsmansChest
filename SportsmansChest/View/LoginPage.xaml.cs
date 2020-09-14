@@ -17,9 +17,9 @@ namespace SportsmansChest.View
 
         protected override void OnAppearing()
         {
-            
-            username.Text = string.Empty;
-            password.Text = string.Empty;
+            // Uncomment the below prior to deploying the App.
+            //username.Text = string.Empty;
+            //password.Text = string.Empty;
             base.OnAppearing();
         }
 
@@ -42,7 +42,15 @@ namespace SportsmansChest.View
 
                         if (user.UserName == username.Text && user.UserPassword == password.Text)
                         {
+                            
                             userExists = true;
+
+                            // Delete all App data and remove before publishing
+                            App.DeleteAlInventoryItems();
+                            App.DeleteAllAccessories();
+                            App.DeleteAllLocations();
+                            // Delete the above ^^^^^^^^^^^^^^^^^^^^
+
                             App.UserLoggedIn = user.Id;
                             App.LocationTestingData();
                             App.InventoryTestingData();

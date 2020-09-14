@@ -27,6 +27,7 @@ namespace SportsmansChest.View.SportingLocationsViews
 
                 var userLocations = (from LocationDb in locations
                                  where LocationDb.CurrentUser == App.UserLoggedIn
+                                 orderby LocationDb.LocationName
                                  select LocationDb).ToList();
 
                 LocationListView.ItemsSource = userLocations;
@@ -49,7 +50,9 @@ namespace SportsmansChest.View.SportingLocationsViews
                 {
                     var defaultLocations = (from Location in location
                                             where Location.CurrentUser == App.UserLoggedIn
+                                            orderby Location.LocationName
                                             select Location).ToList();
+
                     LocationListView.ItemsSource = defaultLocations;
                 }
                 else
@@ -58,6 +61,7 @@ namespace SportsmansChest.View.SportingLocationsViews
                                          where (Location.LocationName.ToUpper().StartsWith(e.NewTextValue.ToUpper())) &&
                                          (Location.CurrentUser == App.UserLoggedIn)
                                          select Location).ToList();
+
                     LocationListView.ItemsSource = foundLocation;
                 }
             }

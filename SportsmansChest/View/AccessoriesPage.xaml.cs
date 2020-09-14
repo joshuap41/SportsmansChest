@@ -31,6 +31,7 @@ namespace SportsmansChest.View
                 //sifting for correct accessory for the item
                 var createdAccessoryList = (from accessory in accessoryTable
                                             where accessory.InvItem == selectedInventoryItem.Id
+                                            orderby accessory.Description
                                             select accessory).ToList();
 
                 AccessoriesListView.ItemsSource = createdAccessoryList;
@@ -61,13 +62,14 @@ namespace SportsmansChest.View
                 {
                     var defaultAccessories = (from Accessory in associatedAccessories
                                               where Accessory.InvItem == selectedInventoryItem.Id
+                                              orderby Accessory.Description
                                               select Accessory).ToList();
                     AccessoriesListView.ItemsSource = defaultAccessories;
                 }
                 else
                 {
                     var foundAccessories = (from Accessory in associatedAccessories
-                                      where (Accessory.Manufacturer.ToUpper().StartsWith(e.NewTextValue.ToUpper())) &&
+                                      where (Accessory.Description.ToUpper().StartsWith(e.NewTextValue.ToUpper())) &&
                                       (Accessory.InvItem == selectedInventoryItem.Id)
                                       select Accessory).ToList();
                     AccessoriesListView.ItemsSource = foundAccessories;

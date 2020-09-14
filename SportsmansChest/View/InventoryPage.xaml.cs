@@ -32,7 +32,10 @@ namespace SportsmansChest.View
 
                 var userItems = (from InventoryItem in items
                                  where InventoryItem.CurrentUser == App.UserLoggedIn
+                                 orderby InventoryItem.Description
                                  select InventoryItem).ToList();
+
+                //var decendingItems = userItems.OrderBy(i => i.Description);
 
                 itemListView.ItemsSource = userItems;
             }
@@ -62,6 +65,7 @@ namespace SportsmansChest.View
                 {
                     var defaultItems = (from Inventory in items
                                         where Inventory.CurrentUser == App.UserLoggedIn
+                                        orderby Inventory.Description
                                         select Inventory).ToList();
 
                     itemListView.ItemsSource = defaultItems;
@@ -69,7 +73,7 @@ namespace SportsmansChest.View
                 else
                 {
                     var foundItems = (from InventoryItem in items
-                                      where (InventoryItem.Manufacturer.ToUpper().StartsWith(e.NewTextValue.ToUpper())) &&
+                                      where (InventoryItem.Description.ToUpper().StartsWith(e.NewTextValue.ToUpper())) &&
                                       (InventoryItem.CurrentUser == App.UserLoggedIn)
                                       select InventoryItem).ToList();
                     itemListView.ItemsSource = foundItems;

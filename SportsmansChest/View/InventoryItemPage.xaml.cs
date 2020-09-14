@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Linq;
 using Xamarin.Forms;
 using SQLite;
 using SportsmansChest.Model;
@@ -48,11 +48,38 @@ namespace SportsmansChest.View
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
                 conn.CreateTable<InventoryItem>();
+                conn.CreateTable<Accessory>();
+                var accessory = conn.Table<Accessory>().ToList();
 
                 var confirmationAccept = await DisplayAlert("Delete", "Delete this item?", "Yes", "No");
                 if (confirmationAccept)
                 {
                     conn.Delete(selectedInventoryItem);
+
+                    // still not working for some reason - Latest attempt
+                    
+                    //var howMany = conn.Execute($"DELETE FROM Accessory WHERE InvItem = '{selectedInventoryItem.Id}'");
+                    //var howManyAfter = conn.Execute($"SELECT * FROM Accessory WHERE InvItem = '{selectedInventoryItem.Id}'");
+
+                    // Notes
+                    //var courseList = await _connection.QueryAsync<Course>($"SELECT * FROM Courses WHERE Term = '{_currentTerm.Id}'");
+                    //DELETE FROM Customers WHERE CustomerName = 'Alfreds Futterkiste';
+
+
+                    // An "Id" somehow needs to be extracted from the list or iterate through it and delete each item
+                    //var associatedItems = (from Accessory in accessory
+                    //                       where Accessory.InvItem == selectedInventoryItem.Id
+                    //                       select Accessory).ToList();
+
+                    //var rowsBefore = associatedItems.Count();
+
+                    //if (rowsBefore > 0)
+                    //{
+                    //    conn.Delete(associatedItems);
+                    //}
+
+                    //var rowsAfter = associatedItems.Count();
+
                     await Navigation.PopAsync();
                 }
             }
