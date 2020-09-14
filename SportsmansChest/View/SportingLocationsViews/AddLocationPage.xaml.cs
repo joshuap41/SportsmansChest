@@ -51,7 +51,7 @@ namespace SportsmansChest.View.SportingLocationsViews
                     {
                         CurrentUser = App.UserLoggedIn,
                         LocationName = locationName.Text,
-                        Longitude = Convert.ToDouble(latitude.Text),
+                        Longitude = Convert.ToDouble(longitude.Text),
                         Latitude = Convert.ToDouble(latitude.Text),
                         EventType = Convert.ToString(eventTypePicker.SelectedItem),
                         CreatedDate = DateTime.Now,
@@ -60,7 +60,7 @@ namespace SportsmansChest.View.SportingLocationsViews
                         Notes = notes.Text
                     };
                     conn.Insert(newLocation);
-                    await DisplayAlert("Success", "Item successfully created", "OK");
+                    await DisplayAlert("Success", "Location successfully created", "OK");
                     await Navigation.PopModalAsync();
                 }
             }

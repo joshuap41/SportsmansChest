@@ -125,7 +125,7 @@ namespace SportsmansChest
                         CreatedDate = DateTime.Today,
                         ReturnDate = DateTime.Today,
                         Notification = "Enabled",
-                        Notes = "This testing data is for the assessor and will appear at the login page with any new user created"
+                        Notes = "This testing data is for the assessor and is created at the login page with any new user created that doesn't contain any data"
                     };
                     conn.Insert(newLocaiton);
                 }
@@ -177,7 +177,7 @@ namespace SportsmansChest
                         CreatedDate = DateTime.Today,
                         MaintenanceDate = DateTime.Today,
                         Notification = "Enabled",
-                        Notes = "This testing data is for the assessor and will appear at the login page with any new user created"
+                        Notes = "This testing data is for the assessor and is created at the login page with any new user created that doesn't contain any data"
 
                     };
                     conn.Insert(newItem);
@@ -189,7 +189,7 @@ namespace SportsmansChest
                         SerialNumber = "89352413",
                         DeclairedValue = "200.00",
                         CreatedDate = DateTime.Today,
-                        Notes = "This testing data is for the assessor and will appear at the login page with any new user created",
+                        Notes = "This testing data is for the assessor and is created at the login page with any new user created that doesn't contain any data",
                         InvItem = newItem.Id
                     };
                     conn.Insert(newAccessory);

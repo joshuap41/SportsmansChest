@@ -26,11 +26,6 @@ namespace SportsmansChest.View
             //Displays the Report run date
             var reportCreationDate = DateTime.Now;
             ReportCreationDate.Text = reportCreationDate.ToString(App.dateFormat);
-
-            // Display the user details for Polymorphism requirement
-            //StatisticsReport rep = new StatisticsReport();
-            var developerDetails = StatisticsReport.GetDeveloperInfo();
-            DeveloperDetails.Text = developerDetails;
         }
 
         async void ExitToolbarItem_Clicked(System.Object sender, System.EventArgs e)
