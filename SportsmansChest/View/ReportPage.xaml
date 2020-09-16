@@ -29,6 +29,13 @@
 
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
+                            <Label Text="All Saved Accessories" FontAttributes="Bold" FontSize="Medium"/>
+                            <Label x:Name="AllSavedAccessories" Visual="Material" Padding="0,3,0,4"/>
+                        </StackLayout>
+                    </ViewCell>
+
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
                             <Label Text="Unique Item Manufacturers: " FontAttributes="Bold" FontSize="Medium"/>
                             <Label x:Name="UniqueItemManufacturers" Visual="Material" Padding="0,3,0,4"/>
                         </StackLayout>

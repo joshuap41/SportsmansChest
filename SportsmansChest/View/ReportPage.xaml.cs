@@ -22,10 +22,16 @@ namespace SportsmansChest.View
             // total created locations
             var totalLocationCount = App.TotalLocationCount();
             TotalLocationCount.Text = totalLocationCount.ToString();
+
+            // All Accessories.
+            var allAccessories = App.AllAccessories();
+            AllSavedAccessories.Text = allAccessories.ToString();
             
             //Displays the Report run date
             var reportCreationDate = DateTime.Now;
             ReportCreationDate.Text = reportCreationDate.ToString(App.dateFormat);
+
+            
         }
 
         async void CloseToolbarItem_Clicked(System.Object sender, System.EventArgs e)

@@ -85,6 +85,24 @@ namespace SportsmansChest
             }
         }
 
+        public static int AllAccessories()
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(DatabaseLocation))
+            {
+                conn.CreateTable<Accessory>();
+
+                var inventoryList = conn.Table<Accessory>().ToList().Count();
+
+                //var userItems = (from InventoryItem in inventoryList
+                //                 where InventoryItem.CurrentUser == App.UserLoggedIn
+                //                 select InventoryItem).ToList();
+
+                //var inventoryItemCount = userItems.Count();
+
+                return inventoryList;
+            }
+        }
+
         public static int TotalLocationCount()
         {
             using (SQLiteConnection conn = new SQLiteConnection(DatabaseLocation))
@@ -144,23 +162,6 @@ namespace SportsmansChest
                     };
                     conn.Insert(newLocaiton2);
                 }
-            }
-        }
-
-        public static void UserForTesting()
-        {
-            using (SQLiteConnection conn = new SQLiteConnection(DatabaseLocation))
-            {
-                conn.CreateTable<User>();
-                var testUser = conn.Table<User>().ToList();
-
-                User newUser = new User()
-                {
-                    Id = 1,
-                    UserName = "test",
-                    UserPassword = "test"
-                };
-                conn.Insert(newUser);
             }
         }
 
@@ -237,7 +238,7 @@ namespace SportsmansChest
                         DeclairedValue = "200.00",
                         CreatedDate = DateTime.Today,
                         Notes = "This testing data is for the assessor and is created at the login page with any new user created that doesn't contain any data",
-                        InvItem = newItem.Id
+                        InvItem = newItem2.Id
                     };
                     conn.Insert(newAccessory2);
                 }
@@ -310,7 +311,7 @@ namespace SportsmansChest
             }
         }
 
-        // Need to test this somehow
+        // Need to test.
         private static void DisplayAlert(string v1, string v2, string v3)
         {
             throw new NotImplementedException();
@@ -360,5 +361,7 @@ namespace SportsmansChest
 
             }
         }
+
+        
     }
 }
