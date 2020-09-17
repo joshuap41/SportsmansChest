@@ -27,7 +27,7 @@
                 <Entry x:Name="serialNumber" Placeholder="..." FontSize="Medium"/>
                 
                 <Label Text="Declaired Value:" FontAttributes="Bold" FontSize="Medium"/>
-                <Entry x:Name="declairedValue" Placeholder="..." FontSize="Medium"/>
+                <Entry x:Name="declairedValue" Placeholder="..." FontSize="Medium" Keyboard="Numeric" TextChanged="DeclairedValue_TextChanged"/>
                 
                 <!--Editor allows "AutoSize" which allows all text to be seen in the form-->
                 <Label Text="Notes:" FontAttributes="Bold" FontSize="Medium"/>

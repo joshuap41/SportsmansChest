@@ -40,7 +40,7 @@
 
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
-                                    <Label Text="Declaired Value:" FontAttributes="Bold" FontSize="Medium"/>
+                                    <Label Text="Declaired Value: $" FontAttributes="Bold" FontSize="Medium"/>
                                     <Label x:Name="DeclairedValue" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
                                 </StackLayout>
                             </ViewCell>

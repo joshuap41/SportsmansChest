@@ -28,7 +28,7 @@
                 </Picker>
                 
                 <Entry x:Name="serialNumber" Placeholder="Serial Number" FontSize="Medium"/>
-                <Entry x:Name="declairedValue" Placeholder="Declaired Value" FontSize="Medium"/>
+                <Entry x:Name="declairedValue" Placeholder="Declaired Value" FontSize="Medium" Keyboard="Numeric" TextChanged="DeclairedValue_TextChanged"/>
 
                 <StackLayout Orientation="Horizontal" Padding="5, 10, 5, 10">
                     <Label Text="Maintenance Date:" FontAttributes="Bold" FontSize="Medium" Padding="0,10,0,0"/>

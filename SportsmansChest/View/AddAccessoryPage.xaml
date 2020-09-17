@@ -18,7 +18,7 @@
                     <Entry x:Name="manufacturer" Placeholder="Manufacturer" FontSize="Medium"/>
                     <Entry x:Name="model" Placeholder="Model" FontSize="Medium"/>
                     <Entry x:Name="serialNumber" Placeholder="Serial Number" FontSize="Medium"/>
-                    <Entry x:Name="declairedValue" Placeholder="Declaired Value" FontSize="Medium"/>
+                    <Entry x:Name="declairedValue" Placeholder="Declaired Value" FontSize="Medium" Keyboard="Numeric" TextChanged="DeclairedValue_TextChanged"/>
 
                     <Editor x:Name="notes"
                             Placeholder="Notes (Optional)"

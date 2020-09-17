@@ -55,5 +55,18 @@ namespace SportsmansChest.View
                 }
             }
         }
+
+        async private void DeclairedValue_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //lets the Entry be empty
+            if (string.IsNullOrEmpty(e.NewTextValue)) return;
+
+            if (!double.TryParse(e.NewTextValue, out double value))
+            {
+                await DisplayAlert("Data Entry Error", "Please enter a numeric value.", "OK");
+                ((Entry)sender).Text = e.OldTextValue;
+            }
+
+        }
     }
 }

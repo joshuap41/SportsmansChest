@@ -38,7 +38,7 @@
                 <Entry x:Name="serialNumber" Placeholder="..." FontSize="Medium"/>
                 
                 <Label Text="Declaired Value:" FontAttributes="Bold" FontSize="Medium"/>
-                <Entry x:Name="declairedValue" Placeholder="..." FontSize="Medium"/>
+                <Entry x:Name="declairedValue" Placeholder="..." FontSize="Medium" Keyboard="Numeric" TextChanged="DeclairedValue_TextChanged"/>
 
                 <!--DatePicker-->
                 <StackLayout Orientation="Horizontal" Padding="0,10,4,0">
