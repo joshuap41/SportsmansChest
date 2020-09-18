@@ -37,15 +37,10 @@
                 <Label Text="Serial Number:" FontAttributes="Bold" FontSize="Medium"/>
                 <Entry x:Name="serialNumber" Placeholder="..." FontSize="Medium"/>
                 
-<<<<<<< HEAD
-                <Label Text="Declaired Value:" FontAttributes="Bold" FontSize="Medium"/>
-                <Entry x:Name="declairedValue" Placeholder="..." FontSize="Medium" Keyboard="Numeric" TextChanged="DeclairedValue_TextChanged"/>
-=======
                 <Label Text="Declared Value:" FontAttributes="Bold" FontSize="Medium"/>
-                <Entry x:Name="declaredValue" Placeholder="..." FontSize="Medium"/>
->>>>>>> 1aaa8db... Added "SHARE" feature to all details pages and fixed wording along the way.
+                <Entry x:Name="declaredValue" Placeholder="..." FontSize="Medium" Keyboard="Numeric" TextChanged="DeclaredValue_TextChanged"/>
 
-                <!--DatePicker-->
+                    <!--DatePicker-->
                 <StackLayout Orientation="Horizontal" Padding="0,10,4,0">
                     <Label Text="Maintenance Date:" FontAttributes="Bold" FontSize="Medium" Padding="0,5,0,0"/>
                     <DatePicker x:Name="maintenanceDate"/>

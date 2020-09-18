@@ -26,17 +26,13 @@
                         <x:String>N/A</x:String>
                     </Picker.Items>
                 </Picker>
-                
+
                 <Entry x:Name="serialNumber" Placeholder="Serial Number" FontSize="Medium"/>
-<<<<<<< HEAD
-                <Entry x:Name="declairedValue" Placeholder="Declaired Value" FontSize="Medium" Keyboard="Numeric" TextChanged="DeclairedValue_TextChanged"/>
-=======
-                <Entry x:Name="declaredValue" Placeholder="Declared Value" FontSize="Medium"/>
->>>>>>> 1aaa8db... Added "SHARE" feature to all details pages and fixed wording along the way.
+                <Entry x:Name="declaredValue" Placeholder="Declared Value" FontSize="Medium" Keyboard="Numeric" TextChanged="DeclaredValue_TextChanged"/>
 
                 <StackLayout Orientation="Horizontal" Padding="5, 10, 5, 10">
-                    <Label Text="Maintenance Date:" FontAttributes="Bold" FontSize="Medium" Padding="0,10,0,0"/>
-                    <DatePicker x:Name="maintenanceDate" FontSize="Medium" HorizontalOptions="Center"/>
+                <Label Text="Maintenance Date:" FontAttributes="Bold" FontSize="Medium" Padding="0,10,0,0"/>
+                <DatePicker x:Name="maintenanceDate" FontSize="Medium" HorizontalOptions="Center"/>
                 </StackLayout>
 
                 <Picker Title="Enable Maintenance Notifications" x:Name="notification" HorizontalOptions="StartAndExpand" WidthRequest="500" FontSize="Medium">

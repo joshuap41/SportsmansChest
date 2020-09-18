@@ -53,13 +53,8 @@
 
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
-<<<<<<< HEAD
-                                    <Label Text="Declaired Value: $" FontAttributes="Bold" FontSize="Medium"/>
-                                    <Label x:Name="DeclairedValue" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
-=======
-                                    <Label Text="Declared Value:" FontAttributes="Bold" FontSize="Medium"/>
+                                    <Label Text="Declared Value: $" FontAttributes="Bold" FontSize="Medium"/>
                                     <Label x:Name="DeclaredValue" FontSize="Small" HorizontalOptions="StartAndExpand" Padding="10,5,0,0"/>
->>>>>>> 1aaa8db... Added "SHARE" feature to all details pages and fixed wording along the way.
                                 </StackLayout>
                             </ViewCell>
 

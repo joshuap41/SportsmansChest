@@ -58,7 +58,7 @@ namespace SportsmansChest.View
             }
         }
 
-        async private void DeclairedValue_TextChanged(object sender, TextChangedEventArgs e)
+        async private void DeclaredValue_TextChanged(object sender, TextChangedEventArgs e)
         {
             //lets the Entry be empty
             if (string.IsNullOrEmpty(e.NewTextValue)) return;

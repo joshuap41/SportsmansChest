@@ -85,7 +85,6 @@ namespace SportsmansChest.View.SportingLocationsViews
                 Subject = "Sporting Location Information",
                 Text = sb.ToString(),
                 Title = "Share your notes on the course"
-
             });
         }
     }
