@@ -33,7 +33,7 @@ namespace SportsmansChest.View
                 Manufacturer = manufacturer.Text,
                 Model = model.Text,
                 SerialNumber = serialNumber.Text,
-                DeclairedValue = declairedValue.Text,
+                DeclaredValue = declaredValue.Text,
                 CreatedDate = DateTime.Now,
                 Notes = notes.Text
             };
@@ -44,7 +44,7 @@ namespace SportsmansChest.View
 
                 if (string.IsNullOrWhiteSpace(description.Text) || string.IsNullOrWhiteSpace(manufacturer.Text) ||
                     string.IsNullOrWhiteSpace(model.Text) || string.IsNullOrWhiteSpace(serialNumber.Text) ||
-                    string.IsNullOrWhiteSpace(declairedValue.Text))
+                    string.IsNullOrWhiteSpace(declaredValue.Text))
                 {
                     await DisplayAlert("Failure", "Please enter information for all accessory fields", "OK");
                 }

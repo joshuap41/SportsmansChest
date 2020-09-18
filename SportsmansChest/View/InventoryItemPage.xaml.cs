@@ -4,6 +4,8 @@ using System.Linq;
 using Xamarin.Forms;
 using SQLite;
 using SportsmansChest.Model;
+using Xamarin.Essentials;
+using System.Text;
 
 namespace SportsmansChest.View
 {
@@ -24,7 +26,7 @@ namespace SportsmansChest.View
             Model.Text = selectedInventoryItem.Model;
             Grade.Text = selectedInventoryItem.Grade;
             SerialNumnber.Text = selectedInventoryItem.SerialNumber;
-            DeclairedValue.Text = selectedInventoryItem.DeclairedValue;
+            DeclaredValue.Text = selectedInventoryItem.DeclaredValue;
             CreatedDate.Text = selectedInventoryItem.CreatedDate.ToString(App.dateFormat);
             MaintenanceDate.Text = selectedInventoryItem.MaintenanceDate.ToString(App.dateFormat);
             Notification.Text = selectedInventoryItem.Notification;
@@ -62,6 +64,30 @@ namespace SportsmansChest.View
                     await Navigation.PopAsync();
                 }
             }
+        }
+
+        async void Share_Clicked(System.Object sender, System.EventArgs e)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("Saved Inventory Item Information from the Sportsman's Chest Mobile Application.");
+            sb.AppendLine($"");
+            sb.AppendLine($"Description:  {Description.Text}");
+            sb.AppendLine($"Manufacturer:  {Manufacturer.Text}");
+            sb.AppendLine($"Model:  {Model.Text}");
+            sb.AppendLine($"Grade:  {Grade.Text}");
+            sb.AppendLine($"Serial Number:  {SerialNumnber.Text}");
+            sb.AppendLine($"Declared Value : $ {DeclaredValue.Text}");
+            sb.AppendLine($"Created Date:  {CreatedDate.Text}");
+            sb.AppendLine($"Maintenance Date:  {MaintenanceDate.Text}");
+            sb.AppendLine($"Notes:  {Notes.Text}");
+
+            await Share.RequestAsync(new ShareTextRequest
+            {
+                Subject = "Inventory Item Information",
+                Text = sb.ToString(),
+                Title = "Share your notes on the course"
+
+            });
         }
     }
 }

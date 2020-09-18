@@ -26,7 +26,7 @@ namespace SportsmansChest.View
             model.Text = selectedInventoryItem.Model;
             grade.SelectedItem = selectedInventoryItem.Grade;
             serialNumber.Text = selectedInventoryItem.SerialNumber;
-            declairedValue.Text = selectedInventoryItem.DeclairedValue;
+            declaredValue.Text = selectedInventoryItem.DeclaredValue;
             maintenanceDate.Date = selectedInventoryItem.MaintenanceDate;
             notification.SelectedItem = selectedInventoryItem.Notification;
             notes.Text = selectedInventoryItem.Notes;
@@ -44,7 +44,7 @@ namespace SportsmansChest.View
             selectedInventoryItem.Model = model.Text;
             selectedInventoryItem.Grade = Convert.ToString(grade.SelectedItem);
             selectedInventoryItem.SerialNumber = serialNumber.Text;
-            selectedInventoryItem.DeclairedValue = declairedValue.Text;
+            selectedInventoryItem.DeclaredValue = declaredValue.Text;
             selectedInventoryItem.MaintenanceDate = maintenanceDate.Date;
             selectedInventoryItem.Notification = Convert.ToString(notification.SelectedItem);
             selectedInventoryItem.Notes = notes.Text;
@@ -55,7 +55,7 @@ namespace SportsmansChest.View
 
                 if (string.IsNullOrWhiteSpace(description.Text) || string.IsNullOrWhiteSpace(manufacturer.Text) || string.IsNullOrWhiteSpace(model.Text) ||
                     string.IsNullOrWhiteSpace(Convert.ToString(grade.SelectedItem)) || string.IsNullOrWhiteSpace(serialNumber.Text) ||
-                    string.IsNullOrWhiteSpace(declairedValue.Text) || string.IsNullOrWhiteSpace(Convert.ToString(notification.SelectedItem)))
+                    string.IsNullOrWhiteSpace(declaredValue.Text) || string.IsNullOrWhiteSpace(Convert.ToString(notification.SelectedItem)))
                 {
                     await DisplayAlert("Failure", "Please enter information for all item fields", "OK");
                 }

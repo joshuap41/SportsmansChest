@@ -26,8 +26,13 @@
                 <Label Text="Serial Number:" FontAttributes="Bold" FontSize="Medium"/>
                 <Entry x:Name="serialNumber" Placeholder="..." FontSize="Medium"/>
                 
+<<<<<<< HEAD
                 <Label Text="Declaired Value:" FontAttributes="Bold" FontSize="Medium"/>
                 <Entry x:Name="declairedValue" Placeholder="..." FontSize="Medium" Keyboard="Numeric" TextChanged="DeclairedValue_TextChanged"/>
+=======
+                <Label Text="Declared Value:" FontAttributes="Bold" FontSize="Medium"/>
+                <Entry x:Name="declaredValue" Placeholder="..." FontSize="Medium"/>
+>>>>>>> 1aaa8db... Added "SHARE" feature to all details pages and fixed wording along the way.
                 
                 <!--Editor allows "AutoSize" which allows all text to be seen in the form-->
                 <Label Text="Notes:" FontAttributes="Bold" FontSize="Medium"/>

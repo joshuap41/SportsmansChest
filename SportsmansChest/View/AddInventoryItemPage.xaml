@@ -28,7 +28,11 @@
                 </Picker>
                 
                 <Entry x:Name="serialNumber" Placeholder="Serial Number" FontSize="Medium"/>
+<<<<<<< HEAD
                 <Entry x:Name="declairedValue" Placeholder="Declaired Value" FontSize="Medium" Keyboard="Numeric" TextChanged="DeclairedValue_TextChanged"/>
+=======
+                <Entry x:Name="declaredValue" Placeholder="Declared Value" FontSize="Medium"/>
+>>>>>>> 1aaa8db... Added "SHARE" feature to all details pages and fixed wording along the way.
 
                 <StackLayout Orientation="Horizontal" Padding="5, 10, 5, 10">
                     <Label Text="Maintenance Date:" FontAttributes="Bold" FontSize="Medium" Padding="0,10,0,0"/>

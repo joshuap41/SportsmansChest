@@ -30,7 +30,7 @@ namespace SportsmansChest.View
                 Model = model.Text,
                 Grade = Convert.ToString(grade.SelectedItem),
                 SerialNumber = serialNumber.Text,
-                DeclairedValue = declairedValue.Text,
+                DeclaredValue = declaredValue.Text,
                 MaintenanceDate = maintenanceDate.Date,
                 CreatedDate = DateTime.Now,
                 Notification = Convert.ToString(notification.SelectedItem),
@@ -43,7 +43,7 @@ namespace SportsmansChest.View
 
                 if (string.IsNullOrWhiteSpace(description.Text) || string.IsNullOrWhiteSpace(manufacturer.Text) || string.IsNullOrWhiteSpace(model.Text) ||
                     string.IsNullOrWhiteSpace(Convert.ToString(grade.SelectedItem)) || string.IsNullOrWhiteSpace(serialNumber.Text) ||
-                    string.IsNullOrWhiteSpace(declairedValue.Text) || string.IsNullOrWhiteSpace(Convert.ToString(notification.SelectedItem)))
+                    string.IsNullOrWhiteSpace(declaredValue.Text) || string.IsNullOrWhiteSpace(Convert.ToString(notification.SelectedItem)))
                 {
                     await DisplayAlert("Failure", "Please enter information for all item fields", "OK");
                 }

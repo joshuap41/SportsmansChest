@@ -3,6 +3,7 @@ using SportsmansChest.Model;
 using SQLite;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using System.Text;
 
 namespace SportsmansChest.View.SportingLocationsViews
 {
@@ -64,6 +65,28 @@ namespace SportsmansChest.View.SportingLocationsViews
                 NavigationMode = NavigationMode.None
             });
 
+        }
+
+        async void Share_Clicked(System.Object sender, System.EventArgs e)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("Saved Location Information from the Sportsman's Chest Mobile Application.");
+            sb.AppendLine($"");
+            sb.AppendLine($"Location Name:  {LocationName.Text}");
+            sb.AppendLine($"Longitude:  {Longitude.Text}");
+            sb.AppendLine($"Latitude:  {Latitude.Text}");
+            sb.AppendLine($"Event Type:  {EventType.Text}");
+            sb.AppendLine($"Created Date:  {CreatedDate.Text}");
+            sb.AppendLine($"Return Date:  {ReturnDate.Text}");
+            sb.AppendLine($"Notes:  {Notes.Text}");
+
+            await Share.RequestAsync(new ShareTextRequest
+            {
+                Subject = "Sporting Location Information",
+                Text = sb.ToString(),
+                Title = "Share your notes on the course"
+
+            });
         }
     }
 }
