@@ -276,7 +276,7 @@ namespace SportsmansChest
                                     if (inventoryItem.CurrentUser == App.UserLoggedIn)
                                     {
                                         // need a "nickName for the individual items to further decifer each one
-                                        CrossLocalNotifications.Current.Show("Notification Received", $"Inventory Item: {inventoryItem.Manufacturer} needs maintenance today.", itemId);
+                                        CrossLocalNotifications.Current.Show("Notification Received", $"Inventory Item: {inventoryItem.Description} needs maintenance today.", itemId);
                                     }
                                 }
                             }
