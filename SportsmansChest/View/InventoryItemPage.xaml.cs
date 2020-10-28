@@ -26,7 +26,7 @@ namespace SportsmansChest.View
             Model.Text = selectedInventoryItem.Model;
             Grade.Text = selectedInventoryItem.Grade;
             SerialNumnber.Text = selectedInventoryItem.SerialNumber;
-            DeclaredValue.Text = selectedInventoryItem.DeclaredValue;
+            DeclaredValue.Text = selectedInventoryItem.DeclaredValue.ToString();
             CreatedDate.Text = selectedInventoryItem.CreatedDate.ToString(App.dateFormat);
             MaintenanceDate.Text = selectedInventoryItem.MaintenanceDate.ToString(App.dateFormat);
             Notification.Text = selectedInventoryItem.Notification;
@@ -86,7 +86,6 @@ namespace SportsmansChest.View
                 Subject = "Inventory Item Information",
                 Text = sb.ToString(),
                 Title = "Share your notes on the course"
-
             });
         }
     }

@@ -13,7 +13,6 @@ namespace SportsmansChest.View
         public EditInventoryItemPage(InventoryItem selectedInventoryItem)
         {
             InitializeComponent();
-
             this.selectedInventoryItem = selectedInventoryItem;
         }
 
@@ -26,7 +25,7 @@ namespace SportsmansChest.View
             model.Text = selectedInventoryItem.Model;
             grade.SelectedItem = selectedInventoryItem.Grade;
             serialNumber.Text = selectedInventoryItem.SerialNumber;
-            declaredValue.Text = selectedInventoryItem.DeclaredValue;
+            declaredValue.Text = selectedInventoryItem.DeclaredValue.ToString();
             maintenanceDate.Date = selectedInventoryItem.MaintenanceDate;
             notification.SelectedItem = selectedInventoryItem.Notification;
             notes.Text = selectedInventoryItem.Notes;
@@ -44,7 +43,7 @@ namespace SportsmansChest.View
             selectedInventoryItem.Model = model.Text;
             selectedInventoryItem.Grade = Convert.ToString(grade.SelectedItem);
             selectedInventoryItem.SerialNumber = serialNumber.Text;
-            selectedInventoryItem.DeclaredValue = declaredValue.Text;
+            selectedInventoryItem.DeclaredValue = Convert.ToDouble(declaredValue.Text);
             selectedInventoryItem.MaintenanceDate = maintenanceDate.Date;
             selectedInventoryItem.Notification = Convert.ToString(notification.SelectedItem);
             selectedInventoryItem.Notes = notes.Text;
@@ -55,7 +54,7 @@ namespace SportsmansChest.View
 
                 if (string.IsNullOrWhiteSpace(description.Text) || string.IsNullOrWhiteSpace(manufacturer.Text) || string.IsNullOrWhiteSpace(model.Text) ||
                     string.IsNullOrWhiteSpace(Convert.ToString(grade.SelectedItem)) || string.IsNullOrWhiteSpace(serialNumber.Text) ||
-                    string.IsNullOrWhiteSpace(declaredValue.Text) || string.IsNullOrWhiteSpace(Convert.ToString(notification.SelectedItem)))
+                    declaredValue.Text == "" || string.IsNullOrWhiteSpace(Convert.ToString(notification.SelectedItem)))
                 {
                     await DisplayAlert("Failure", "Please enter information for all item fields", "OK");
                 }

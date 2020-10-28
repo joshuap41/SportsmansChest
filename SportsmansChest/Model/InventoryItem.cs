@@ -16,7 +16,7 @@ namespace SportsmansChest.Model
         public string Model { get; set; }
         public string Grade { get; set; }
         public string SerialNumber { get; set; }
-        public string DeclaredValue { get; set; }
+        public double DeclaredValue { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime MaintenanceDate { get; set; }
         public string Notification { get; set; }

@@ -13,7 +13,7 @@ namespace SportsmansChest.Model
         public string Manufacturer { get; set; }
         public string Model { get; set; }
         public string SerialNumber { get; set; }
-        public string DeclaredValue { get; set; }
+        public double DeclaredValue { get; set; }
         public DateTime CreatedDate { get; set; }
         public string Notes { get; set; }
 
