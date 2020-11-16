@@ -15,12 +15,7 @@
         <views:MenuPage />
     </MasterDetailPage.Master>
     -->
-    <StackLayout>
-        <Label Text="The Sportsman's Chest"
-               FontSize="Title"
-               FontAttributes="Bold"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"/>
+    <StackLayout Margin="0,20,0,20" VerticalOptions="Center">
 
         <!-- Change backgound of buttons to a picture...
         https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/images?tabs=macos#Local_Images
@@ -28,8 +23,8 @@
         <Button Text="Inventory List"
                 x:Name="InventoryList"
                 Clicked="InventoryList_Clicked"
-                Margin="2, 30, 2, 2"
-                HeightRequest="80"
+                Margin="2, 2, 2, 2"
+                HeightRequest="120"
                 BackgroundColor="{StaticResource blueColorForButton}"
                 TextColor="{StaticResource white}"/>
 
@@ -37,14 +32,14 @@
                 x:Name="SportingLocations"
                 Clicked="SportingLocations_Clicked"
                 Margin="2"
-                HeightRequest="80"
+                HeightRequest="120"
                 BackgroundColor="{StaticResource blueColorForButton}"
                 TextColor="{StaticResource white}"/>
 
         <Button Text="Statistics Report"
                 Clicked="ReportButton_Clicked"
-                Margin="80"
-                HeightRequest="60"
+                Margin="2,2,2,20"
+                HeightRequest="120"
                 BackgroundColor="{StaticResource blueColorForButton}"
                 TextColor="{StaticResource white}"/>
     </StackLayout>
