@@ -32,7 +32,7 @@
 
             <Label Text="Version 1.0"
                    HorizontalOptions="Center"
-                   Margin="5"/>
+                   Margin="0,30,0,0"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
