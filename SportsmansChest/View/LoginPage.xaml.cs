@@ -18,8 +18,8 @@ namespace SportsmansChest.View
         protected override void OnAppearing()
         {
             // Uncomment the below prior to deploying the App.
-            //username.Text = string.Empty;
-            //password.Text = string.Empty;
+            username.Text = string.Empty;
+            password.Text = string.Empty;
             base.OnAppearing();
         }
 
@@ -46,16 +46,15 @@ namespace SportsmansChest.View
                             userExists = true;
 
                             // Delete all App data and remove before publishing
-                            App.DeleteAlInventoryItems();
-                            App.DeleteAllAccessories();
-                            App.DeleteAllLocations();
-                            // Delete the above ^^^^^^^^^^^^^^^^^^^^
+                            //App.DeleteAlInventoryItems();
+                            //App.DeleteAllAccessories();
+                            //App.DeleteAllLocations();
 
                             App.UserLoggedIn = user.Id;
-                            App.LocationTestingData();
-                            App.InventoryTestingData();
+                            //App.LocationTestingData();
+                            //App.InventoryTestingData();
 
-                            // Change this to happen without the App being open.
+                            // Change notifications to happen without the App being open.
                             App.DisplayNotifications();
                             await Navigation.PushAsync(new MainPage());
                             return;
@@ -71,7 +70,6 @@ namespace SportsmansChest.View
                 {
                     await DisplayAlert("Invalid Input", "Please enter the username and password.", "OK");
                 }
-                
             }
         }
 
@@ -79,6 +77,5 @@ namespace SportsmansChest.View
         {
             Navigation.PushModalAsync(new NavigationPage(new RegisterNewUserPage()));
         }
-
     }
 }
