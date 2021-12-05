@@ -34,6 +34,7 @@ namespace SportsmansChest.View
 
                 if (!string.IsNullOrWhiteSpace(username.Text) || !string.IsNullOrWhiteSpace(password.Text))
                 {
+                    // Using for future feature improvement
                     bool userExists = false;
 
                     foreach (User user in users)
@@ -42,7 +43,6 @@ namespace SportsmansChest.View
 
                         if (user.UserName == username.Text && user.UserPassword == password.Text)
                         {
-                            
                             userExists = true;
 
                             // Delete all App data and remove before publishing

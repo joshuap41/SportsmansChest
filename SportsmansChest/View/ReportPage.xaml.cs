@@ -23,11 +23,11 @@ namespace SportsmansChest.View
             var totalLocationCount = App.TotalLocationCount();
             TotalLocationCount.Text = totalLocationCount.ToString();
 
-            // All Accessories.
+            // all Accessories.
             var allAccessories = App.AllAccessories();
             AllSavedAccessories.Text = allAccessories.ToString();
             
-            //Displays the Report run date
+            // displays the Report run date
             var reportCreationDate = DateTime.Now;
             ReportCreationDate.Text = reportCreationDate.ToString(App.dateFormat);
 

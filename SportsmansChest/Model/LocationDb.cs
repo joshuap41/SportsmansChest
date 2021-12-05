@@ -17,6 +17,7 @@ namespace SportsmansChest.Model
         public string Notification { get; set; }
         public string Notes { get; set; }
 
+
         // Pitures here... byte?
     }
 }

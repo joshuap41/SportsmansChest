@@ -70,7 +70,6 @@ namespace SportsmansChest.View
                 Subject = "Associated Accessory Information",
                 Text = sb.ToString(),
                 Title = "Share your notes on the course"
-
             });
         }
     }

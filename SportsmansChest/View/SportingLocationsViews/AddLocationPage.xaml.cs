@@ -66,6 +66,7 @@ namespace SportsmansChest.View.SportingLocationsViews
             }
         }
 
+
         //Geolocation
         //https://docs.microsoft.com/en-us/xamarin/essentials/geolocation?tabs=android
         async public void GetUserGPSLocation()

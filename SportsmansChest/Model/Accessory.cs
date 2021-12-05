@@ -17,6 +17,7 @@ namespace SportsmansChest.Model
         public DateTime CreatedDate { get; set; }
         public string Notes { get; set; }
 
+
         // Pictures here... byte?
     }
 }
